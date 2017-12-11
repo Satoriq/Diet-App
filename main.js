@@ -3179,6 +3179,16 @@ function allowed(){
   }
 }
 
+function notAllowed(){
+  for (var i = 0; i<fodmapList.length; i++) {
+    if ((document.getElementsByClassName("food__fodmap")[i].innerHTML === "high") && (document.getElementsByClassName("food")[i].style.display === "block")) {
+      document.getElementsByClassName("food")[i].style.display="block";
+    } else {
+      document.getElementsByClassName("food")[i].style.display="none";
+    }
+  }
+}
+
 function everything() {
   for (var i = 0; i<fodmapList.length; i++) {
     document.getElementsByClassName("food")[i].style.display="block";
