@@ -1,14 +1,24 @@
-// document.getElementById("box").oninput=function(){
-//   var matcher = new RegExp(document.getElementById("box").value, "gi");
-//   for (var i=0;i<document.getElementsByClassName("connect-cat").length;i++) {
-//     if (matcher.test(document.getElementsByClassName("name")[i].innerHTML) || matcher.test(document.getElementsByClassName("category")[i].innerHTML)) {
-//       document.getElementsByClassName("connect-cat")[i].style.display="inline-block";
-//     } else {
-//       document.getElementsByClassName("connect-cat")[i].style.display="none";
-//     }
-      
-//   }
-// };
+// construct an instance of Headroom, passing the element
+var myElement = document.querySelector("header");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+// initialise
+headroom.init(); 
+
+var headroom = new Headroom(myElement, {
+  "offset": 200,
+  "tolerance": {
+    "up" : 30,
+    "down" : 10
+},
+  "classes": {
+    "initial": "animated",
+    "pinned": "slideDown",
+    "unpinned": "slideUp"
+  }
+});
+headroom.init();
+
 
 
 
@@ -46,13 +56,6 @@ var fodmapList = [
     "name": "Cocoa powder",
     "fodmap": "low",
     "category": "Cooking ingredients, Herbs and Spices",
-	  "details": {"oligos": 0,"fructose": 0, "polyols": 0 ,"lactose": 0}
-  },
-  {
-    "id": "6",
-    "name": "Pineapple",
-    "fodmap": "low",
-    "category": "Fruit",
 	  "details": {"oligos": 0,"fructose": 0, "polyols": 0 ,"lactose": 0}
   },
   {
@@ -335,24 +338,24 @@ var fodmapList = [
   },
   {
     "id": "47",
-    "name": "Marshmello",
-    "fodmap": "low",
-    "category": "Sweeteners",
-	  "details": {"oligos": 0,"fructose": 0, "polyols": 0 ,"lactose": 0}
+    "name": "Apple (any)",
+    "fodmap": "high",
+    "category": "Fruits",
+	  "details": {"oligos": 0,"fructose": 2, "polyols": 2 ,"lactose": 0}
   },
   {
     "id": "48",
     "name": "Croissants",
     "fodmap": "high",
     "category": "Breads, Cereals, Grains and Pasta",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "49",
     "name": "Crumpets",
     "fodmap": "high",
     "category": "Breads, Cereals, Grains and Pasta",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "51",
@@ -564,7 +567,7 @@ var fodmapList = [
     "name": "Black eyed peas",
     "fodmap": "high",
     "category": "Vegetables and legumes",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "81",
@@ -676,7 +679,7 @@ var fodmapList = [
     "name": "Cold cuts / deli meat / cold meats such as ham",
     "fodmap": "low",
     "category": "Meat and Substitutes",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "98",
@@ -1096,7 +1099,7 @@ var fodmapList = [
     "name": "Chorizo",
     "fodmap": "high",
     "category": "Meat and Substitutes",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "158",
@@ -1140,7 +1143,7 @@ var fodmapList = [
     "name": "Coffee, black",
     "fodmap": "low",
     "category": "Drinks",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "164",
@@ -1288,7 +1291,7 @@ var fodmapList = [
     "name": "Glucose",
     "fodmap": "low",
     "category": "Sweeteners",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "186",
@@ -1324,14 +1327,14 @@ var fodmapList = [
     "fodmap": "low",
     "category": "Condiments",
     "qty": "1/2 tbsp",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "191",
     "name": "Granola",
     "fodmap": "high",
     "category": "Breads, Cereals, Grains and Pasta",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "192",
@@ -1353,7 +1356,7 @@ var fodmapList = [
     "fodmap": "low",
     "category": "Dairy",
     "qty":"small amounts",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "195",
@@ -1473,7 +1476,7 @@ var fodmapList = [
     "name": "Isomalt",
     "fodmap": "high",
     "category": "Sweeteners",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "212",
@@ -1608,7 +1611,7 @@ var fodmapList = [
     "name": "Muffins",
     "fodmap": "high",
     "category": "Breads, Cereals, Grains and Pasta",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "232",
@@ -1958,7 +1961,7 @@ var fodmapList = [
     "name": "Semolina",
     "fodmap": "high",
     "category": "Breads, Cereals, Grains and Pasta",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "281",
@@ -1980,14 +1983,14 @@ var fodmapList = [
     "name": "Sodas with HFCS",
     "fodmap": "high",
     "category": "Drinks",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "284",
     "name": "Sorbitol",
     "fodmap": "high",
     "category": "Sweeteners",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "285",
@@ -2224,7 +2227,7 @@ var fodmapList = [
     "name": "Xylitol",
     "fodmap": "high",
     "category": "Sweeteners",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "318",
@@ -2458,7 +2461,7 @@ var fodmapList = [
     "name": "Molasses",
     "fodmap": "high",
     "category": "Condiments",
-    "details": {"oligos": "nodata","fructose": "nodata", "polyols": "nodata" ,"lactose": "nodata"}
+    "details": {"oligos": "?","fructose": "?", "polyols": "?" ,"lactose": "?"}
   },
   {
     "id": "351",
@@ -3000,52 +3003,101 @@ var fodmapList = [
   }
 ];
 
-for (var i = 0; i < fodmapList.length; i++) {
-  var div = document.createElement("div");
-  var div2 = document.createElement("div");
-  var div5 = document.createElement("div");
-  var div3 = document.createElement("div");
-  var p = document.createElement("p");
-  var p3 = document.createElement("p");
-  var p2 = document.createElement("p");
-  var t2 = document.createTextNode(fodmapList[i].name);
-  var t3 = document.createTextNode(fodmapList[i].fodmap);
-  var t411 = document.createTextNode(" Oligos: ");
-  var t412 = document.createTextNode(fodmapList[i].details.oligos);
-  var t421 = document.createTextNode(" Fructose: ", fodmapList[i].details.fructose);
-  var t422 = document.createTextNode(fodmapList[i].details.fructose);
-  var t431 = document.createTextNode(" Polyols: ");
-  var t432 = document.createTextNode(fodmapList[i].details.polyols);
-  var t441 = document.createTextNode(" Lactose: ");
-  var t442 = document.createTextNode(fodmapList[i].details.lactose);
-  var t5 = document.createTextNode(fodmapList[i].category);
-  div.appendChild(div2);
-  div.appendChild(p2);
-  div.appendChild(p3);
-  div2.appendChild(div5);
-  div2.appendChild(div3);
-  div5.appendChild(t2);
-  div3.appendChild(t3);
-  p2.appendChild(t411);
-  p2.appendChild(t412);
-  p2.appendChild(t421);
-  p2.appendChild(t422);
-  p2.appendChild(t431);
-  p2.appendChild(t432);
-  p2.appendChild(t441);
-  p2.appendChild(t442);
-  p3.appendChild(t5);
-  div.className = "food";
-  div2.className = "food__title";
-  div5.className = "food__title-name";
-  div3.className = "food__fodmap";
-  p2.className = "food__details";
-  p3.className = "food__category";
-  document.body.appendChild(div);
-}
+// for (var i = 0; i < fodmapList.length; i++) {
+//   if (fodmapList[i].details.oligos === 0 ){
+//     var oligos = document.createElement("span");
+//     oligos.className = "circle__good";
+//   } else if (fodmapList[i].details.oligos === 1 ){
+//     var oligos = document.createElement("span");
+//     oligos.className = "circle__middle";
+//   } else if (fodmapList[i].details.oligos === 2 ){
+//     var oligos = document.createElement("span");
+//     oligos.className = "circle__bad";
+//   }
 
-document.getElementById("box").oninput=function(){
-  var matcher = new RegExp(document.getElementById("box").value, "gi");
+  // if (fodmapList[i].details.fructose === 0 ){
+  //   var fructose = document.createElement("span");
+  //   fructose.className = "circle__good";
+  // } else if (fodmapList[i].details.fructose === 1 ){
+  //   var fructose = document.createElement("span");
+  //   fructose.className = "circle__middle";
+  // } else if (fodmapList[i].details.fructose === 2 ){
+  //   var fructose = document.createElement("span");
+  //   fructose.className = "circle__bad";
+  // }
+
+  // if (fodmapList[i].details.polyols === 0 ){
+  //   var polyols = document.createElement("span");
+  //   polyols.className = "circle__good";
+  // } else if (fodmapList[i].details.polyols === 1 ){
+  //   var polyols = document.createElement("span");
+  //   polyols.className = "circle__middle";
+  // } else if (fodmapList[i].details.polyols === 2 ){
+  //   var polyols = document.createElement("span");
+  //   polyols.className = "circle__bad";
+  // }
+
+  // if (fodmapList[i].details.lactose === 0 ){
+  //   var lactose = document.createElement("span");
+  //   lactose.className = "circle__good";
+  // } else if (fodmapList[i].details.lactose === 1 ){
+  //   var lactose = document.createElement("span");
+  //   lactose.className = "circle__middle";
+  // } else if (fodmapList[i].details.lactose === 2 ){
+  //   var lactose = document.createElement("span");
+  //   lactose.className = "circle__bad";
+  // } 
+  
+//   var div = document.createElement("div");
+//   var div2 = document.createElement("div");
+//   var div5 = document.createElement("div");
+//   var div3 = document.createElement("div");
+//   var p = document.createElement("p");
+//   var p3 = document.createElement("p");
+//   var p2 = document.createElement("p");
+//   var t2 = document.createTextNode(fodmapList[i].name);
+//   var t3 = document.createTextNode(fodmapList[i].fodmap);
+//   var t411 = document.createTextNode(" Oligos: ");
+//   var t412 = document.createElement("span");
+//   var t421 = document.createTextNode(" Fructose: ");
+//   var t422 = document.createElement("span");
+//   var t431 = document.createTextNode(" Polyols: ");
+//   var t432 = document.createElement("span");
+//   var t441 = document.createTextNode(" Lactose: ");
+//   var t442 = document.createElement("span");
+//   var t5 = document.createTextNode(fodmapList[i].category);
+//   var container = document.getElementById("js-container");
+//   div.appendChild(div2);
+//   div.appendChild(p2);
+//   div.appendChild(p3);
+//   div2.appendChild(div5);
+//   div2.appendChild(div3);
+//   div5.appendChild(t2);
+//   div3.appendChild(t3);
+//   p2.appendChild(t411);
+//   p2.appendChild(t412);
+//   t412.appendChild(oligos);
+//   p2.appendChild(t421);
+//   p2.appendChild(t422);
+//   t422.appendChild(fructose);
+//   p2.appendChild(t431);
+//   p2.appendChild(t432);
+//   t432.appendChild(polyols);
+//   p2.appendChild(t441);
+//   p2.appendChild(t442);
+//   t442.appendChild(lactose);
+//   p3.appendChild(t5);
+//   div.className = "food";
+//   div2.className = "food__title";
+//   div5.className = "food__title-name";
+//   div3.className = "food__fodmap";
+//   p2.className = "food__details";
+//   p3.className = "food__category";
+//   container.appendChild(div);
+// }
+
+document.getElementById("js-search").oninput=function(){
+  var matcher = new RegExp(document.getElementById("js-search").value, "gi");
   for (var i = 0; i<fodmapList.length; i++) {
     if (matcher.test(document.getElementsByClassName("food")[i].innerHTML)) {
       document.getElementsByClassName("food")[i].style.display="block";
@@ -3056,140 +3108,263 @@ document.getElementById("box").oninput=function(){
   }
 };
 
-  for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__fodmap")[i].innerHTML === "low") {
-      document.getElementsByClassName("food__fodmap")[i].style.backgroundColor="green";
-    } else {
-      document.getElementsByClassName("food__fodmap")[i].style.backgroundColor="red";
-    }
-  }
+  // for (var i = 0; i<fodmapList.length; i++) {
+  //   if (document.getElementsByClassName("food__fodmap")[i].innerHTML === "low") {
+  //     document.getElementsByClassName("food__fodmap")[i].style.backgroundColor="green";
+  //   } else {
+  //     document.getElementsByClassName("food__fodmap")[i].style.backgroundColor="red";
+  //   }
+  // }
+
+  // for (var i = 0; i<fodmapList.length; i++) {
+  //   document.getElementsByClassName("food")[i].style.display="block";
+  // }
 
 // by category
 function breads(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Breads, Cereals, Grains and Pasta") {
+    if (fodmapList[i].category === "Breads, Cereals, Grains and Pasta") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
   }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+  }
+  document.getElementsByClassName("categories__content-item")[1].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Breads, Cereals, Grains and Pasta";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+    setTimeout(function(){
+  document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); //LOL IT WORKS
 }
+
+
 
 function vegetables(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Vegetables and legumes") {
+    if (fodmapList[i].category === "Vegetables and legumes") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
   }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+  }
+  document.getElementsByClassName("categories__content-item")[2].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Vegetables and legumes";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+  setTimeout(function(){
+    document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 
 function fruits(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Fruit") {
+    if (fodmapList[i].category === "Fruit") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
+    for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+      document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    }
   }
+  document.getElementsByClassName("categories__content-item")[3].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Fruit";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+  setTimeout(function(){
+    document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 
 function drinks(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Drinks") {
+    if (fodmapList[i].category === "Drinks") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
   }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+  }
+  document.getElementsByClassName("categories__content-item")[4].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Drinks";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+  setTimeout(function(){
+    document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 
 function meat(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Meat and Substitutes") {
+    if (fodmapList[i].category === "Meat and Substitutes") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
   }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+  }
+  document.getElementsByClassName("categories__content-item")[5].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Meat and Substitutes";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+  setTimeout(function(){
+    document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 function condiments(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Condiments") {
+    if (fodmapList[i].category === "Condiments") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
   }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+  }
+  document.getElementsByClassName("categories__content-item")[6].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Condiments";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+  setTimeout(function(){
+    document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 function milk(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Milk") {
+    if (fodmapList[i].category === "Milk") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
   }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+  }
+  document.getElementsByClassName("categories__content-item")[7].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Milk";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+  setTimeout(function(){
+    document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 function sweeteners(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Sweeteners") {
+    if (fodmapList[i].category === "Sweeteners") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
+    for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+      document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    }
   }
+  document.getElementsByClassName("categories__content-item")[8].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Sweeteners";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+  setTimeout(function(){
+    document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 function dairy(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Dairy") {
+    if (fodmapList[i].category === "Dairy") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
+    for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+      document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    }
   }
+  document.getElementsByClassName("categories__content-item")[9].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Dairy";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+    setTimeout(function(){
+  document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 function cheese(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Cheese") {
+    if (fodmapList[i].category === "Cheese") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
   }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+  }
+  document.getElementsByClassName("categories__content-item")[10].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Cheese";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+    setTimeout(function(){
+  document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 function nuts(){
   for (var i = 0; i<fodmapList.length; i++) {
-    if (document.getElementsByClassName("food__category")[i].innerHTML === "Nuts and Seeds") {
+    if (fodmapList[i].category === "Nuts and Seeds") {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
   }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+  }
+  document.getElementsByClassName("categories__content-item")[11].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Nuts and Seeds";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+    setTimeout(function(){
+  document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 100); 
 }
 
-function allowed(){
+function allowed() {
   for (var i = 0; i<fodmapList.length; i++) {
-    if ((document.getElementsByClassName("food__fodmap")[i].innerHTML === "low") && (document.getElementsByClassName("food")[i].style.display === "block")) {
+    if ((fodmapList[i].fodmap === "low") && (document.getElementsByClassName("food")[i].style.display === "block")) {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
+   }
+   document.getElementsByClassName("categories__allowed")[0].style.color="red";
   }
-}
 
-function notAllowed(){
-  for (var i = 0; i<fodmapList.length; i++) {
-    if ((document.getElementsByClassName("food__fodmap")[i].innerHTML === "high") && (document.getElementsByClassName("food")[i].style.display === "block")) {
-      document.getElementsByClassName("food")[i].style.display="block";
-    } else {
-      document.getElementsByClassName("food")[i].style.display="none";
-    }
-  }
-}
 
-function everything() {
+function everything() {  //why all() doesnt work?
   for (var i = 0; i<fodmapList.length; i++) {
     document.getElementsByClassName("food")[i].style.display="block";
-}}
+  }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+  }
+  document.getElementsByClassName("categories__content-item")[0].style.color="red";
+  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementsByClassName("categories__name")[0].innerHTML="All";
+  document.getElementsByClassName("categories__content")[0].style.display="none";
+    setTimeout(function(){
+  document.getElementsByClassName("categories__content")[0].style.display="";
+  }, 150); 
+}
+
+
+
+
