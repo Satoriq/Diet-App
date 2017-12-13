@@ -14,7 +14,18 @@
   }
   &__details {
     font-size: 12px;
+
   }
+  &__fodmap {
+    color: grey;
+    &--low{
+      background-color: green;
+    }
+    &--high {
+      background-color: red;
+    }
+  }
+  
 }
 .search {
   display: block;
@@ -40,7 +51,7 @@
     @extend .circle;
     background-color: red; 
   }
-  
+
 }
 
 #js-container {

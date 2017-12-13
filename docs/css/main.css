@@ -103,6 +103,18 @@
   font-size: 12px;
 }
 
+.food__fodmap {
+  color: grey;
+}
+
+.food__fodmap--low {
+  background-color: green;
+}
+
+.food__fodmap--high {
+  background-color: red;
+}
+
 .search {
   display: block;
   margin-left: auto;
