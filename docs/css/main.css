@@ -122,7 +122,7 @@
   margin-top: 300px;
 }
 
-.circle, .circle__good, .circle__middle, .circle__bad {
+.circle, .circle__good, .circle__middle, .circle__bad, .circle__idk {
   display: inline-block;
   padding: 4px;
   margin-right: 8px;
@@ -140,6 +140,10 @@
 
 .circle__bad {
   background-color: red;
+}
+
+.circle__idk {
+  background-color: grey;
 }
 
 #js-container {
@@ -205,7 +209,7 @@
 }
 
 .my-gallery {
-  width: 100%;
+  width: 30%;
   float: left;
 }
 
@@ -218,7 +222,7 @@
   display: block;
   float: left;
   margin: 0 5px 5px 0;
-  width: 150px;
+  width: 100%;
 }
 
 .my-gallery figcaption {

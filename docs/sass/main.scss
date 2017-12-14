@@ -51,6 +51,10 @@
     @extend .circle;
     background-color: red; 
   }
+  &__idk {
+    @extend .circle;
+    background-color: grey; 
+  }
 
 }
 
@@ -104,7 +108,7 @@
 
 
 .my-gallery {
-  width: 100%;
+  width: 30%;
   float: left;
 }
 .my-gallery img {
@@ -115,7 +119,7 @@
   display: block;
   float: left;
   margin: 0 5px 5px 0;
-  width: 150px;
+  width: 100%;
 }
 .my-gallery figcaption {
   display: none;
