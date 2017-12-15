@@ -739,7 +739,7 @@ var fodmapList = [
   },
   {
     "id": "77",
-    "name": "Butter  beans, canned",
+    "name": "Butter beans, canned",
     "fodmap": "high",
     "category": "Vegetables and legumes",
 	  "details": {"oligos": 2,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -942,7 +942,7 @@ var fodmapList = [
   },
   {
     "id": "108",
-    "name": "Gotukala",
+    "name": "Gotukola",
     "fodmap": "low",
     "category": "Cooking ingredients, Herbs and Spices",
 	  "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -1316,7 +1316,7 @@ var fodmapList = [
     "name": "Coconut water",
     "fodmap": "high",
     "category": "Drinks",
-	"details": {"oligos": 1,"fructose": 0, "polyols": 2 ,"lactose": 0}
+	  "details": {"oligos": 1,"fructose": 0, "polyols": 2 ,"lactose": 0}
   },
   {
     "id": "163",
@@ -1341,7 +1341,7 @@ var fodmapList = [
   },
   {
     "id": "166",
-    "name": "Cornf lour",
+    "name": "Corn flour",
     "fodmap": "low",
     "category": "Breads, Cereals, Grains and Pasta",
 	  "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -1544,7 +1544,7 @@ var fodmapList = [
   },
   {
     "id": "197",
-    "name": "yogurt ",
+    "name": "Yogurt ",
     "fodmap": "high",
     "category": "Dairy",
 	  "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 2}
@@ -1614,7 +1614,7 @@ var fodmapList = [
   },
   {
     "id": "207",
-    "name": "Hommus dip",
+    "name": "Hummus dip",
     "fodmap": "high",
     "category": "Condiments",
     "details": {"oligos": 2,"fructose": 0, "polyols": 0, "lactose": 0}
