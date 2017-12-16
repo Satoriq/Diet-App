@@ -1733,7 +1733,7 @@ var fodmapList = [
   },
   {
     "id": "226",
-    "name": "Mayonnaise",
+    "name": "Mayonnaise (check ingredients)",
     "fodmap": "low",
     "category": "Condiments",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -2034,21 +2034,21 @@ var fodmapList = [
   },
   {
     "id": "269",
-    "name": "Brown rice",
+    "name": "Brown rice ",
     "fodmap": "low",
     "category": "Breads, Cereals, Grains and Pasta",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
   },
   {
     "id": "270",
-    "name": "White rice",
+    "name": "White rice ",
     "fodmap": "low",
     "category": "Breads, Cereals, Grains and Pasta",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
   },
   {
     "id": "271",
-    "name": "Basmati rice",
+    "name": "Basmati rice ",
     "fodmap": "low",
     "category": "Breads, Cereals, Grains and Pasta",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -2202,14 +2202,14 @@ var fodmapList = [
   },
   {
     "id": "293",
-    "name": "Butter nut squash",
+    "name": "Butternut squash",
     "fodmap": "low",
     "category": "Vegetables and legumes",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
   },
   {
     "id": "294",
-    "name": "Star Fruit",
+    "name": "Star fruit",
     "fodmap": "low",
     "category": "Fruit",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -2482,7 +2482,7 @@ var fodmapList = [
   },
   {
     "id": "333",
-    "name": "Goji Berries",
+    "name": "Goji berries",
     "fodmap": "high",
     "category": "Fruit",
     "details": {"oligos": 2,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -2517,14 +2517,14 @@ var fodmapList = [
   },
   {
     "id": "338",
-    "name": "Balsamic Vinegar",
+    "name": "Balsamic vinegar",
     "fodmap": "low",
     "category": "Condiments",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
   },
   {
     "id": "339",
-    "name": "Apple Cider Vinegar",
+    "name": "Apple cider vinegar",
     "fodmap": "low",
     "category": "Condiments",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
