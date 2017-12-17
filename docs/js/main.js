@@ -2642,13 +2642,6 @@ var fodmapList = [
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
   },
   {
-    "id": "356",
-    "name": "Garlic powder",
-    "fodmap": "high",
-    "category": "Cooking ingredients, Herbs and Spices",
-    "details": {"oligos": 2,"fructose": 0, "polyols": 0, "lactose": 0}
-  },
-  {
     "id": "357",
     "name": "Garlic salt",
     "fodmap": "high",
@@ -2853,7 +2846,7 @@ var fodmapList = [
   },
   {
     "id": "386",
-    "name": "Tumeric",
+    "name": "Turmeric",
     "fodmap": "low",
     "category": "Vegetables and legumes",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -2867,7 +2860,7 @@ var fodmapList = [
   },
   {
     "id": "388",
-    "name": "Wild rice",
+    "name": "Wild rice ",
     "fodmap": "low",
     "category": "Breads, Cereals, Grains and Pasta",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -3119,7 +3112,7 @@ var fodmapList = [
   },
   {
     "id": "424",
-    "name": "Chickpeas, sprouted",
+    "name": "Chickpeas, sprouted ",
     "fodmap": "high",
     "category": "Vegetables and legumes",
 	  "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -3141,13 +3134,6 @@ var fodmapList = [
   {
     "id": "427",
     "name": "Tortillas, corn",
-    "fodmap": "low",
-    "category": "Breads, Cereals, Grains and Pasta",
-	  "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
-  },
-  {
-    "id": "429",
-    "name": "White rice",
     "fodmap": "low",
     "category": "Breads, Cereals, Grains and Pasta",
 	  "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
@@ -3294,7 +3280,7 @@ var fodmapList = [
   },
   {
     "id": "450",
-    "name": "cheese , soy",
+    "name": "Cheese , soy",
     "fodmap": "low",
     "category": "Cheese",
     "details": {"oligos": 0,"fructose": 0, "polyols": 0, "lactose": 0}
