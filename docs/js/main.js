@@ -1,25 +1,5 @@
-//
-// ────────────────────────────────────────────────────────── I ──────────
-//   :::::: JS  F O R   H E A D E R : :  :   :    :     :
-// ────────────────────────────────────────────────────────────────────
-//
-var myElement = document.querySelector("header");
-var headroom  = new Headroom(myElement);
-headroom.init(); 
 
-var headroom = new Headroom(myElement, {
-  "offset": 200,
-  "tolerance": {
-    "up" : 30,
-    "down" : 10
-},
-  "classes": {
-    "initial": "animated",
-    "pinned": "slideDown",
-    "unpinned": "slideUp"
-  }
-});
-headroom.init();
+
 
 //
 // ────────────────────────────────────────────────────────── I ──────────

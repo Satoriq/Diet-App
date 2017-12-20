@@ -17,15 +17,16 @@
 
 
 <body>
+  <button onclick="toTheStars()" id="js-toTop">Go top</button>
   <header>
-    <nav>
+    <nav id="navbar">
       <div class="nav">
         <div class="logo">
-          <p class= "logo__name">FODMAP App</p>
+          <button onclick="toTheStarsHeader()" class= "logo__name"><p>FODMAP App</p><a href="#top"></a></button>
         </div>
         <ul>
           <li>Contacts</li>  
-          <li>Info</li>
+          <li>About</li>
           <li><button class="nav__add">Add to Bookmarks</button></li>
         </ul>
       </div>
@@ -34,7 +35,6 @@
   
   <input placeholder="Apple" id="js-search" class="search" type="search">
   <br>
-  <a href="#top" class="topw">go to the top</a>
 
   <div class="filters">
     <div class="categories">
@@ -9964,9 +9964,9 @@
 
 
 
-
-  <script src="js/headroom.js"></script>
+  <script src="js/back-to-top.js"></script>  
   <script src="js/main.js"></script>
+  <script src="js/header.js"></script>
   <script src="js/photoswipe.js"></script> 
   <script src="js/photoswipe-ui-default.min.js"></script> 
 
