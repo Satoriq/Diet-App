@@ -1,3 +1,33 @@
+document.getElementById("wrapper").onclick = function lolka(){
+  if (document.getElementById("container").className === " active"){
+    document.getElementById("container").className = "";
+  }
+  else {
+    document.getElementById("container").className += " active";
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -107,6 +137,19 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
       }
       return false;
   };
+
+
+  const share = document.querySelector('.share');
+
+setTimeout(() => {
+  share.classList.add("hover");
+}, 1000);
+
+setTimeout(() => {
+  share.classList.remove("hover");
+}, 3000);
+
+
 
   // parse picture index and gallery index from URL (#&pid=1&gid=2)
   var photoswipeParseHash = function() {

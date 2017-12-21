@@ -22,17 +22,29 @@
     <nav id="navbar">
       <div class="nav">
         <div class="logo">
-          <button onclick="toTheStarsHeader()" class= "logo__name"><p>FODMAP App</p><a href="#top"></a></button>
+          <button onclick="toTheStarsHeader()" class= "logo__name"><p>FODMAP App</p></button>
         </div>
-        <ul>
-          <li>Contacts</li>  
-          <li>About</li>
-          <li><button class="nav__add">Add to Bookmarks</button></li>
+        <ul class="nav__info">
+          <li class="nav__info-item" >Contacts</li>  
+          <li class="nav__info-item">About</li> 
         </ul>
       </div>
     </nav>
   </header>
-  
+  <div id="wrapper">
+      <div id="container">
+          
+        <img id="share-btn" src="img/share.svg" alt="we" width="50px" height="50px">
+        
+        <ul id="social">
+          <li class = "social__item"><img src="img/facebook-logo.svg" alt="we" width="20px" height="20px"> </li>
+          <li class = "social__item"><img src="img/reddit.svg" alt="we" width="20px" height="20px"></li>
+          <li class = "social__item"><img src="img/twitter.svg" alt="we" width="20px" height="20px"></li>
+          <li class = "social__item"><img src="img/g+.svg" alt="we" width="20px" height="20px"></li>
+        </ul>
+        
+      </div>
+    </div>
   <input placeholder="Apple" id="js-search" class="search" type="search">
   <br>
 
@@ -9963,8 +9975,6 @@
 
 
 
-
-  <script src="js/back-to-top.js"></script>  
   <script src="js/main.js"></script>
   <script src="js/header.js"></script>
   <script src="js/photoswipe.js"></script> 
