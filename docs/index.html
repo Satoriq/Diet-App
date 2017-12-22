@@ -17,7 +17,7 @@
 
 
 <body>
-  <button onclick="toTheStars()" id="js-toTop">Go top</button>
+  <i id="js-top" class="top fas fa-arrow-alt-circle-up"></i>
   <header>
     <nav id="navbar">
       <div class="nav">
@@ -27,24 +27,24 @@
         <ul class="nav__info">
           <li class="nav__info-item" >Contacts</li>  
           <li class="nav__info-item">About</li> 
+          <li class="nav__info-item"></li>
         </ul>
       </div>
     </nav>
   </header>
-  <div id="wrapper">
-      <div id="container">
-          
-        <img id="share-btn" src="img/share.svg" alt="we" width="50px" height="50px">
-        
-        <ul id="social">
-          <li class = "social__item"><img src="img/facebook-logo.svg" alt="we" width="20px" height="20px"> </li>
-          <li class = "social__item"><img src="img/reddit.svg" alt="we" width="20px" height="20px"></li>
-          <li class = "social__item"><img src="img/twitter.svg" alt="we" width="20px" height="20px"></li>
-          <li class = "social__item"><img src="img/g+.svg" alt="we" width="20px" height="20px"></li>
+
+  <div id="js-share__wrapper" class="share__wrapper">
+      <div id="js-share" class="share"> 
+        <i class="share__btn fas fa-share-alt"></i>
+        <ul class="share__social">
+          <li class="share__social-item"><a href="#1"><i class="fab fa-facebook-f"></i></a></li>
+          <li class="share__social-item"><a href="#2"><i class="fab fa-twitter"></i></a></li>
+          <li class="share__social-item"><a href="#3"><i class="fab fa-reddit-alien"></i></a></li>
+          <li class="share__social-item"><a href="#4"><i class="fab fa-google-plus-g"></i></a></li>
+          <li class="share__social-item"><a href="#5"><i class="fas fa-angle-double-right"></i></a></li>
         </ul>
-        
       </div>
-    </div>
+  </div>
   <input placeholder="Apple" id="js-search" class="search" type="search">
   <br>
 
@@ -9977,6 +9977,9 @@
 
   <script src="js/main.js"></script>
   <script src="js/header.js"></script>
+  <script src="js/fontawesome.min.js"></script>
+  <script src="js/fa-solid.js"></script>
+  <script src="js/fa-brands.js"></script>
   <script src="js/photoswipe.js"></script> 
   <script src="js/photoswipe-ui-default.min.js"></script> 
 

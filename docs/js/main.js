@@ -1,9 +1,9 @@
-document.getElementById("wrapper").onclick = function lolka(){
-  if (document.getElementById("container").className === " active"){
-    document.getElementById("container").className = "";
+document.getElementById("js-share__wrapper").onclick = function lolka(){
+  if (document.getElementById("js-share").className === "share share--active"){
+    document.getElementById("js-share").className = "share";
   }
   else {
-    document.getElementById("container").className += " active";
+    document.getElementById("js-share").className += " share--active";
   }
 };
 

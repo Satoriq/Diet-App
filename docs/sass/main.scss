@@ -1,73 +1,79 @@
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
+$primary-color: #5bc0de;
+$secondary-color: #f9f9f9;
+$decor-color: #00aedb;
+
+ul{
+  -webkit-padding-start: 0;
 }
 
-$primary-color: #ecf0f1;
-$secondary-color: #81CFE0;
-$decor-color: #52B3D9;
 
-
-
-
-#wrapper{
-   position: fixed;
-   bottom: 20px;
-   right: 20px;
-   transition: .5s ease;
-   z-index: 1;
-}
-
-#container{
+.share{
   width: 50px;
   height: 50px;
   margin: 0 auto;
-  text-align: center;
-  cursor: pointer;
   display: table;
   box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.3);
-  @include border-radius(50px);
+  border-radius: 50px;
   overflow: hidden;
-  background-color: $secondary-color;
+  background-color: #5bc0de;
   transition: 0.4s ease-in-out;
+  cursor: pointer;
   &:hover{
     transition: all 0.25s ease;
-    transform: translateY(-1px);
-    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    transform: translateY(-2px);
+    background-color:#00aedb;
   }
-  &:active {
-    transform: translateY(1px);
+  &__wrapper{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: .5s ease;
+    z-index: 1;
   }
-  #share-btn{
-    display: table-cell;
-    color: $primary-color;
+  &__btn{
+    display: block;
+    color: #f9f9f9;
+    font-size: 24px;
+    margin-top: 12px;
+    margin-left: 13px;  
   }
-  #social{
+  &__social{
     width: 100%;
-    margin-right: 30px;
     display: none;
     opacity: 0;
     visibility: hidden;
-    text-align: center;
-    li{
-      width: 40px;
+    &-item{
       list-style: none;
-      margin-right: 20px;
+      font-size: 24px;
+      color: #f9f9f9;
+      transform: translateY(-3px);
+      margin-left: 28px;
+      &:nth-child(5){
+        font-size: 35px;
+        transform: translateY(-9px);
+        &:hover{
+          transition: all 0.25s ease;
+          transform: translateY(-11px);
+        }
+      }
+      &:hover{
+        transition: all 0.25s ease;
+        transform: translateY(-5px);
+        color: #fff;
+      }
     }
   }
-  &.active{
-    background-color: $decor-color;
-    width: 80px;
-    padding-right: 100px;
+  &--active{
+    background-color: #5bc0de;
+    width: 280px;
     display: flex;
-    #share-btn{
+    cursor: default;
+    .share__btn{
       display: none;
       opacity: 1;
       visibility: hidden;
     }
-    #social{
+    .share__social{
       display: flex;
       opacity: 1;
       visibility: visible;
@@ -76,41 +82,47 @@ $decor-color: #52B3D9;
 }
 
 
+
+
 body{
   font-family: 'Roboto', sans-serif;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-#js-toTop {
+.top {
   display: block;
   opacity: 0;
   position: fixed;
   bottom: 80px;
-  right: 30px;
+  right: 22px;
   z-index: -1;
   border: none;
   outline: none;
-  background-color: #5bc0de;
-  color: #f9f9f9;
+  background-color: #f9f9f9;
+  color: #5bc0de;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 15px;
-  font-family: 'Roboto', sans-serif;
+  border-radius: 50%;
   transition: opacity .6s;
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
   &:hover{
     transition: all 0.25s ease;
-    background-color:#1DA1B7;
+    color:#1DA1B7;
     transform: translateY(-2px);
-    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
   }
   &:active {
     transform: translateY(1px);
   }
 }
 
+.fa-arrow-alt-circle-up{
+  box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
 
 #navbar {
   background-color:#5bc0de;//#5bc0de;

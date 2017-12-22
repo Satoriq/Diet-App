@@ -44,7 +44,6 @@ if (window.addEventListener) { //Integrate direction logic with listeners for fi
 window.onscroll = function() {
   showGoTop();
   ifScrolledTop();
-  showGoTop2();
 };
 function ifScrolledTop() {
   if (window.scrollY < 149) {
@@ -64,13 +63,15 @@ function toTheStarsHeader() {
 //"Go top" button
 function showGoTop() {
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-    document.getElementById("js-toTop").style.opacity = "1";
-    document.getElementById("js-toTop").style.zIndex = "1";
+    document.getElementById("js-top").style.opacity = "1";
+    document.getElementById("js-top").style.zIndex = "1";
   } else {
-    document.getElementById("js-toTop").style.opacity = "0";
+    document.getElementById("js-top").style.opacity = "0";
+    document.getElementById("js-top").style.zIndex = "-1";
   }
 }
-function toTheStars() {
+var top = document.getElementById("js-top");
+top.onclick = function() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
