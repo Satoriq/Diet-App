@@ -35,7 +35,7 @@ document.onmousewheel = function(e) { //Integrate direction logic with listeners
   hideNavbar(detectWheelDirection(e));
 };
 if (window.addEventListener) { //Integrate direction logic with listeners for firefox
-  document.addEventListener( 'DOMMouseScroll', function( e ) {
+  document.addEventListener( 'DOMMouseScroll', { passive: true }, function( e ) {
     hideNavbar(detectWheelDirection(e));
   });
 }
@@ -70,8 +70,8 @@ function showGoTop() {
     document.getElementById("js-top").style.zIndex = "-1";
   }
 }
-var top = document.getElementById("js-top");
-top.onclick = function() {
+var goTopButton = document.getElementById("js-top");
+goTopButton.onclick = function() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
