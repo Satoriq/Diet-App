@@ -10,27 +10,6 @@ document.getElementById("js-share__wrapper").onclick = function lolka(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //
 // ────────────────────────────────────────────────────────── I ──────────
 //   :::::: JS  F O R   P H O T O S : :  :   :    :     :
@@ -3429,7 +3408,7 @@ function breads() {
     document.getElementsByClassName("categories__content-item")[a].style.color="blue";
   }
   document.getElementsByClassName("categories__content-item")[1].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Breads, Cereals, Grains and Pasta";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3449,7 +3428,7 @@ function vegetables() {
     document.getElementsByClassName("categories__content-item")[a].style.color="blue";
   }
   document.getElementsByClassName("categories__content-item")[2].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Vegetables and legumes";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3469,7 +3448,7 @@ function fruits() {
     }
   }
   document.getElementsByClassName("categories__content-item")[3].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Fruit";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3489,7 +3468,7 @@ function drinks() {
     document.getElementsByClassName("categories__content-item")[a].style.color="blue";
   }
   document.getElementsByClassName("categories__content-item")[4].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Drinks";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3509,7 +3488,7 @@ function meat() {
     document.getElementsByClassName("categories__content-item")[a].style.color="blue";
   }
   document.getElementsByClassName("categories__content-item")[5].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Meat and Substitutes";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3529,7 +3508,7 @@ function condiments() {
     document.getElementsByClassName("categories__content-item")[a].style.color="blue";
   }
   document.getElementsByClassName("categories__content-item")[6].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Condiments";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3549,7 +3528,7 @@ function milk() {
     document.getElementsByClassName("categories__content-item")[a].style.color="blue";
   }
   document.getElementsByClassName("categories__content-item")[7].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Milk";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3569,7 +3548,7 @@ function sweeteners() {
     }
   }
   document.getElementsByClassName("categories__content-item")[8].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Sweeteners";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3589,7 +3568,7 @@ function dairy() {
     }
   }
   document.getElementsByClassName("categories__content-item")[9].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Dairy";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3609,7 +3588,7 @@ function cheese() {
     document.getElementsByClassName("categories__content-item")[a].style.color="blue";
   }
   document.getElementsByClassName("categories__content-item")[10].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Cheese";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3629,7 +3608,7 @@ function nuts() {
     document.getElementsByClassName("categories__content-item")[a].style.color="blue";
   }
   document.getElementsByClassName("categories__content-item")[11].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Nuts and Seeds";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3645,7 +3624,7 @@ function everything() {  //all() doesnt work, idk why
     document.getElementsByClassName("categories__content-item")[a].style.color="blue";
   }
   document.getElementsByClassName("categories__content-item")[0].style.color="red";
-  document.getElementsByClassName("categories__allowed")[0].style.color="grey";
+  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="All";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3653,16 +3632,22 @@ function everything() {  //all() doesnt work, idk why
   }, 150); 
 }
 
-function allowed() {
-  for (var i = 0; i<fodmapList.length; i++) {
-    if ((fodmapList[i].fodmap === "low") && (document.getElementsByClassName("food")[i].style.display === "block")) {
-      document.getElementsByClassName("food")[i].style.display="block";
-    } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+
+  document.getElementById("js-allowed").onclick = function lolka2(){
+    for (var i = 0; i<fodmapList.length; i++) {
+      if ((fodmapList[i].fodmap === "low") && (document.getElementsByClassName("food")[i].style.display === "block")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
-   }
-   document.getElementsByClassName("categories__allowed")[0].style.color="red";
-  }
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      document.getElementById("js-allowed").className = "categories__allowed";
+    }
+    else {
+      document.getElementById("js-allowed").className += " categories__allowed--checked";
+    }
+  };
 
 
 
