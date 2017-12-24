@@ -1,3 +1,7 @@
+//fist do it.
+//then do it right.
+//then do it better.
+// Now I'm at the first stage =)
 document.getElementById("js-share__wrapper").onclick = function lolka(){
   if (document.getElementById("js-share").className === "share share--active"){
     document.getElementById("js-share").className = "share";
@@ -3373,6 +3377,7 @@ var fodmapList = [
  // ────────────────────────────────────────────────────────────────────────────────
  //
 document.getElementById("js-search").oninput=function(){
+  document.getElementById("js-allowed").className = "categories__allowed";
   var matcher = new RegExp(document.getElementById("js-search").value, "i"); //  i = case-insensitive
   for (var i = 0; i<fodmapList.length; i++) {
     if (matcher.test(fodmapList[i].name)) {
@@ -3405,11 +3410,11 @@ function breads() {
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
-  document.getElementsByClassName("categories__content-item")[1].style.color="red";
+  document.getElementsByClassName("categories__content-item")[1].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
-  document.getElementsByClassName("categories__name")[0].innerHTML="Breads, Cereals, Grains and Pasta";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Breads, Cereals, Grains";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
   document.getElementsByClassName("categories__content")[0].style.display="";
@@ -3425,9 +3430,9 @@ function vegetables() {
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
-  document.getElementsByClassName("categories__content-item")[2].style.color="red";
+  document.getElementsByClassName("categories__content-item")[2].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Vegetables and legumes";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3444,10 +3449,10 @@ function fruits() {
       document.getElementsByClassName("food")[i].style.display="none";
     }
     for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-      document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+      document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
     }
   }
-  document.getElementsByClassName("categories__content-item")[3].style.color="red";
+  document.getElementsByClassName("categories__content-item")[3].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Fruit";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3465,9 +3470,9 @@ function drinks() {
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
-  document.getElementsByClassName("categories__content-item")[4].style.color="red";
+  document.getElementsByClassName("categories__content-item")[4].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Drinks";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3485,9 +3490,9 @@ function meat() {
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
-  document.getElementsByClassName("categories__content-item")[5].style.color="red";
+  document.getElementsByClassName("categories__content-item")[5].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Meat and Substitutes";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3505,9 +3510,9 @@ function condiments() {
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
-  document.getElementsByClassName("categories__content-item")[6].style.color="red";
+  document.getElementsByClassName("categories__content-item")[6].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Condiments";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3525,9 +3530,9 @@ function milk() {
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
-  document.getElementsByClassName("categories__content-item")[7].style.color="red";
+  document.getElementsByClassName("categories__content-item")[7].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Milk";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3544,10 +3549,10 @@ function sweeteners() {
       document.getElementsByClassName("food")[i].style.display="none";
     }
     for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-      document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+      document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
     }
   }
-  document.getElementsByClassName("categories__content-item")[8].style.color="red";
+  document.getElementsByClassName("categories__content-item")[8].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Sweeteners";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3564,10 +3569,10 @@ function dairy() {
       document.getElementsByClassName("food")[i].style.display="none";
     }
     for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-      document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+      document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
     }
   }
-  document.getElementsByClassName("categories__content-item")[9].style.color="red";
+  document.getElementsByClassName("categories__content-item")[9].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Dairy";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3585,9 +3590,9 @@ function cheese() {
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
-  document.getElementsByClassName("categories__content-item")[10].style.color="red";
+  document.getElementsByClassName("categories__content-item")[10].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Cheese";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3605,9 +3610,9 @@ function nuts() {
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
-  document.getElementsByClassName("categories__content-item")[11].style.color="red";
+  document.getElementsByClassName("categories__content-item")[11].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Nuts and Seeds";
   document.getElementsByClassName("categories__content")[0].style.display="none";
@@ -3621,9 +3626,9 @@ function everything() {  //all() doesnt work, idk why
     document.getElementsByClassName("food")[i].style.display="block";
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-    document.getElementsByClassName("categories__content-item")[a].style.color="blue";
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
-  document.getElementsByClassName("categories__content-item")[0].style.color="red";
+  document.getElementsByClassName("categories__content-item")[0].style.color="#2B2D42";
   document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="All";
   document.getElementsByClassName("categories__content")[0].style.display="none";
