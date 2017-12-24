@@ -126,7 +126,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 99999;
   &__bar{
     background-color:#5bc0de;//#5bc0de;
     height: 70px;
@@ -135,6 +134,7 @@ a {
     top: 0; 
     width: 100%; 
     transition: 0.5s;
+    z-index: 2;
   }
   &__info {
     display: flex;
@@ -202,39 +202,13 @@ a {
   }
 }
 
-.food {
-	width: 30%;
-	margin-top: 30px;
-  margin-left: 30px;
-  border: 1px solid grey;
-	&__title{
-		display: flex;
-    justify-content: space-between;
-    &-name {
-      font-size: 25px;
-    }
-  }
-  &__details {
-    font-size: 12px;
-
-  }
-  &__fodmap {
-    color: grey;
-    &--low{
-      background-color: green;
-    }
-    &--high {
-      background-color: red;
-    }
-  }
-  
-}
 .search {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 300px;
-  width: 538px;
+  width: 43%;
+  text-align: center;
   height: 61px;
   border-radius: 30.5px;
   border: 3px solid rgba(91, 192, 222, .6);
@@ -244,61 +218,34 @@ a {
   font-family: 'Roboto', sans-serif;
   outline: none;
   background-color: #fff;
+  transition: all 0.25s ease;
   &:hover{
-    transition: all 0.25s ease;
-    border: 3px solid rgba(91, 192, 222, 1);
+    border: 3px solid rgba(91, 192, 222, .85);
+  }
+  &:focus{
+    border: 3px solid rgba(91, 192, 222, .95);
   }
   &::-webkit-input-placeholder{
     color: #8190a5;
   }
+  &:focus::-webkit-input-placeholder { 
+    color:transparent; 
+  }
 }
-
-.circle {
-  display: inline-block;
-  padding: 4px;
-  margin-right: 8px;
-  border-radius: 50%;
-  &__good {
-    @extend .circle;
-    background-color: green;
-  }
-  &__middle {
-    @extend .circle;
-    background-color: yellow;
-  }
-  &__bad {
-    @extend .circle;
-    background-color: red; 
-  }
-  &__idk {
-    @extend .circle;
-    background-color: grey; 
-  }
-
-}
-
-#js-container {
-	display: flex;
-	flex-wrap: wrap;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
 
 .filters {
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
+
 .categories {
   position: relative;
+  z-index: 1;
   display: inline-block;
   padding-top: 14px;
   padding-bottom: 14px;
-  padding-left: 28px;
   width: 314px;
   border: 2px solid rgba(91, 192, 222, .4);
   border-radius: 10px;
@@ -306,24 +253,29 @@ a {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
   margin-top: 30px;
-
+  background-color: #fff;
+  text-align: center;
   &:hover{
     transition: all 0.25s ease;
-    color: #2B2D42;
-    border: 2px solid rgba(91, 192, 222, 1);
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,.02), 0 3px 14px 3px rgba(0,0,0,.02), 0 4px 5px 0 rgba(0,0,0,.03);
+    border: 2px solid rgba(91, 192, 222, .95);
   }
   &__content{
-    display: block;
+    display: none;
     opacity: 0;
     position: absolute;
-    left: -1.5px;
     background-color: #f9f9f9;
-    width: 310px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
+    padding-top: 10px;
+    left: -1.5px;
+    width: 100%;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
     z-index: -1;
     border: 2px solid rgba(91, 192, 222, 1);
     border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+    text-align: center;
     &-item{
       padding-top: 5px;
       padding-bottom: 5px;
@@ -332,6 +284,8 @@ a {
       cursor: pointer;
       width: 100%;
       text-align: left;
+      color: #8190a5;
+      z-index: -1;
       &:hover{
         background-color: rgba(91, 192, 222, 0.3);
       }
@@ -353,46 +307,139 @@ a {
     transition: all 0.25s ease;
     &:hover{
       transition: all 0.25s ease;
+      transform: translateY(-1px);
       color: #fff;
       background-color: #58c858;
-      border: 3px solid rgba(88, 200, 88, .7);
+      border: 3px solid rgba(88, 200, 88, .7); 
+    }
+    &:active{
+      transform: translateY(0px);
     }
     &--checked{
       color: #fff;
       background-color: #58c858;
       border: 3px solid #58c858;
+      box-shadow: 2px 5px 10px #e4e4e4;
       &:hover{
-        color: #58c858;
         transition: all 0.25s ease;
-        border: 3px solid rgba(88, 200, 88, .4);
-        background-color: #ffffff;
+        transform: translateY(-1px);
+      }
+      &:active{
+        transform: translateY(0px);
       }
     }
   }
 }
 
 .categories:hover .categories__content {
-  transition: all 0.4s ease;
+  display: block;
+  transition: all 2s ease;
   opacity: 1;
   z-index: 1;
 }
 
-//todo add background change when hover for dropdown items
+#js-container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.food {
+  width: 30%;
+	margin-top: 30px;
+  margin-left: 40px;
+  border: 2px solid rgba(91, 192, 222, 0.59);
+  border-radius: 59px;
+  max-height: 93px;
+	&__title{
+		display: flex;
+    justify-content: space-between;
+    &-name {
+      margin-top: 8px;
+      margin-left: 10px;
+      font-size: 25px;
+      color: #134d5f;
+    }
+  }
+  &__details {
+    color: rgba(71, 82, 94, .68);
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 32.5%;
+    &-wrapper{
+      white-space: nowrap;
+    }
+  }
+  &__fodmap {
+    color: #f9f9f9;
+    width: 27%;
+    text-align: center;
+    height: 20px;
+    border-radius: 15px;
+    margin-right: 10%;
+    margin-top: 8px;
+    padding-top: 5px;
+    align-self: center;
+    &--low{
+      background-color: #58c858;
+    }
+    &--high {
+      background-color: #d9534f;
+    }
+  }
+  
+}
+.circle {
+  display: inline-block;
+  padding: 5px;
+  margin-right: 6px;
+  border-radius: 50%;
+  &__good {
+    @extend .circle;
+    background-color: rgba(88, 200, 88, .7);
+  }
+  &__middle {
+    @extend .circle;
+    background-color: rgba(217, 83, 79, .7);
+  }
+  &__bad {
+    @extend .circle;
+    background-color: rgb(255,246,143); 
+  }
+  &__idk {
+    @extend .circle;
+    background-color: grey; 
+  }
+}
+
 
 .my-gallery {
   width: 30%;
-  float: left;
+
 }
 .my-gallery img {
+  margin-top: 1px;
+  margin-left: 1.5px;
+  margin-bottom: 0;
+  padding-bottom: 0;
   width: 100%;
   height: auto;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .my-gallery figure {
   display: block;
   float: left;
-  margin: 0 5px 5px 0;
+  margin: 0;
+  padding: 0;
   width: 100%;
+  height: 93px;
 }
 .my-gallery figcaption {
   display: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
