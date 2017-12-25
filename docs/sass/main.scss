@@ -401,11 +401,11 @@ a {
   }
   &__middle {
     @extend .circle;
-    background-color: rgba(217, 83, 79, .7);
+    background-color: rgb(255,246,143);
   }
   &__bad {
     @extend .circle;
-    background-color: rgb(255,246,143); 
+    background-color: rgba(217, 83, 79, .7); 
   }
   &__idk {
     @extend .circle;

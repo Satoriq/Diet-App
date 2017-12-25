@@ -556,11 +556,11 @@ a {
 }
 
 .circle__middle {
-  background-color: rgba(217, 83, 79, 0.7);
+  background-color: #fff68f;
 }
 
 .circle__bad {
-  background-color: #fff68f;
+  background-color: rgba(217, 83, 79, 0.7);
 }
 
 .circle__idk {

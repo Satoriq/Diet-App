@@ -2,7 +2,7 @@
 //then do it right.
 //then do it better.
 // Now I'm at the first stage =)
-document.getElementById("js-share__wrapper").onclick = function lolka(){
+document.getElementById("js-share__wrapper").onclick = function(){
   if (document.getElementById("js-share").className === "share share--active"){
     document.getElementById("js-share").className = "share";
   }
@@ -3376,19 +3376,38 @@ var fodmapList = [
  //   :::::: S E A R C H I N G   B Y   I N P U T : :  :   :    :     :        :          :
  // ────────────────────────────────────────────────────────────────────────────────
  //
-document.getElementById("js-search").oninput=function(){
-  document.getElementById("js-allowed").className = "categories__allowed";
-  var matcher = new RegExp(document.getElementById("js-search").value, "i"); //  i = case-insensitive
-  for (var i = 0; i<fodmapList.length; i++) {
+document.getElementById("js-search").oninput=function search229(){
+  if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+    var matcher = new RegExp(document.getElementById("js-search").value, "i") ; //  i = case-insensitive
+    for (var i = 0; i<fodmapList.length; i++) {
+    if ((matcher.test(fodmapList[i].name)) && (fodmapList[i].fodmap === "low")) {
+      document.getElementsByClassName("food")[i].style.display="block";
+    } else {
+      document.getElementsByClassName("food")[i].style.display="none";
+    }}
+
+    } else{
+    var matcher = new RegExp(document.getElementById("js-search").value, "i"); //  i = case-insensitive
+    for (var i = 0; i<fodmapList.length; i++) {
     if (matcher.test(fodmapList[i].name)) {
       document.getElementsByClassName("food")[i].style.display="block";
     } else {
       document.getElementsByClassName("food")[i].style.display="none";
     }
-      
+  }
   }
 };
 
+function keke() {
+  var matcher = new RegExp(document.getElementById("js-search").value, "i"); //  i = case-insensitive
+    for (var i = 0; i<fodmapList.length; i++) {
+    if (matcher.test(fodmapList[i].name)) {
+      document.getElementsByClassName("food")[i].style.display="block";
+    } else {
+      document.getElementsByClassName("food")[i].style.display="none";
+    }
+  }
+}
 
 //
 // ────────────────────────────────────────────────────────────────────────────────── I ──────────
@@ -3402,18 +3421,26 @@ document.getElementById("js-search").oninput=function(){
 // 5) categories dropdown hide when clicked by display none and after 100ms display = ""
 
 function breads() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Breads, Cereals, Grains and Pasta") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Breads, Cereals, Grains and Pasta") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Breads, Cereals, Grains and Pasta") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
     document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
   document.getElementsByClassName("categories__content-item")[1].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Breads, Cereals, Grains";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3422,18 +3449,26 @@ function breads() {
 }
 
 function vegetables() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Vegetables and legumes") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Vegetables and legumes") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Vegetables and legumes") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
     document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
   document.getElementsByClassName("categories__content-item")[2].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Vegetables and legumes";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3442,19 +3477,27 @@ function vegetables() {
 }
 
 function fruits() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Fruit") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Fruit") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
-    }
-    for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
-      document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
+      if (fodmapList[i].category === "Fruit") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
   }
+  for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
+    document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
+  }
   document.getElementsByClassName("categories__content-item")[3].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
-  document.getElementsByClassName("categories__name")[0].innerHTML="Fruit";
+  document.getElementsByClassName("categories__name")[0].innerHTML="Fruits";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
     document.getElementsByClassName("categories__content")[0].style.display="";
@@ -3462,18 +3505,26 @@ function fruits() {
 }
 
 function drinks() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Drinks") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Drinks") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Drinks") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
     document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
   document.getElementsByClassName("categories__content-item")[4].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Drinks";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3482,18 +3533,26 @@ function drinks() {
 }
 
 function meat() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Meat and Substitutes") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Meat and Substitutes") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Meat and Substitutes") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
     document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
   document.getElementsByClassName("categories__content-item")[5].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Meat and Substitutes";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3502,18 +3561,26 @@ function meat() {
 }
 
 function condiments() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Condiments") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Condiments") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Condiments") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
     document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
   document.getElementsByClassName("categories__content-item")[6].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Condiments";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3522,18 +3589,26 @@ function condiments() {
 }
 
 function milk() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Milk") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Milk") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Milk") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
     document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
   document.getElementsByClassName("categories__content-item")[7].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Milk";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3542,18 +3617,26 @@ function milk() {
 }
 
 function sweeteners() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Sweeteners") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Sweeteners") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Sweeteners") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
     for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
       document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
     }
   }
   document.getElementsByClassName("categories__content-item")[8].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Sweeteners";
   document.getElementsByClassName("categories__content")[0].style.display="none";
   setTimeout(function(){
@@ -3562,18 +3645,27 @@ function sweeteners() {
 }
 
 function dairy() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Dairy") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Dairy") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Dairy") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
+    
     for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
       document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
     }
   }
   document.getElementsByClassName("categories__content-item")[9].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Dairy";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3582,18 +3674,26 @@ function dairy() {
 }
 
 function cheese() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Cheese") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Cheese") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Cheese") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
     document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
   document.getElementsByClassName("categories__content-item")[10].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Cheese";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3602,18 +3702,26 @@ function cheese() {
 }
 
 function nuts() {
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
-    if (fodmapList[i].category === "Nuts and Seeds") {
-      document.getElementsByClassName("food")[i].style.display="block";
+    if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+      if ((fodmapList[i].category === "Nuts and Seeds") && (fodmapList[i].fodmap === "low")) {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     } else {
-      document.getElementsByClassName("food")[i].style.display="none";
+      if (fodmapList[i].category === "Nuts and Seeds") {
+        document.getElementsByClassName("food")[i].style.display="block";
+      } else {
+        document.getElementsByClassName("food")[i].style.display="none";
+      }
     }
   }
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
     document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
   document.getElementsByClassName("categories__content-item")[11].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="Nuts and Seeds";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3621,15 +3729,24 @@ function nuts() {
   }, 100); 
 }
 
-function everything() {  //all() doesnt work, idk why
+function everything() { 
+  document.getElementById('js-search').value="";
   for (var i = 0; i<fodmapList.length; i++) {
+  if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+    if (fodmapList[i].fodmap === "low") {
+      document.getElementsByClassName("food")[i].style.display="block";
+    } else {
+      document.getElementsByClassName("food")[i].style.display="none";
+    }
+  } else {
     document.getElementsByClassName("food")[i].style.display="block";
   }
+}
+
   for (var a = 0; a<document.getElementsByClassName("categories__content-item").length; a++){
     document.getElementsByClassName("categories__content-item")[a].style.color="#8190a5";
   }
   document.getElementsByClassName("categories__content-item")[0].style.color="#2B2D42";
-  document.getElementById("js-allowed").className = "categories__allowed";
   document.getElementsByClassName("categories__name")[0].innerHTML="All";
   document.getElementsByClassName("categories__content")[0].style.display="none";
     setTimeout(function(){
@@ -3638,7 +3755,7 @@ function everything() {  //all() doesnt work, idk why
 }
 
 
-  document.getElementById("js-allowed").onclick = function lolka2(){
+  document.getElementById("js-allowed").onclick = function(){
     for (var i = 0; i<fodmapList.length; i++) {
       if ((fodmapList[i].fodmap === "low") && (document.getElementsByClassName("food")[i].style.display === "block")) {
         document.getElementsByClassName("food")[i].style.display="block";
@@ -3648,10 +3765,45 @@ function everything() {  //all() doesnt work, idk why
     }
     if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
       document.getElementById("js-allowed").className = "categories__allowed";
+      if (document.getElementById("js-search").value.length >= 1) {
+        keke();
+      }
+       else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Categories"){
+        everything();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Breads, Cereals, Grains"){
+        breads();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Vegetables and legumes"){
+        vegetables();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Fruits"){
+        fruits();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Drinks"){
+        drinks();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Meat and Substitutes"){
+        meat();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Condiments"){
+        condiments();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Milk"){
+        milk();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Sweeteners"){
+        sweeteners();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Dairy"){
+        dairy();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Cheese"){
+        cheese();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="Nuts and Seeds"){
+        nuts();
+      } else if(document.getElementsByClassName("categories__name")[0].innerHTML==="All"){
+        everything();
+      }
+      else if((document.getElementsByClassName("food").style.display === "block") && (fodmapList[i].fodmap === "low")){
+        document.getElementsByClassName("food").style.display="block";
+      }
     }
     else {
       document.getElementById("js-allowed").className += " categories__allowed--checked";
     }
+
+
   };
 
 
