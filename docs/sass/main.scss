@@ -16,7 +16,15 @@ a {
   color: inherit;
 }
 
+.b-lazy {
+  transition: opacity 500ms ease-in-out;
+  max-width: 100%;
+  opacity: 0;
+}
 
+.b-lazy.b-loaded {
+  opacity: 1;
+}
 .share{
   width: 50px;
   height: 50px;
@@ -333,7 +341,7 @@ a {
 
 .categories:hover .categories__content {
   display: block;
-  transition: all 2s ease;
+  transition: all .5s ease;
   opacity: 1;
   z-index: 1;
 }
@@ -424,7 +432,7 @@ a {
   margin-bottom: 0;
   padding-bottom: 0;
   width: 100%;
-  height: auto;
+  height: 91px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   border-top-right-radius: 10px;
