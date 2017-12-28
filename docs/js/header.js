@@ -49,7 +49,7 @@ window.onscroll = function () {
   ifScrolledTop();
 };
 
-// If user use scroll or press "Go top" after mouse weel hide navbar
+// If user use scroll or press "Go top" after mouse weel hided navbar
 function ifScrolledTop() {
   if (window.scrollY < 149) {
     document.getElementById('navbar').style.top = '0';
