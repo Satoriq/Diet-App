@@ -25,6 +25,7 @@
     <nav id="navbar" class="nav__bar">
       <div class="nav">
         <div class="nav__logo">
+            <img class="nav__logo-image" src="img/logo.png" alt="logo">
           <button onclick="toTheStarsHeader()" class="nav__logo-name">
             <p>FODMAP App</p>
           </button>
@@ -1029,7 +1030,7 @@
     <div class="food" style="display: block;">
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-          <a href="img/pinto-beans.jpg" itemprop="contentUrl" data-size="1280x850">
+          <a href="img/pinto-beans.jpeg" itemprop="contentUrl" data-size="1280x850">
             <img class="b-lazy" src="#" data-src="img/pinto-beans_s.jpg" alt="alt-text">
           </a>
         </figure>
@@ -11534,7 +11535,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Dried Cranberries</div>
+          <div class="food__title-name">Dried cranberries</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -13092,6 +13093,7 @@
     </div>
   </div>
 
+
   <script src="js/blazy.min.js"></script>
   <script src="js/header.js"></script>
   <script src="js/fontawesome.min.js"></script>
@@ -13100,9 +13102,23 @@
   <script src="js/main.js"></script>
   <script src="js/photoswipe.js"></script>
   <script src="js/photoswipe-ui-default.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111728145-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111728145-1');
+  </script>
 
 
 
 </body>
+<footer>
+  <div class="free-space">
+
+  </div>
+</footer>
 
 </html>
