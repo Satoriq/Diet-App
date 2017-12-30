@@ -49,21 +49,23 @@ window.onscroll = function () {
   ifScrolledTop();
 };
 
-// If user use scroll or press "Go top" after mouse weel hided navbar
+// If user use scroll or press "Go top" after mouse wheel hided navbar
 function ifScrolledTop() {
   if (window.scrollY < 149) {
     document.getElementById('navbar').style.top = '0';
   }
 }
+
 //  if  user is at the bottom and click on logo, scroll top, if he already on top, reload page
-function toTheStarsHeader() {
+var headerLogo = document.getElementById('js-header');
+headerLogo.onclick = function(){
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   } else {
     location.reload();
   }
-}
+};
 
 // "Go top" button
 function showGoTop() {

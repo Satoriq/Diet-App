@@ -161,8 +161,7 @@ a {
       margin-top: 15px;
       position: relative;
       cursor: pointer;
-      margin-right: 30px;
-      margin-left: 20px;
+      margin-left: 50px;
       &:after {    //underline
         background: none repeat scroll 0 0 transparent;
         bottom: 0;
@@ -191,22 +190,17 @@ a {
     }
   }
   &__logo{
+    cursor: pointer;
     display: flex;
     &-name{
       font-size: 27px;
-      color: #f9f9f9;//#f9f9f9
+      color: #f9f9f9;
       font-weight: bold;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      height: 70px;
       font-family: 'Roboto', sans-serif;
-      background: #5bc0de;//#5bc0de
-      margin-bottom: 12px;
       white-space: nowrap;
     }
     &-image{
-      padding-top: 8px;
+      margin-top: 5px;
       height: 65px;
     }
   }
@@ -252,7 +246,6 @@ a {
 
 .categories {
   position: relative;
-  z-index: 1;
   display: inline-block;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -271,11 +264,13 @@ a {
     box-shadow: 0 8px 10px 1px rgba(0,0,0,.02), 0 3px 14px 3px rgba(0,0,0,.02), 0 4px 5px 0 rgba(0,0,0,.03);
     border: 2px solid rgba(91, 192, 222, .95);
     & .categories__content{
-      display: block;
+      opacity: 1;
+      pointer-events: auto;
     }
   }
   &__content{
-    display: none;
+    pointer-events: none;
+    display: block;
     position: absolute;
     background-color: #f9f9f9;
     padding-top: 10px;
@@ -289,6 +284,8 @@ a {
     border-bottom-right-radius: 10px;
     background-color: #fff;
     text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease;
     &-item{
       padding-top: 5px;
       padding-bottom: 5px;
@@ -299,6 +296,7 @@ a {
       text-align: left;
       color: #8190a5;
       &:hover{
+        color: #697586;
         background-color: rgba(91, 192, 222, 0.3);
       }
     }
@@ -385,7 +383,7 @@ a {
 
 
 
-#js-container {
+.container {
 	display: flex;
 	flex-wrap: wrap;
 	width: 80%;
@@ -395,10 +393,16 @@ a {
 .food {
   width: 30%;
 	margin-top: 30px;
-  margin-left: 40px;
+  margin-left: 3%;
   border: 2px solid rgba(91, 192, 222, 0.59);
   border-radius: 59px;
   max-height: 93px;
+  @media (max-width: 1520px){
+    width: 29%;
+  }
+  @media (max-width: 1200px){
+    width: 45%;
+  }
 	&__title{
 		display: flex;
     justify-content: space-between;
@@ -407,6 +411,24 @@ a {
       margin-left: 10px;
       font-size: 25px;
       color: #134d5f;
+      line-height: 90%;
+      @media (max-width: 1700px){
+        font-size: 23px;
+        margin-top: 10px;
+      }
+      &--additional-info{
+        margin-top: -5px;
+        font-size: 17px;
+        display: inline-block;
+        line-height: 100%;
+        margin-top: 1px;
+      }
+      &--small-title{
+        @media (max-width: 1700px){
+          font-size: 19px;
+          margin-top: 0px;
+        }
+      }
     }
   }
   &__details {
@@ -414,6 +436,46 @@ a {
     font-size: 15px;
     margin-top: 20px;
     margin-left: 32.5%;
+    padding-right: 10px;
+    @media (max-width: 1700px){
+      font-size: 14px;
+    }
+    &--1920fix-1860fix{
+      margin-top: 5px;
+    }
+    &--1860-1700fix{
+      @media (max-width: 1860px){
+        margin-top: 5px;
+      }
+    }
+    &--1600-1500fix{
+      @media (max-width: 1600px){
+        margin-top: 5px;
+      }
+    }
+    &--1500-1440fix{
+      @media (max-width: 1500px){
+        margin-top: 5px;
+      }
+    }
+    &--gluten{
+      @media (max-width: 1700px){
+        margin-top: -2px;
+      }
+      @media (max-width: 1700px){
+        display: none;
+      }
+    }
+    &--lettuce{
+      @media (max-width: 1860px){
+        margin-top: -1px;
+      }
+    }
+    &--cold-cuts{
+      @media (max-width: 1860px){
+        margin-top: -1px;
+      }
+    }
     &-wrapper{
       white-space: nowrap;
     }
@@ -425,9 +487,14 @@ a {
     height: 20px;
     border-radius: 15px;
     margin-right: 10%;
-    margin-top: 8px;
+    margin-top: 10px;
     padding-top: 5px;
-    align-self: center;
+    align-self: flex-start;
+    min-widtH: 45px;
+    @media (max-width: 1440px){
+      font-size: 14px;
+      height: 18px;
+    }
     &--low{
       background-color: #58c858;
     }
@@ -442,6 +509,10 @@ a {
   padding: 5px;
   margin-right: 6px;
   border-radius: 50%;
+  @media (max-width: 1440px){
+    padding: 4.2px;
+    margin-bottom: 0.5px;
+  }
   &__good {
     @extend .circle;
     background-color: rgba(88, 200, 88, .7);
