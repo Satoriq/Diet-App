@@ -51,6 +51,12 @@ a {
   background-color: #00aedb;
 }
 
+@media (max-width: 420px) {
+  .share:hover {
+    background-color: #5bc0de;
+  }
+}
+
 .share__wrapper {
   position: fixed;
   bottom: 20px;
@@ -595,6 +601,20 @@ a {
   }
 }
 
+@media (max-width: 700px) {
+  .food {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .food {
+    width: 95%;
+  }
+}
+
 .food__title {
   display: -webkit-box;
   display: -webkit-flex;
@@ -727,10 +747,38 @@ a {
   }
 }
 
+@media (max-width: 420px) {
+  .food__title-name--grapes {
+    font-size: 19px;
+    margin-top: 7px;
+  }
+}
+
 @media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name-gluten {
+  .food__title-name--gluten {
     font-size: 15px;
     margin-top: 8px;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 700px) {
+  .food__title-name--coconut-milk {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 700px) {
+  .food__title-name--instant {
+    font-size: 19px;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 700px) {
+  .food__title-name--coffe {
+    font-size: 20px;
+    margin-top: 5px;
   }
 }
 
@@ -808,6 +856,12 @@ a {
 
 @media (max-width: 800px) and (min-width: 700px) {
   .food__details--800-700fix {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 420px) and (min-width: 400px) {
+  .food__details--420-400fix {
     margin-top: 5px;
   }
 }

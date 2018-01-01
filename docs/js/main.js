@@ -278,7 +278,6 @@ document.getElementById("js-search").oninput = function () {
         document.getElementsByClassName("food")[a].style.display = "none";
       }
     }
-
   } else {
     var matcher3 = new RegExp(document.getElementById("js-search").value, "i"); //  i = case-insensitive
     for (var b = 0; b < fodmapList.length; b++) {
@@ -289,9 +288,11 @@ document.getElementById("js-search").oninput = function () {
       }
     }
   }
-  document.getElementsByClassName("categories__name")[0].innerHTML = "Categories";
   for (var c = 0; c < document.getElementsByClassName("categories__content-item").length; c++) {
     document.getElementsByClassName("categories__content-item")[c].style.color = "#8190a5";
+  }
+  if(document.getElementById("js-search").value.length >= 1) {
+    document.getElementsByClassName("categories__name")[0].innerHTML = "Categories";
   }
   (function () {
     var bLazy = new Blazy();

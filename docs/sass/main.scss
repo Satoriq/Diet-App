@@ -40,6 +40,9 @@ a {
     transition: all 0.4s ease;
     transform: translateY(-2px);
     background-color:#00aedb;
+    @media (max-width: 420px){
+      background-color: #5bc0de;
+    }
   }
   &__wrapper{
     position: fixed;
@@ -412,6 +415,14 @@ a {
   @media (max-width: 1200px){
     width: 45%;
   }
+  @media (max-width: 700px){
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (max-width: 420px){
+    width: 95%;
+  }
 	&__title{
 		display: flex;
     justify-content: space-between;
@@ -507,11 +518,33 @@ a {
           font-size: 18px;
           margin-top: 8px;
         }
+        @media (max-width: 420px){
+          font-size: 19px;
+          margin-top: 7px;
+        }
       }
-      &-gluten{
+      &--gluten{
         @media (max-width: 800px) and (min-width: 700px){
           font-size: 15px;
           margin-top: 8px;
+        }
+      }
+      &--coconut-milk{
+        @media (max-width: 800px) and (min-width: 700px){
+          font-size: 18px;
+          margin-top: 10px;
+        }
+      }
+      &--instant{
+        @media (max-width: 800px) and (min-width: 700px){
+          font-size: 19px;
+          margin-top: 5px;
+        }
+      }
+      &--coffe{
+        @media (max-width: 800px) and (min-width: 700px){
+          font-size: 20px;
+          margin-top: 5px;
         }
       }
     }
@@ -573,6 +606,11 @@ a {
     }
     &--800-700fix {
       @media (max-width: 800px) and (min-width: 700px){
+        margin-top: 5px;
+      }
+    }
+    &--420-400fix {
+      @media (max-width: 420px) and (min-width: 400px){
         margin-top: 5px;
       }
     }
