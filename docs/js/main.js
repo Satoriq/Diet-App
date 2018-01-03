@@ -715,7 +715,7 @@ function nuts() {
         document.getElementsByClassName("food")[i].style.display = "none";
       }
     } else if (document.getElementById("js-high").className === "categories__high categories__high--checked") {
-      if ((fodmapList[i].category === "Cheese") && (fodmapList[i].fodmap === "high")) {
+      if ((fodmapList[i].category === "Nuts and Seeds") && (fodmapList[i].fodmap === "high")) {
         document.getElementsByClassName("food")[i].style.display = "block";
       } else {
         document.getElementsByClassName("food")[i].style.display = "none";

@@ -7,7 +7,7 @@ ul{
 }
 
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: #f9f9f9;
 }
 
@@ -205,7 +205,7 @@ a {
       font-size: 27px;
       color: #f9f9f9;
       font-weight: bold;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Nunito', sans-serif;
       white-space: nowrap;
     }
     &-image{
@@ -227,8 +227,8 @@ a {
   border: 3px solid rgba(91, 192, 222, .6);
   padding-left: 25px;
   font-size: 23px;
-  color: #2B2D42;
-  font-family: 'Roboto', sans-serif;
+  color: #6a7481;
+  font-family: 'Nunito', sans-serif;
   outline: none;
   background-color: #fff;
   transition: all 0.25s ease;
@@ -237,6 +237,8 @@ a {
   }
   &:focus{
     border: 3px solid rgba(91, 192, 222, .95);
+    transition: width 0.5s ease;
+    widtH: 35%;
   }
   &::-webkit-input-placeholder{
     color: #8190a5;
@@ -262,7 +264,7 @@ a {
   border: 2px solid rgba(91, 192, 222, .4);
   border-radius: 10px;
   color: #8190a5;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 22px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -314,7 +316,7 @@ a {
     color: #58c858;
     background-color: #ffffff;
     font-size: 22px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
     border: 3px solid rgba(88, 200, 88, .4);
     border-radius: 10px;
     padding: 0;
@@ -353,7 +355,7 @@ a {
     color: rgba(217, 83, 79, .9);
     background-color: #ffffff;
     font-size: 22px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
     border: 3px solid rgba(217, 83, 79, .4);
     border-radius: 10px;
     padding: 0;
@@ -409,6 +411,8 @@ a {
   border: 2px solid rgba(91, 192, 222, 0.59);
   border-radius: 59px;
   max-height: 93px;
+  color: #6a7481;
+  background-color: #fff;
   @media (max-width: 1520px){
     width: 29%;
   }
@@ -430,7 +434,7 @@ a {
       margin-top: 8px;
       margin-left: 10px;
       font-size: 25px;
-      color: #134d5f;
+      color: #515963;
       line-height: 90%;
       @media (max-width: 1700px){
         font-size: 23px;
