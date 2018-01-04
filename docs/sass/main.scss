@@ -448,111 +448,67 @@ a {
         font-size: 21px;
         margin-top: 11px;
       }
-      &--additional-info{
-        margin-top: -5px;
-        font-size: 17px;
-        display: inline-block;
-        line-height: 100%;
-        margin-top: 1px;
-      }
-      &--small-title{
-        @media (max-width: 1700px){
-          font-size: 19px;
-          margin-top: 5px;
-        }
-      }
-      &--small-title-1400{
-        @media (max-width: 1400px){
-          font-size: 19px;
-          margin-top: 5px;
-        }
-      }
-      &--rampa{
-        @media (max-width: 1400px){
-          font-size: 19px;
-          margin-top: 13px;
-        }
-      }
-      &--pasta-sauce{
-        @media (max-width: 1280px) and (min-width: 1200px){
-          font-size: 19px;
-          margin-top: 13px;
-        }
-        @media (max-width: 800px) and (min-width: 700px){
-          font-size: 19px;
-          margin-top: 10px;
-        }
-      }
-      &--garbanzo{
-        @media (max-width: 1280px) and (min-width: 1200px){
-          font-size: 19px;
-          margin-top: 10px;
-        }
-      }
-      &--corn-free{
-        @media (max-width: 1280px) and (min-width: 1200px){
-          font-size: 19px;
-          margin-top: 10px;
-        }
-        @media (max-width: 800px) and (min-width: 700px){
-          font-size: 19px;
-          margin-top: 10px;
-        }
-      }
-      &--biscuit{
-        @media (max-width: 800px) and (min-width: 700px){
-          font-size: 19px;
-          margin-top: 10px;
-        }
-      }
-      &--melons{
-        @media (max-width: 800px) and (min-width: 700px){
-          font-size: 19px;
-          margin-top: 10px;
-        }
-      }
-      &--lettuce{
-        @media (max-width: 800px) and (min-width: 700px){
-          font-size: 17px;
-          margin-top: 10px;
-        }
-      }
-      &--grapes{
-        @media (max-width: 800px) and (min-width: 700px){
-          font-size: 18px;
-          margin-top: 8px;
-        }
-        @media (max-width: 420px){
-          font-size: 19px;
-          margin-top: 7px;
-        }
-      }
       &--gluten{
-        @media (max-width: 800px) and (min-width: 700px){
-          font-size: 15px;
-          margin-top: 8px;
+        font-size: 18px;
+        @media(max-width: 1832px){
+          font-size: 16px;
         }
-      }
-      &--coconut-milk{
-        @media (max-width: 800px) and (min-width: 700px){
+        @media(max-width: 1680px){
           font-size: 18px;
-          margin-top: 10px;
+        }
+        @media(max-width: 750px) and (min-width: 700px) {
+          font-size: 16px;
         }
       }
       &--instant{
-        @media (max-width: 800px) and (min-width: 700px){
-          font-size: 19px;
-          margin-top: 5px;
-        }
-      }
-      &--coffe{
-        @media (max-width: 800px) and (min-width: 700px){
+        font-size: 23px;
+        @media(max-width: 1700px){
           font-size: 20px;
-          margin-top: 5px;
+        }
+        @media(max-width: 1537px) and (min-width: 700px){
+          font-size: 19px;
         }
       }
-    }
-  }
+      &--cuts{
+        font-size: 19px;
+      }
+      &--powder{
+        font-size: 20px;
+        @media(max-width: 1325px) and (min-width: 1200px){
+          font-size: 19px;
+        }
+        @media(max-width: 860px) and (min-width: 500px){
+          font-size: 18px;
+        }
+      }
+      &--lettuce{
+        font-size: 20px;
+        @media(max-width: 1535px) and (min-width: 1200px){
+          font-size: 19px;
+        }
+        @media(max-width: 900px) and (min-width: 500px){
+          font-size: 18px;
+        }
+      }
+      &--coconut{
+        font-size: 20px;
+        @media(max-width: 1535px) and (min-width: 1200px){
+          font-size: 19px;
+        }
+        @media(max-width: 900px) and (min-width: 500px){
+          font-size: 18px;
+        }
+      }
+      &--jam{
+        font-size: 19px;
+      }
+      &--wheat{
+        font-size: 19px;
+      }
+      &--grapes{
+        font-size: 19px;
+      }
+    }}
   &__details {
     color: rgba(71, 82, 94, .68);
     font-size: 15px;
@@ -565,95 +521,9 @@ a {
     @media (max-width: 800px){
       font-size: 14px;
     }
-    &--1920-1860fix{
-        margin-top: 5px;
-    }
-    &--1860-1700fix{
-      @media (max-width: 1860px) and (min-width: 1442px){
-        margin-top: 5px;
-      }
-    }
-    &--1600-1500fix{
-      @media (max-width: 1600px) and (min-width: 1442px){
-        margin-top: 5px;
-      }
-    }
-    &--1500-1440fix{
-      @media (max-width: 1500px) and (min-width: 1442px){
-        margin-top: 5px;
-      }
-    }
-    &--1440-1369fix{
-      @media (max-width: 1440px) and (min-width: 1369px) {
-        margin-top: 5px;
-      }
-    }
-    &--1368-1281fix {
-      @media (max-width: 1368px) and (min-width: 1200px){
-        margin-top: 5px;
-      }
-    }
-    &--1280-1200fix {
-      @media (max-width: 1280px) and (min-width: 1200px){
-        margin-top: 5px;
-      }
-    }
-    &--1200-1024fix {
-      @media (max-width: 1200px) and (min-width: 1024px){
-        margin-top: 5px;
-      }
-    }
-    &--1024-800fix {
-      @media (max-width: 1023px) and (min-width: 801px){
-        margin-top: 5px;
-      }
-    }
-    &--800-700fix {
-      @media (max-width: 800px) and (min-width: 700px){
-        margin-top: 5px;
-      }
-    }
-    &--420-400fix {
-      @media (max-width: 420px) and (min-width: 400px){
-        margin-top: 5px;
-      }
-    }
     &--gluten{
-      @media (max-width: 1700px){
-        margin-top: -2px;
-      }
-      @media (max-width: 1700px){
+      @media(max-width: 1680px){
         display: none;
-      }
-      @media (max-width: 1200px){
-        display: block;
-        margin-top: 10px;
-      }
-      @media (max-width: 1035px){
-        margin-top: -2px;
-      }
-      @media (max-width: 890px){
-        display: none;
-      }
-    }
-    &--lettuce{
-      @media (max-width: 1860px) and (min-width: 1200px){
-        margin-top: -1px;
-      }
-    }
-    &--cold-cuts{
-      @media (max-width: 1860px){
-        margin-top: -1px;
-      }
-    }
-    &--wheat{
-      @media (max-width: 1570px){
-        margin-top: -1px;
-      }
-    }
-    &--instant{
-      @media (max-width: 800px){
-        margin-top: -1px;
       }
     }
     &-wrapper{
@@ -693,19 +563,19 @@ a {
     padding: 4.2px;
     margin-bottom: 0.5px;
   }
-  &__good {
+  &--good {
     @extend .circle;
     background-color: rgba(88, 200, 88, .7);
   }
-  &__middle {
+  &--middle {
     @extend .circle;
     background-color: rgb(255,246,143);
   }
-  &__bad {
+  &--bad {
     @extend .circle;
     background-color: rgba(217, 83, 79, .7); 
   }
-  &__idk {
+  &--idk {
     @extend .circle;
     background-color: grey; 
   }

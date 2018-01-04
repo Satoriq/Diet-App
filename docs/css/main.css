@@ -661,131 +661,106 @@ a {
   }
 }
 
-.food__title-name--additional-info {
-  margin-top: -5px;
-  font-size: 17px;
-  display: inline-block;
-  line-height: 100%;
-  margin-top: 1px;
+.food__title-name--gluten {
+  font-size: 18px;
+}
+
+@media (max-width: 1832px) {
+  .food__title-name--gluten {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1680px) {
+  .food__title-name--gluten {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 750px) and (min-width: 700px) {
+  .food__title-name--gluten {
+    font-size: 16px;
+  }
+}
+
+.food__title-name--instant {
+  font-size: 23px;
 }
 
 @media (max-width: 1700px) {
-  .food__title-name--small-title {
-    font-size: 19px;
-    margin-top: 5px;
+  .food__title-name--instant {
+    font-size: 20px;
   }
 }
 
-@media (max-width: 1400px) {
-  .food__title-name--small-title-1400 {
-    font-size: 19px;
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 1400px) {
-  .food__title-name--rampa {
-    font-size: 19px;
-    margin-top: 13px;
-  }
-}
-
-@media (max-width: 1280px) and (min-width: 1200px) {
-  .food__title-name--pasta-sauce {
-    font-size: 19px;
-    margin-top: 13px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name--pasta-sauce {
-    font-size: 19px;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 1280px) and (min-width: 1200px) {
-  .food__title-name--garbanzo {
-    font-size: 19px;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 1280px) and (min-width: 1200px) {
-  .food__title-name--corn-free {
-    font-size: 19px;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name--corn-free {
-    font-size: 19px;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name--biscuit {
-    font-size: 19px;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name--melons {
-    font-size: 19px;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name--lettuce {
-    font-size: 17px;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name--grapes {
-    font-size: 18px;
-    margin-top: 8px;
-  }
-}
-
-@media (max-width: 420px) {
-  .food__title-name--grapes {
-    font-size: 19px;
-    margin-top: 7px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name--gluten {
-    font-size: 15px;
-    margin-top: 8px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name--coconut-milk {
-    font-size: 18px;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
+@media (max-width: 1537px) and (min-width: 700px) {
   .food__title-name--instant {
     font-size: 19px;
-    margin-top: 5px;
   }
 }
 
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__title-name--coffe {
-    font-size: 20px;
-    margin-top: 5px;
+.food__title-name--cuts {
+  font-size: 19px;
+}
+
+.food__title-name--powder {
+  font-size: 20px;
+}
+
+@media (max-width: 1325px) and (min-width: 1200px) {
+  .food__title-name--powder {
+    font-size: 19px;
   }
+}
+
+@media (max-width: 860px) and (min-width: 500px) {
+  .food__title-name--powder {
+    font-size: 18px;
+  }
+}
+
+.food__title-name--lettuce {
+  font-size: 20px;
+}
+
+@media (max-width: 1535px) and (min-width: 1200px) {
+  .food__title-name--lettuce {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 500px) {
+  .food__title-name--lettuce {
+    font-size: 18px;
+  }
+}
+
+.food__title-name--coconut {
+  font-size: 20px;
+}
+
+@media (max-width: 1535px) and (min-width: 1200px) {
+  .food__title-name--coconut {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 500px) {
+  .food__title-name--coconut {
+    font-size: 18px;
+  }
+}
+
+.food__title-name--jam {
+  font-size: 19px;
+}
+
+.food__title-name--wheat {
+  font-size: 19px;
+}
+
+.food__title-name--grapes {
+  font-size: 19px;
 }
 
 .food__details {
@@ -808,122 +783,9 @@ a {
   }
 }
 
-.food__details--1920-1860fix {
-  margin-top: 5px;
-}
-
-@media (max-width: 1860px) and (min-width: 1442px) {
-  .food__details--1860-1700fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 1600px) and (min-width: 1442px) {
-  .food__details--1600-1500fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 1500px) and (min-width: 1442px) {
-  .food__details--1500-1440fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 1440px) and (min-width: 1369px) {
-  .food__details--1440-1369fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 1368px) and (min-width: 1200px) {
-  .food__details--1368-1281fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 1280px) and (min-width: 1200px) {
-  .food__details--1280-1200fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 1200px) and (min-width: 1024px) {
-  .food__details--1200-1024fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 1023px) and (min-width: 801px) {
-  .food__details--1024-800fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 700px) {
-  .food__details--800-700fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 420px) and (min-width: 400px) {
-  .food__details--420-400fix {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 1700px) {
-  .food__details--gluten {
-    margin-top: -2px;
-  }
-}
-
-@media (max-width: 1700px) {
+@media (max-width: 1680px) {
   .food__details--gluten {
     display: none;
-  }
-}
-
-@media (max-width: 1200px) {
-  .food__details--gluten {
-    display: block;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 1035px) {
-  .food__details--gluten {
-    margin-top: -2px;
-  }
-}
-
-@media (max-width: 890px) {
-  .food__details--gluten {
-    display: none;
-  }
-}
-
-@media (max-width: 1860px) and (min-width: 1200px) {
-  .food__details--lettuce {
-    margin-top: -1px;
-  }
-}
-
-@media (max-width: 1860px) {
-  .food__details--cold-cuts {
-    margin-top: -1px;
-  }
-}
-
-@media (max-width: 1570px) {
-  .food__details--wheat {
-    margin-top: -1px;
-  }
-}
-
-@media (max-width: 800px) {
-  .food__details--instant {
-    margin-top: -1px;
   }
 }
 
@@ -962,7 +824,7 @@ a {
   background-color: #d9534f;
 }
 
-.circle, .circle__good, .circle__middle, .circle__bad, .circle__idk {
+.circle, .circle--good, .circle--middle, .circle--bad, .circle--idk {
   display: inline-block;
   padding: 5px;
   margin-right: 6px;
@@ -971,25 +833,25 @@ a {
 }
 
 @media (max-width: 1440px) {
-  .circle, .circle__good, .circle__middle, .circle__bad, .circle__idk {
+  .circle, .circle--good, .circle--middle, .circle--bad, .circle--idk {
     padding: 4.2px;
     margin-bottom: 0.5px;
   }
 }
 
-.circle__good {
+.circle--good {
   background-color: rgba(88, 200, 88, 0.7);
 }
 
-.circle__middle {
+.circle--middle {
   background-color: #fff68f;
 }
 
-.circle__bad {
+.circle--bad {
   background-color: rgba(217, 83, 79, 0.7);
 }
 
-.circle__idk {
+.circle--idk {
   background-color: grey;
 }
 

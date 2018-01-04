@@ -3,8 +3,23 @@
 //then do it better.
 // Now I'm at the first stage =)
 
+var details = document.getElementsByClassName('food__details');
+var titleName = document.getElementsByClassName('food__title-name');
+function adaptDetailsMargin(){
+  for (var i=0; i< titleName.length; i++){
+    if (titleName[i].clientHeight > 31){
+      details[i].style.marginTop = "5px";
+    }
+    else if (titleName[i].clientHeight < 30){
+      details[i].style.marginTop = "20px";
+    }}
+}
+adaptDetailsMargin();
+window.addEventListener("resize", adaptDetailsMargin);
+
+
+// Initialize Blazy
 (function () {
-  // Initialize
   var bLazy = new Blazy();
 })();
 document.getElementById("js-share__wrapper").onclick = function () {
