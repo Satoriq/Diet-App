@@ -19,9 +19,6 @@
 
 
 <body>
-  <div id="js-top" class="top">
-    <i class="fas fa-angle-double-up"></i>
-  </div>
   <header>
     <nav id="navbar" class="nav__bar">
       <div class="nav">
@@ -29,10 +26,15 @@
           <img class="nav__logo-image" src="img/logo.png" alt="logo">
           <h1 class="nav__logo-name">FODMAP App</h1>
         </div>
-        <ul class="nav__info">
+        <ul id="js-nav__info" class="nav__info">
           <li class="nav__info-item">Contacts</li>
           <li class="nav__info-item">About</li>
         </ul>
+        <div onclick="openBurger()" class="hamburger" id="hamburger-9">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
       </div>
     </nav>
   </header>
@@ -69,13 +71,13 @@
       </ul>
     </div>
   </div>
-  <input id="js-search" class="search" type="search" placeholder="Product name...">
+  <input id="js-search" class="search" type="text" placeholder="Product name...">
   <br>
 
   <div class="filters">
-    <div class="categories">
+    <div id="js-categories" class="categories" onclick="showCategories()">
       <div class="categories__name">Categories</div>
-      <div class="categories__content">
+      <div id="js-categories__content" class="categories__content">
         <button class="categories__content-item" onclick="everything()"> &#128257; All</button>
         <br>
         <button class="categories__content-item" onclick="breads()"> &#127838;Breads, Cereals, Grains</button>
@@ -102,8 +104,13 @@
         <br>
       </div>
     </div>
-    <button id="js-allowed" class="categories__allowed"> Only low</button>
-    <button id="js-high" class="categories__high"> Only high</button>
+    <div class="categories__wrapper">
+      <button id="js-allowed" class="categories__allowed"> Only low</button>
+      <button id="js-high" class="categories__high"> Only high</button>
+    </div>
+  </div>
+  <div id="js-top" class="top">
+    <i class="fas fa-angle-double-up"></i>
   </div>
 
 
@@ -398,7 +405,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Tofu (drained or firm)</div>
+          <div class="food__title-name food__title-name--mobile-s">Tofu (drained or firm)</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -1993,7 +2000,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Mung beans, boiled</div>
+          <div class="food__title-name food__title-name--mobile-s">Mung beans, boiled</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -2051,7 +2058,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Haricot beans, boiled</div>
+          <div class="food__title-name food__title-name--mobile-s">Haricot beans, boiled</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -2225,7 +2232,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Butter beans, canned</div>
+          <div class="food__title-name food__title-name--mobile-s">Butter beans, canned</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -2283,7 +2290,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Kidney beans, boiled</div>
+          <div class="food__title-name food__title-name--mobile-s">Kidney beans, boiled</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -2950,7 +2957,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Rampa / pandan leaves</div>
+          <div class="food__title-name food__title-name--mobile-s">Rampa / pandan leaves</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -4429,7 +4436,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Chips, potato crisps (plain)</div>
+          <div class="food__title-name food__title-name--mobile-s">Chips, potato crisps (plain)</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -4545,7 +4552,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name food__title-name--coconut">Coconut (fresh or dried)</div>
+          <div class="food__title-name food__title-name--coconut food__title-name--mobile-s">Coconut (fresh or dried)</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -4574,7 +4581,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Coconut milk , canned</div>
+          <div class="food__title-name food__title-name--mobile-s">Coconut milk , canned</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -5357,7 +5364,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Golden syrup / light tracle</div>
+          <div class="food__title-name food__title-name--mobile-s">Golden syrup / light tracle</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -5444,7 +5451,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name food__title-name--grapes">Grapes (Red, Green and Black)</div>
+          <div class="food__title-name food__title-name--smaller">Grapes (Red, Green and Black)</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -5821,7 +5828,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">High Fructose Corn Syrup</div>
+          <div class="food__title-name food__title-name--mobile-s">High Fructose Corn Syrup</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -6372,7 +6379,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name"> Melons e.g. Honeydew, galia </div>
+          <div class="food__title-name food__title-name--smaller"> Melons e.g. Honeydew, galia </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -6836,7 +6843,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Pasta sauce (cream based)</div>
+          <div class="food__title-name food__title-name--mobile-s">Pasta sauce (cream based)</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -8083,7 +8090,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Soy milk made with soy beans</div>
+          <div class="food__title-name food__title-name--smaller">Soy milk made with soy beans</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -8141,7 +8148,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Soya milk made with soy protein</div>
+          <div class="food__title-name food__title-name--smaller">Soya milk made with soy protein</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -8199,7 +8206,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Spelt bread (non-sourdough)</div>
+          <div class="food__title-name food__title-name--smaller">Spelt bread (non-sourdough)</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -8402,7 +8409,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name food__title-name--jam">Strawberry jam / jelly (without HFCS)</div>
+          <div class="food__title-name food__title-name--smaller food__title-name--mobile-s">Strawberry jam (without HFCS)</div>
           <div class="food__fodmap food__fodmap--low ">LOW</div>
         </div>
         <p class="food__details">
@@ -8895,7 +8902,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name food__title-name--wheat">Wheat foods e.g. Bread, cereal, pasta</div>
+          <div class="food__title-name food__title-name--smaller">Wheat foods e.g. Bread, cereal, pasta</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -11215,7 +11222,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Garbanzo beans, canned</div>
+          <div class="food__title-name food__title-name--mobile-s">Garbanzo beans, canned</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -11882,7 +11889,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Mung beans, sprouted</div>
+          <div class="food__title-name food__title-name--mobile-s">Mung beans, sprouted</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">
@@ -11911,7 +11918,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Kidney beans, sprouted</div>
+          <div class="food__title-name food__title-name--mobile-s">Kidney beans, sprouted</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
         <p class="food__details">
@@ -12462,7 +12469,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Flakes, of corn (gluten free)</div>
+          <div class="food__title-name food__title-name--mobile-s">Flakes, of corn (gluten free)</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details"> 
@@ -12955,7 +12962,7 @@
       </div>
       <div class="food__info">
         <div class="food__title">
-          <div class="food__title-name">Biscuit, savoury, plain</div>
+          <div class="food__title-name food__title-name--mobile-s">Biscuit, savoury, plain</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
         <p class="food__details">

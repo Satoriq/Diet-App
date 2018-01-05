@@ -5,14 +5,15 @@
 
 var details = document.getElementsByClassName('food__details');
 var titleName = document.getElementsByClassName('food__title-name');
-function adaptDetailsMargin(){
-  for (var i=0; i< titleName.length; i++){
-    if (titleName[i].clientHeight > 31){
+
+function adaptDetailsMargin() {
+  for (var i = 0; i < titleName.length; i++) {
+    if (titleName[i].clientHeight > 31) {
       details[i].style.marginTop = "5px";
-    }
-    else if (titleName[i].clientHeight < 30){
+    } else if (titleName[i].clientHeight < 30) {
       details[i].style.marginTop = "20px";
-    }}
+    }
+  }
 }
 adaptDetailsMargin();
 window.addEventListener("resize", adaptDetailsMargin);
@@ -30,6 +31,49 @@ document.getElementById("js-share__wrapper").onclick = function () {
   }
 };
 
+function showCategories() {
+  var content = document.getElementById("js-categories__content");
+  if (window.screen.width <= 1024){
+    if (content.className === "categories__content") {
+      content.className += " categories__content--show";
+    } else {
+      content.className = "categories__content";
+    }
+  }
+}
+
+function openBurger() {
+  var a = document.getElementById("hamburger-9");
+  if (a.className === "hamburger") {
+    a.className += " is-active";
+  } 
+  else {
+    a.className = "hamburger";
+  }
+  var x = document.getElementById("js-nav__menu");
+  if (x.className === "nav__menu") {
+      x.className += " nav__menu--open";
+  } 
+  else {
+      x.className = "nav__menu";
+  }
+
+  var y = document.getElementById("js-header");
+  if (y.className === "nav__logo") {
+      y.className += " nav__logo--hide";
+  } 
+  else {
+      y.className = "nav__logo";
+  }
+
+  var z = document.getElementById("js-nav__info");
+  if (z.className === "nav__logo") {
+      z.className += " nav__logo--show";
+  } 
+  else {
+      z.className = "nav__logo"; 
+  }
+}
 
 //
 // ────────────────────────────────────────────────────────── I ──────────
@@ -306,7 +350,7 @@ document.getElementById("js-search").oninput = function () {
   for (var c = 0; c < document.getElementsByClassName("categories__content-item").length; c++) {
     document.getElementsByClassName("categories__content-item")[c].style.color = "#8190a5";
   }
-  if(document.getElementById("js-search").value.length >= 1) {
+  if (document.getElementById("js-search").value.length >= 1) {
     document.getElementsByClassName("categories__name")[0].innerHTML = "Categories";
   }
   (function () {
@@ -893,21 +937,19 @@ function findHigh() {
 }
 
 document.getElementById("js-allowed").onclick = function () {
-  if (document.getElementById("js-high").className === "categories__high categories__high--checked"){
+  if (document.getElementById("js-high").className === "categories__high categories__high--checked") {
     document.getElementById("js-high").click();
     findLow();
-  }
-  else {
+  } else {
     findLow();
-}
+  }
 };
 
-document.getElementById("js-high").onclick = function() {
-  if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked"){
+document.getElementById("js-high").onclick = function () {
+  if (document.getElementById("js-allowed").className === "categories__allowed categories__allowed--checked") {
     document.getElementById("js-allowed").click();
     findHigh();
-  }
-  else {
+  } else {
     findHigh();
-}};
-
+  }
+};
