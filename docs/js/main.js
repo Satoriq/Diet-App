@@ -43,19 +43,19 @@ function showCategories() {
 }
 
 function openBurger() {
-  var a = document.getElementById("hamburger-9");
+  var a = document.getElementById("hamburger");
   if (a.className === "hamburger") {
-    a.className += " is-active";
+    a.className += " hamburger--active";
   } 
   else {
     a.className = "hamburger";
   }
-  var x = document.getElementById("js-nav__menu");
-  if (x.className === "nav__menu") {
-      x.className += " nav__menu--open";
+  var x = document.getElementById("navbar");
+  if (x.className === "nav__bar") {
+      x.className += " nav__bar--open";
   } 
   else {
-      x.className = "nav__menu";
+      x.className = "nav__bar";
   }
 
   var y = document.getElementById("js-header");
@@ -67,11 +67,11 @@ function openBurger() {
   }
 
   var z = document.getElementById("js-nav__info");
-  if (z.className === "nav__logo") {
-      z.className += " nav__logo--show";
+  if (z.className === "nav__info") {
+      z.className += " nav__info--show";
   } 
   else {
-      z.className = "nav__logo"; 
+      z.className = "nav__info"; 
   }
 }
 

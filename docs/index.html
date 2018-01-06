@@ -21,23 +21,43 @@
 <body>
   <header>
     <nav id="navbar" class="nav__bar">
-      <div class="nav">
+      <div id="js-nav" class="nav">
         <div id="js-header" class="nav__logo">
           <img class="nav__logo-image" src="img/logo.png" alt="logo">
           <h1 class="nav__logo-name">FODMAP App</h1>
         </div>
         <ul id="js-nav__info" class="nav__info">
-          <li class="nav__info-item">Contacts</li>
-          <li class="nav__info-item">About</li>
+          <li><a class="nav__info-item" href="#popupContacts">Contacts</a></li>
+          <li><a class="nav__info-item" href="#popupAbout">About</a></li>
         </ul>
-        <div onclick="openBurger()" class="hamburger" id="hamburger-9">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
+        <div onclick="openBurger()" class="hamburger" id="hamburger">
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
         </div>
       </div>
     </nav>
   </header>
+
+  <div id="popupContacts" class="overlay">
+    <div class="popup">
+      <h2 class="popup__title">Hi, i'm a developer =)</h2>
+      <a class="popup__close" href="#">&times;</a>
+      <div class="popup__content">
+        <span>Fell free to contact: satori.akarin@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="popupAbout" class="overlay">
+    <div class="popup">
+      <h2 class="popup__title">About</h2>
+      <a class="popup__close" href="#">&times;</a>
+      <div class="popup__content">
+        Something will be here =) 
+      </div>
+    </div>
+  </div>
 
   <div id="js-share__wrapper" class="share__wrapper">
     <div id="js-share" class="share">
