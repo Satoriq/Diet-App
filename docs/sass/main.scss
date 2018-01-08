@@ -859,7 +859,9 @@ a {
     }
   }
   &__title{
+    display: inline-block;
     margin-top: 2px;
+    margin-bottom: 10px;
     font-size: 30px;
     color: #6a7481;
   }
