@@ -1,3 +1,158 @@
+/*----------  Variables   ----------*/
+/*----------  Basic   ----------*/
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #f9f9f9;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  -webkit-padding-start: 0;
+  list-style: none;
+}
+
+/*----------  Blazy   ----------*/
+.b-lazy {
+  -webkit-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  max-width: 100%;
+  opacity: 0;
+}
+
+.b-lazy.b-loaded {
+  opacity: 1;
+}
+
+/*----------  PhotoSwipe   ----------*/
+.my-gallery {
+  width: 30%;
+}
+
+.my-gallery a {
+  cursor: default;
+}
+
+.my-gallery img {
+  margin-top: 1px;
+  margin-left: 1.5px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 100%;
+  height: 91px;
+  -webkit-border-top-left-radius: 50px;
+          border-top-left-radius: 50px;
+  -webkit-border-bottom-left-radius: 50px;
+          border-bottom-left-radius: 50px;
+  -webkit-border-top-right-radius: 10px;
+          border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+  cursor: url(../img/glass.png), auto;
+}
+
+.my-gallery figure {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 93px;
+}
+
+.my-gallery figcaption {
+  display: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/*----------  POPUPS  ----------*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 50;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  width: 30%;
+  position: relative;
+  -webkit-transition: all 5s ease-in-out;
+  -o-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .popup {
+    width: 90%;
+  }
+}
+
+.popup__close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  -webkit-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #5bc0de;
+  pointer-events: auto;
+}
+
+.popup__close:hover {
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  color: #00aedb;
+  -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+
+.popup__title {
+  display: inline-block;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #6a7481;
+}
+
+.popup__content {
+  color: #6a7481;
+  max-height: 30%;
+  font-size: 20px;
+}
+
+/*=============================================
+=     UI BUTTONS (HAMBURGER, TOP, SHARE)      =
+=============================================*/
+/*----------  HAMBURGER BUTTON ----------*/
 .hamburger {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -17,7 +172,7 @@
 .hamburger__line {
   width: 35px;
   height: 5px;
-  background-color: #ecf0f1;
+  background-color: #f9f9f9;
   display: block;
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
@@ -55,7 +210,7 @@
 }
 
 .hamburger--active::before {
-  border: 5px solid #ecf0f1;
+  border: 5px solid #f9f9f9;
 }
 
 .hamburger::before {
@@ -74,33 +229,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-ul {
-  -webkit-padding-start: 0;
-  list-style: none;
-}
-
-body {
-  font-family: 'Nunito', sans-serif;
-  background-color: #f9f9f9;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.b-lazy {
-  -webkit-transition: opacity 500ms ease-in-out;
-  -o-transition: opacity 500ms ease-in-out;
-  transition: opacity 500ms ease-in-out;
-  max-width: 100%;
-  opacity: 0;
-}
-
-.b-lazy.b-loaded {
-  opacity: 1;
-}
-
+/*----------  SHARE BUTTON ----------*/
 .share {
   width: 50px;
   height: 50px;
@@ -218,12 +347,14 @@ a {
   display: flex;
   opacity: 1;
   visibility: visible;
+  padding-left: 0;
 }
 
 .fa-angle-double-right {
   cursor: pointer;
 }
 
+/*----------  GO TOP BUTTON ----------*/
 .top {
   padding: 5px 14px 5px 14px;
   -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
@@ -238,9 +369,9 @@ a {
   right: 22px;
   z-index: -1;
   color: #f9f9f9;
-  -webkit-transition: opacity .6s;
-  -o-transition: opacity .6s;
-  transition: opacity .6s;
+  -webkit-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
   font-size: 35px;
   cursor: pointer;
 }
@@ -272,6 +403,10 @@ a {
           box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
+/*=====  End of UI BUTTONS  ======*/
+/*=============================================
+=                NAVIGATION                 =
+=============================================*/
 .nav {
   width: 77%;
   height: 70px;
@@ -319,7 +454,7 @@ a {
   font-size: 27px;
   color: #f9f9f9;
   font-weight: bold;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   white-space: nowrap;
   margin-top: 22px;
 }
@@ -452,6 +587,11 @@ a {
   left: 0;
 }
 
+/*=====  End of NAVIGATION  ======*/
+/*=============================================
+=                  FILTERS                   =
+=============================================*/
+/*----------  SEARCH INPUT ----------*/
 .search {
   display: block;
   margin-left: auto;
@@ -465,7 +605,7 @@ a {
   border: 3px solid rgba(91, 192, 222, 0.6);
   font-size: 23px;
   color: #6a7481;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   outline: none;
   background-color: #fff;
   -webkit-transition: all 0.25s ease;
@@ -517,7 +657,7 @@ a {
 
 @media (min-width: 475px) {
   .search:focus {
-    widtH: 35%;
+    width: 35%;
   }
 }
 
@@ -553,6 +693,7 @@ a {
   color: transparent;
 }
 
+/*----------  FILTERS ----------*/
 .filters {
   width: 40%;
   margin: 0 auto;
@@ -614,7 +755,7 @@ a {
   -webkit-border-radius: 10px;
           border-radius: 10px;
   color: #8190a5;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 22px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -691,6 +832,7 @@ a {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  z-index: 50;
 }
 
 .categories__content--show {
@@ -713,6 +855,7 @@ a {
   width: 100%;
   text-align: left;
   color: #8190a5;
+  font-family: "Nunito", sans-serif;
 }
 
 @media (max-width: 1368px) {
@@ -727,11 +870,12 @@ a {
   background-color: rgba(91, 192, 222, 0.3);
 }
 
-.categories__allowed {
+/*------- ONLY LOW / ONLY HIGH BUTTONS ----------*/
+.allowed {
   color: #58c858;
   background-color: #ffffff;
   font-size: 22px;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   border: 3px solid rgba(88, 200, 88, 0.4);
   -webkit-border-radius: 10px;
           border-radius: 10px;
@@ -748,17 +892,17 @@ a {
 }
 
 @media (max-width: 600px) {
-  .categories__allowed {
+  .allowed {
     margin-top: 0;
     margin-left: 0;
   }
-  .categories__allowed:last-child {
+  .allowed:last-child {
     margin-left: 10px;
   }
 }
 
 @media (min-width: 1025px) {
-  .categories__allowed:hover {
+  .allowed:hover {
     -webkit-transition: all 0.25s ease;
     -o-transition: all 0.25s ease;
     transition: all 0.25s ease;
@@ -771,13 +915,13 @@ a {
   }
 }
 
-.categories__allowed:active {
+.allowed:active {
   -webkit-transform: translateY(0px);
       -ms-transform: translateY(0px);
           transform: translateY(0px);
 }
 
-.categories__allowed--checked {
+.allowed--checked {
   color: #fff;
   background-color: #58c858;
   border: 3px solid #58c858;
@@ -785,7 +929,7 @@ a {
           box-shadow: 2px 5px 10px #e4e4e4;
 }
 
-.categories__allowed--checked:hover {
+.allowed--checked:hover {
   -webkit-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -794,17 +938,17 @@ a {
           transform: translateY(-1px);
 }
 
-.categories__allowed--checked:active {
+.allowed--checked:active {
   -webkit-transform: translateY(0px);
       -ms-transform: translateY(0px);
           transform: translateY(0px);
 }
 
-.categories__high {
+.banned {
   color: rgba(217, 83, 79, 0.9);
   background-color: #ffffff;
   font-size: 22px;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   border: 3px solid rgba(217, 83, 79, 0.4);
   -webkit-border-radius: 10px;
           border-radius: 10px;
@@ -821,13 +965,13 @@ a {
 }
 
 @media (max-width: 600px) {
-  .categories__high {
+  .banned {
     margin-top: 0;
   }
 }
 
 @media (min-width: 1024px) {
-  .categories__high:hover {
+  .banned:hover {
     -webkit-transition: all 0.25s ease;
     -o-transition: all 0.25s ease;
     transition: all 0.25s ease;
@@ -840,13 +984,13 @@ a {
   }
 }
 
-.categories__high:active {
+.banned:active {
   -webkit-transform: translateY(0px);
       -ms-transform: translateY(0px);
           transform: translateY(0px);
 }
 
-.categories__high--checked {
+.banned--checked {
   color: #fff;
   background-color: #d9534f;
   border: 3px solid #d9534f;
@@ -854,7 +998,7 @@ a {
           box-shadow: 2px 5px 10px #e4e4e4;
 }
 
-.categories__high--checked:hover {
+.banned--checked:hover {
   -webkit-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -863,12 +1007,16 @@ a {
           transform: translateY(-1px);
 }
 
-.categories__high--checked:active {
+.banned--checked:active {
   -webkit-transform: translateY(0px);
       -ms-transform: translateY(0px);
           transform: translateY(0px);
 }
 
+/*=====  End of FILTERS  ======*/
+/*=============================================
+=            CONTAINER WITH PRODUCTS          =
+=============================================*/
 .container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1138,7 +1286,7 @@ a {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start;
-  min-widtH: 45px;
+  min-width: 45px;
 }
 
 @media (max-width: 1440px) {
@@ -1187,125 +1335,8 @@ a {
   background-color: grey;
 }
 
-.my-gallery {
-  width: 30%;
-}
-
-.my-gallery a {
-  cursor: default;
-}
-
-.my-gallery img {
-  margin-top: 1px;
-  margin-left: 1.5px;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  width: 100%;
-  height: 91px;
-  -webkit-border-top-left-radius: 50px;
-          border-top-left-radius: 50px;
-  -webkit-border-bottom-left-radius: 50px;
-          border-bottom-left-radius: 50px;
-  -webkit-border-top-right-radius: 10px;
-          border-top-right-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-          border-bottom-right-radius: 10px;
-  cursor: url(../img/glass.png), auto;
-}
-
-.my-gallery figure {
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 93px;
-}
-
-.my-gallery figcaption {
-  display: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  -webkit-transition: opacity 500ms;
-  -o-transition: opacity 500ms;
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 50;
-}
-
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
-
-.popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #f9f9f9;
-  -webkit-border-radius: 5px;
-          border-radius: 5px;
-  width: 30%;
-  position: relative;
-  -webkit-transition: all 5s ease-in-out;
-  -o-transition: all 5s ease-in-out;
-  transition: all 5s ease-in-out;
-  pointer-events: none;
-}
-
-@media (max-width: 700px) {
-  .popup {
-    width: 90%;
-  }
-}
-
-.popup__close {
-  position: absolute;
-  top: 10px;
-  right: 30px;
-  -webkit-transition: all 200ms;
-  -o-transition: all 200ms;
-  transition: all 200ms;
-  font-size: 40px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #5bc0de;
-  pointer-events: auto;
-}
-
-.popup__close:hover {
-  -webkit-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-  color: #00aedb;
-  -webkit-transform: translateY(-1px);
-      -ms-transform: translateY(-1px);
-          transform: translateY(-1px);
-}
-
-.popup__title {
-  display: inline-block;
-  margin-top: 2px;
-  margin-bottom: 10px;
-  font-size: 30px;
-  color: #6a7481;
-}
-
-.popup__content {
-  color: #6a7481;
-  max-height: 30%;
-  font-size: 20px;
-}
-
+/*=====  End of CONTAINER WITH PRODUCTS  ======*/
+/*----------  Free space for decoration =)  ----------*/
 .free-space {
   width: 100%;
   height: 100px;

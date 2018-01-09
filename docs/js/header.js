@@ -63,7 +63,7 @@ headerLogo.onclick = function(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   } else {
-    location.reload();
+    window.location = "https://fodmap-app.me";
   }
 };
 

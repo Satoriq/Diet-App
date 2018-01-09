@@ -4,14 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>FODMAP App</title>
+  <title>FODMAP App: Your assistant in a low fodmap diet</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111728145-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
     gtag('config', 'UA-111728145-1');
   </script>
@@ -24,24 +28,24 @@
   <meta name="msapplication-config" content="browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
   <!-- FACEBOOK THUMBNAIL -->
-  <meta property="og:image" content="img/facebook-thumbnail.jpg"/> 
-  <meta property="og:title" content="Fodmap App =)"/>
-  <meta property="og:url" content="http://fodmap-app.me"/>
-  <meta property="og:description" content="This app can help you stick to a low fodmap diet."/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://i.imgur.com/jm68tQv.jpg" />
+  <meta property="og:title" content="Fodmap App =)" />
+  <meta property="og:description" content="This app can help you adhere to a low fodmap diet." />
+  <meta property="og:url" content="https://fodmap-app.me" />
   <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/photoswipe.css">
   <link rel="stylesheet" href="css/default-skin/default-skin.css">
-  <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800,900" rel="stylesheet">
 </head>
 
 
 
 <body>
-  <header>
+  <header role="banner">
     <nav id="navbar" class="nav__bar">
       <div id="js-nav" class="nav">
         <div id="js-header" class="nav__logo">
@@ -49,13 +53,17 @@
           <h1 class="nav__logo-name">FODMAP App</h1>
         </div>
         <ul id="js-nav__info" class="nav__info">
-          <li><a class="nav__info-item" href="#popupContacts">Contacts</a></li>
-          <li><a class="nav__info-item" href="#popupAbout">About</a></li>
+          <li>
+            <a class="nav__info-item" href="#popupContacts">Contacts</a>
+          </li>
+          <li>
+            <a class="nav__info-item" href="#popupAbout">About</a>
+          </li>
         </ul>
         <div onclick="openBurger()" class="hamburger" id="hamburger">
-            <span class="hamburger__line"></span>
-            <span class="hamburger__line"></span>
-            <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
         </div>
       </div>
     </nav>
@@ -76,7 +84,7 @@
       <span class="popup__title">About</span>
       <a class="popup__close" href="#">&times;</a>
       <div class="popup__content">
-        Something will be here =) 
+        Something will be here =)
       </div>
     </div>
   </div>
@@ -86,22 +94,22 @@
       <i class="share__btn fas fa-share-alt"></i>
       <ul class="share__social">
         <li class="share__social-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffodmap-app.me" target="_blank">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffodmap-app.me" target="_blank" rel="noopener">
             <i class="fab fa-facebook-f"></i>
           </a>
         </li>
         <li class="share__social-item">
-          <a href="https://twitter.com/share?url=http%3A%2F%2Ffodmap-app.me&text=Fodmap App =)" target="_blank" >
+          <a href="https://twitter.com/share?url=http%3A%2F%2Ffodmap-app.me" target="_blank" rel="noopener">
             <i class="fab fa-twitter"></i>
           </a>
         </li>
         <li class="share__social-item">
-          <a href="http://www.reddit.com/submit?url=http%3A%2F%2Ffodmap-app.me" target="_blank">
+          <a href="http://www.reddit.com/submit?url=http%3A%2F%2Ffodmap-app.me" target="_blank" rel="noopener">
             <i class="fab fa-reddit-alien"></i>
           </a>
         </li>
         <li class="share__social-item">
-          <a href="https://plus.google.com/share?url=http%3A%2F%2Ffodmap-app.me" target="_blank">
+          <a href="https://plus.google.com/share?url=http%3A%2F%2Ffodmap-app.me" target="_blank" rel="noopener">
             <i class="fab fa-google-plus-g"></i>
           </a>
         </li>
@@ -145,8 +153,8 @@
       </div>
     </div>
     <div class="categories__wrapper">
-      <button id="js-allowed" class="categories__allowed"> Only low</button>
-      <button id="js-high" class="categories__high"> Only high</button>
+      <button id="js-allowed" class="allowed"> Only low</button>
+      <button id="js-high" class="banned"> Only high</button>
     </div>
   </div>
   <div id="js-top" class="top">
@@ -202,7 +210,7 @@
   </div>
 
 
-  <div class="container">
+  <section class="container">
     <div class="food" style="display: block;">
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
@@ -274,7 +282,7 @@
           <div class="food__title-name">Vegetable oil </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -332,7 +340,7 @@
           <div class="food__title-name">Cocoa powder</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -506,7 +514,7 @@
           <div class="food__title-name">Brussel sprouts </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -535,7 +543,7 @@
           <div class="food__title-name">Peanut butter </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -564,7 +572,7 @@
           <div class="food__title-name">Almond butter </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -593,7 +601,7 @@
           <div class="food__title-name">Seaweed / nori</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -1086,7 +1094,7 @@
           <div class="food__title-name">Pinto beans</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -1144,7 +1152,7 @@
           <div class="food__title-name">Curry powder</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -1173,7 +1181,7 @@
           <div class="food__title-name">Coconut sugar </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -1347,7 +1355,7 @@
           <div class="food__title-name">Brown sugar</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -1376,7 +1384,7 @@
           <div class="food__title-name">White sugar</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -1405,7 +1413,7 @@
           <div class="food__title-name">Maple syrup</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -1434,7 +1442,7 @@
           <div class="food__title-name">Ground beef</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -1550,7 +1558,7 @@
           <div class="food__title-name">Ketchup (USA)</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -1579,7 +1587,7 @@
           <div class="food__title-name">Lentils, boiled</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -2188,7 +2196,7 @@
           <div class="food__title-name">Chayote / choko</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -2304,7 +2312,7 @@
           <div class="food__title-name">Broad beans</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -2362,7 +2370,7 @@
           <div class="food__title-name">Black eyed peas</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--idk"></span>
           </span>
@@ -2449,7 +2457,7 @@
           <div class="food__title-name">Baked beans</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -2478,7 +2486,7 @@
           <div class="food__title-name">Artichoke, globe</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -2623,7 +2631,7 @@
           <div class="food__title-name">Black tea, strong</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--middle"></span>
           </span>
@@ -2652,7 +2660,7 @@
           <div class="food__title-name">Chai tea, weak</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -2710,7 +2718,7 @@
           <div class="food__title-name">Dandelion tea, strong</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -2739,7 +2747,7 @@
           <div class="food__title-name">Chai tea, strong</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -2768,7 +2776,7 @@
           <div class="food__title-name">Chamomile tea </div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -3174,7 +3182,7 @@
           <div class="food__title-name">Curry leaves</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -3348,7 +3356,7 @@
           <div class="food__title-name">Acesulfame K</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -3406,7 +3414,7 @@
           <div class="food__title-name">Almond milk </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -3638,7 +3646,7 @@
           <div class="food__title-name">Bananas, ripe</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -3667,7 +3675,7 @@
           <div class="food__title-name">Barbeque sauce</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -3696,7 +3704,7 @@
           <div class="food__title-name">Barley, pearl</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -3725,7 +3733,7 @@
           <div class="food__title-name">Bean sprouts</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -3957,7 +3965,7 @@
           <div class="food__title-name">Brie cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -4015,7 +4023,7 @@
           <div class="food__title-name">Buckwheat, flour </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -4334,7 +4342,7 @@
           <div class="food__title-name">Cheddar cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -4653,7 +4661,7 @@
           <div class="food__title-name">Coconut water</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--middle"></span>
           </span>
@@ -4711,7 +4719,7 @@
           <div class="food__title-name">Colby cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -4943,7 +4951,7 @@
           <div class="food__title-name">Cream cheese </div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -5030,7 +5038,7 @@
           <div class="food__title-name">Dark chocolate </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -5059,7 +5067,7 @@
           <div class="food__title-name">Dragon Fruit</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -5204,7 +5212,7 @@
           <div class="food__title-name">Feta cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -5349,7 +5357,7 @@
           <div class="food__title-name">Goat cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -5523,7 +5531,7 @@
           <div class="food__title-name">Greek yogurt </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--idk"></span>
           </span>
@@ -5552,7 +5560,7 @@
           <div class="food__title-name">Goat yogurt </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -5639,7 +5647,7 @@
           <div class="food__title-name">Green Beans</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -5668,7 +5676,7 @@
           <div class="food__title-name">Green Pepper</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -5697,7 +5705,7 @@
           <div class="food__title-name">Havarti cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -5900,7 +5908,7 @@
           <div class="food__title-name">Hommus dip</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -6132,7 +6140,7 @@
           <div class="food__title-name">Lactose free milk </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -6248,7 +6256,7 @@
           <div class="food__title-name">Macadamia nuts</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -6335,7 +6343,7 @@
           <div class="food__title-name">Mango juice </div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -6451,7 +6459,7 @@
           <div class="food__title-name">Milk chocolate </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -6741,7 +6749,7 @@
           <div class="food__title-name">Orange juice </div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -7089,7 +7097,7 @@
           <div class="food__title-name">Pecorino cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -7263,7 +7271,7 @@
           <div class="food__title-name">Poppy seeds</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -7553,7 +7561,7 @@
           <div class="food__title-name">Red Peppers</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -7698,7 +7706,7 @@
           <div class="food__title-name">Basmati rice</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -7872,7 +7880,7 @@
           <div class="food__title-name">Savory biscuits</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -7988,7 +7996,7 @@
           <div class="food__title-name">Sesame seeds</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -8017,7 +8025,7 @@
           <div class="food__title-name">Sheep's milk </div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -8220,7 +8228,7 @@
           <div class="food__title-name">Spelt flakes</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -8336,7 +8344,7 @@
           <div class="food__title-name">Butternut squash</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -8597,7 +8605,7 @@
           <div class="food__title-name">Sweet Potato</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -8626,7 +8634,7 @@
           <div class="food__title-name">Swiss cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -8713,7 +8721,7 @@
           <div class="food__title-name">Tomato sauce</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -8974,7 +8982,7 @@
           <div class="food__title-name">White chocolate </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -9525,7 +9533,7 @@
           <div class="food__title-name">Rice crackers</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -9612,7 +9620,7 @@
           <div class="food__title-name">Acorn Squash</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -9728,7 +9736,7 @@
           <div class="food__title-name">Blue cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -9931,7 +9939,7 @@
           <div class="food__title-name">Jasmine rice</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10047,7 +10055,7 @@
           <div class="food__title-name">Almond flour </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10076,7 +10084,7 @@
           <div class="food__title-name">Coconut flour </div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -10250,7 +10258,7 @@
           <div class="food__title-name">Rice noodles</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10366,7 +10374,7 @@
           <div class="food__title-name">Pepper, black</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10453,7 +10461,7 @@
           <div class="food__title-name">Asiago cheese </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10511,7 +10519,7 @@
           <div class="food__title-name">Tomato paste</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10540,7 +10548,7 @@
           <div class="food__title-name">Baby spinach</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10569,7 +10577,7 @@
           <div class="food__title-name">Apricots, dried</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--middle"></span>
           </span>
@@ -10598,7 +10606,7 @@
           <div class="food__title-name">Guava, ripe</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10627,7 +10635,7 @@
           <div class="food__title-name">Guava, unripe</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10656,7 +10664,7 @@
           <div class="food__title-name">Banana, dried</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10743,7 +10751,7 @@
           <div class="food__title-name">Chips, corn (plain)</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10772,7 +10780,7 @@
           <div class="food__title-name">Nutritional Yeast</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -10888,7 +10896,7 @@
           <div class="food__title-name">Collard greens</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -11091,7 +11099,7 @@
           <div class="food__title-name">Alfalfa sprouts</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -11207,7 +11215,7 @@
           <div class="food__title-name">Carob powder</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -11236,7 +11244,7 @@
           <div class="food__title-name">Chicory leaves</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -11381,7 +11389,7 @@
           <div class="food__title-name">Pesto sauce</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -11584,7 +11592,7 @@
           <div class="food__title-name">Dried cranberries</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -11700,7 +11708,7 @@
           <div class="food__title-name">Onion Powder</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -11729,7 +11737,7 @@
           <div class="food__title-name">Garlic Powder</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -11787,7 +11795,7 @@
           <div class="food__title-name">Soba noodles</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -11903,7 +11911,7 @@
           <div class="food__title-name">Lentils, canned</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--middle"></span>
           </span>
@@ -12048,7 +12056,7 @@
           <div class="food__title-name">Barley, sprouted</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -12135,7 +12143,7 @@
           <div class="food__title-name">Cranberry, dried</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -12193,7 +12201,7 @@
           <div class="food__title-name">Tortillas, corn</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -12280,7 +12288,7 @@
           <div class="food__title-name">Flour, quinoa</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -12309,7 +12317,7 @@
           <div class="food__title-name">Flour , millet</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -12338,7 +12346,7 @@
           <div class="food__title-name">Flour , maize</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -12367,7 +12375,7 @@
           <div class="food__title-name">Oats, quick (dry)</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--middle"></span>
           </span>
@@ -12396,7 +12404,7 @@
           <div class="food__title-name">Flakes, barley</div>
           <div class="food__fodmap food__fodmap--high">HIGH</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--bad"></span>
           </span>
@@ -12425,7 +12433,7 @@
           <div class="food__title-name">Flakes, quinoa</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -12512,7 +12520,7 @@
           <div class="food__title-name food__title-name--mobile-s">Flakes, of corn (gluten free)</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-        <p class="food__details"> 
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -12657,7 +12665,7 @@
           <div class="food__title-name">Chinese cabbage</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -12802,7 +12810,7 @@
           <div class="food__title-name">Cheese , soy</div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -13092,7 +13100,7 @@
           <div class="food__title-name">Garlic infused oil </div>
           <div class="food__fodmap food__fodmap--low">LOW</div>
         </div>
-          <p class="food__details">
+        <p class="food__details">
           <span class="food__details-wrapper"> Oligos
             <span class="circle--good"></span>
           </span>
@@ -13137,24 +13145,22 @@
         </p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <script src="js/header.js"></script>
   <script src="js/blazy.min.js"></script>
-  <script src="js/fontawesome.min.js"></script>
-  <script src="js/fa-solid.js"></script>
-  <script src="js/fa-brands.js"></script>
+  <script src="js/details-fix.js"></script>
   <script src="js/list-of-products.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/Font Awesome/fontawesome.min.js"></script>
+  <script src="js/Font Awesome/fa-solid.js"></script>
+  <script src="js/Font Awesome/fa-brands.js"></script>
   <script src="js/photoswipe.js"></script>
   <script src="js/photoswipe-ui-default.min.js"></script>
-
-
-
-
 </body>
 <footer>
   <div class="free-space">
+     
   </div>
 </footer>
 
