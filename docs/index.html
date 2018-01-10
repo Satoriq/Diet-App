@@ -69,26 +69,11 @@
     </nav>
   </header>
 
-  <div id="popupContacts" class="overlay">
-    <div class="popup">
-      <span class="popup__title">Hi, i'm a site developer =)</span>
-      <a class="popup__close" href="#">&times;</a>
-      <div class="popup__content">
-        <span>Fell free to contact: satori.akarin@gmail.com</span>
-      </div>
-    </div>
+  <!-- GO TOP BUTTON -->
+  <div id="js-top" class="top">
+    <i class="fas fa-angle-double-up"></i>
   </div>
-
-  <div id="popupAbout" class="overlay">
-    <div class="popup">
-      <span class="popup__title">About</span>
-      <a class="popup__close" href="#">&times;</a>
-      <div class="popup__content">
-        Something will be here =)
-      </div>
-    </div>
-  </div>
-
+  <!--SOCIAL BUTTONS START -->
   <div id="js-share__wrapper" class="share__wrapper">
     <div id="js-share" class="share">
       <i class="share__btn fas fa-share-alt"></i>
@@ -119,9 +104,33 @@
       </ul>
     </div>
   </div>
-  <input id="js-search" class="search" type="text" placeholder="Product name...">
-  <br>
+  <!--SOCIAL BUTTONS END -->
 
+  <!--POPUPS START -->
+  <div id="popupContacts" class="overlay">
+    <div class="popup">
+      <span class="popup__title">Hi, i'm a site developer =)</span>
+      <a class="popup__close" href="#">&times;</a>
+      <div class="popup__content">
+        <span>Fell free to contact: satori.akarin@gmail.com</span>
+      </div>
+    </div>
+  </div>
+  <div id="popupAbout" class="overlay">
+    <div class="popup">
+      <span class="popup__title">About</span>
+      <a class="popup__close" href="#">&times;</a>
+      <div class="popup__content">
+        Something will be here =)
+      </div>
+    </div>
+  </div>
+  <!--POPUPS END -->
+
+  <!-- INPUT SEARCH -->
+  <input id="js-search" class="search" type="text" placeholder="Product name...">
+  
+  <!-- FILTER BUTTONS START -->
   <div class="filters">
     <div id="js-categories" class="categories" onclick="showCategories()">
       <div class="categories__name">Categories</div>
@@ -157,59 +166,9 @@
       <button id="js-high" class="banned"> Only high</button>
     </div>
   </div>
-  <div id="js-top" class="top">
-    <i class="fas fa-angle-double-up"></i>
-  </div>
+  <!-- FILTER BUTTONS END -->
 
-
-  <!-- Root element of PhotoSwipe. Must have class pswp. -->
-  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-       It's a separate element, as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-      <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-      <!-- don't modify these 3 pswp__item elements, data is added later on. -->
-      <div class="pswp__container">
-        <div class="pswp__item"></div>
-        <div class="pswp__item"></div>
-        <div class="pswp__item"></div>
-      </div>
-      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-      <div class="pswp__ui pswp__ui--hidden">
-        <div class="pswp__top-bar">
-          <!--  Controls are self-explanatory. Order can be changed. -->
-          <div class="pswp__counter"></div>
-          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-          <button class="pswp__button pswp__button--share" title="Share"></button>
-          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-          <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
-          <!-- element will get class pswp__preloader--active when preloader is running -->
-          <div class="pswp__preloader">
-            <div class="pswp__preloader__icn">
-              <div class="pswp__preloader__cut">
-                <div class="pswp__preloader__donut"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-          <div class="pswp__share-tooltip"></div>
-        </div>
-        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-        </button>
-        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-        </button>
-        <div class="pswp__caption">
-          <div class="pswp__caption__center"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
+  <!-- PRODUCTS CONTAINER START -->
   <section class="container">
     <div class="food" style="display: block;">
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
@@ -13146,6 +13105,56 @@
       </div>
     </div>
   </section>
+  <!-- PRODUCTS CONTAINER END -->
+
+  <!-- PHOTOSWIPE START -->
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+       It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+      <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+      <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <!--  Controls are self-explanatory. Order can be changed. -->
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+        </button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+        </button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PHOTOSWIPE END -->
 
   <script src="js/blazy.min.js"></script>
   <script src="js/details-fix.js"></script>
@@ -13158,10 +13167,8 @@
   <script src="js/photoswipe.js"></script>
   <script src="js/photoswipe-ui-default.min.js"></script>
 </body>
-<footer>
-  <div class="free-space">
-     
-  </div>
-</footer>
 
+<footer>
+  <div class="free-space"> </div>
+</footer>
 </html>

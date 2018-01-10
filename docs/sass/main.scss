@@ -6,15 +6,17 @@ $primary-color: #5bc0de;
 $secondary-color: #f9f9f9;
 $decor-color: #00aedb;
 
-/*----------  Basic   ----------*/
+/*----------  General Styles   ----------*/
 body {
   font-family: "Nunito", sans-serif;
   background-color: $secondary-color;
 }
+
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
+
 ul {
   -webkit-padding-start: 0;
   list-style: none;
@@ -37,30 +39,30 @@ ul {
     cursor: default;
   }
   img {
-    margin-top: 1px;
-    margin-left: 1.5px;
-    margin-bottom: 0;
-    padding-bottom: 0;
     width: 100%;
     height: 91px;
+    padding-bottom: 0;
+    margin-left: 1.5px;
+    margin-top: 1px;
+    margin-bottom: 0;
+    cursor: url(../img/glass.png), auto;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    cursor: url(../img/glass.png), auto;
   }
   figure {
     display: block;
-    float: left;
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 93px;
+    padding: 0;
+    margin: 0;
+    float: left;
   }
   figcaption {
     display: none;
-    margin-bottom: 0;
     padding-bottom: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -68,9 +70,9 @@ ul {
 .overlay {
   position: fixed;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
   background: rgba(0, 0, 0, 0.7);
   transition: opacity 500ms;
   visibility: hidden;
@@ -81,13 +83,14 @@ ul {
     opacity: 1;
   }
 }
+
 .popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: $secondary-color;
-  border-radius: 5px;
-  width: 30%;
   position: relative;
+  width: 30%;
+  padding: 20px;
+  margin: 70px auto;
+  border-radius: 5px;
+  background: $secondary-color;
   transition: all 5s ease-in-out;
   pointer-events: none;
   @media (max-width: 700px) {
@@ -97,15 +100,15 @@ ul {
     position: absolute;
     top: 10px;
     right: 30px;
-    transition: all 200ms;
     font-size: 40px;
+    color: $primary-color;
+    transition: all 200ms;
     font-weight: bold;
     text-decoration: none;
-    color: $primary-color;
     pointer-events: auto;
     &:hover {
-      transition: all 0.25s ease-in-out;
       color: $decor-color;
+      transition: all 0.25s ease-in-out;
       transform: translateY(-1px);
     }
   }
@@ -117,11 +120,12 @@ ul {
     color: #6a7481;
   }
   &__content {
+    font-size: 20px;
     color: #6a7481;
     max-height: 30%;
-    font-size: 20px;
   }
 }
+
 
 /*=============================================
 =     UI BUTTONS (HAMBURGER, TOP, SHARE)      =
@@ -129,25 +133,25 @@ ul {
 
 /*----------  HAMBURGER BUTTON ----------*/
 .hamburger {
-  box-sizing: border-box;
   position: relative;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  box-sizing: border-box;
   @media (min-width: 700px) {
     display: none;
   }
   &__line {
+    display: block;
     width: 35px;
     height: 5px;
-    background-color: $secondary-color;
-    display: block;
     margin: 5px auto;
+    background-color: $secondary-color;
     transition: all 0.3s ease-in-out;
   }
   &--active {
     position: absolute;
-    right: 15px;
     top: 18px;
+    right: 15px;
     transform: rotate(45deg);
     .hamburger__line {
       width: 25px;
@@ -166,42 +170,42 @@ ul {
     }
   }
   &::before {
-    content: "";
     position: absolute;
-    box-sizing: border-box;
-    width: 45px;
-    height: 45px;
     top: -2px;
     left: -11px;
+    width: 45px;
+    height: 45px;
     border-radius: 100%;
     transition: all 0.3s ease-in-out;
+    content: "";
+    box-sizing: border-box;
   }
 }
 
 /*----------  SHARE BUTTON ----------*/
 .share {
+  display: table;
   width: 50px;
   height: 50px;
   margin: 0 auto;
-  display: table;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
   border-radius: 50px;
-  overflow: hidden;
   background-color: $primary-color;
   transition: all 0.25s ease;
   cursor: pointer;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
   &:hover {
+    background-color: $decor-color;
     transition: all 0.4s ease;
     transform: translateY(-2px);
-    background-color: $decor-color;
     @media (max-width: 420px) {
       background-color: $primary-color;
     }
   }
   &__wrapper {
     position: fixed;
-    bottom: 20px;
     right: 20px;
+    bottom: 20px;
     z-index: 1;
     @media (max-width: 768px) {
       right: 10px;
@@ -209,22 +213,22 @@ ul {
   }
   &__btn {
     display: block;
-    color: $secondary-color;
-    font-size: 24px;
-    margin-top: 13px;
     margin-left: 13px;
+    margin-top: 13px;
+    font-size: 24px;
+    color: $secondary-color;
   }
   &__social {
-    width: 100%;
     display: none;
+    width: 100%;
     opacity: 0;
     visibility: hidden;
     &-item {
-      list-style: none;
+      margin-left: 28px;
       font-size: 24px;
       color: $secondary-color;
+      list-style: none;
       transform: translateY(-3px);
-      margin-left: 28px;
       &:nth-child(5) {
         font-size: 35px;
         transform: translateY(-9px);
@@ -233,16 +237,16 @@ ul {
         }
       }
       &:hover {
+        color: #fff;
         transition: all 0.25s ease;
         transform: translateY(-5px);
-        color: #fff;
       }
     }
   }
   &--active {
-    background-color: $primary-color;
-    width: 280px;
     display: flex;
+    width: 280px;
+    background-color: $primary-color;
     cursor: default;
     .share__btn {
       display: none;
@@ -251,9 +255,9 @@ ul {
     }
     .share__social {
       display: flex;
+      padding-left: 0;
       opacity: 1;
       visibility: visible;
-      padding-left: 0;
     }
   }
 }
@@ -263,33 +267,33 @@ ul {
 
 /*----------  GO TOP BUTTON ----------*/
 .top {
+  position: fixed;
+  right: 22px;
+  bottom: 80px;
   padding: 5px 14px 5px 14px;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  font-size: 35px;
+  color: $secondary-color;
   border-radius: 50%;
   background-color: $primary-color;
-  opacity: 0;
-  position: fixed;
-  margin: 0 auto;
-  bottom: 80px;
-  right: 22px;
-  z-index: -1;
-  color: $secondary-color;
   transition: opacity 0.6s;
-  font-size: 35px;
   cursor: pointer;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: -1;
   @media (max-width: 768px) {
     right: 11px;
   }
-
   &:hover {
-    transition: all 0.25s ease-in-out;
     background-color: $decor-color;
+    transition: all 0.25s ease-in-out;
     transform: translateY(-2px);
   }
   &:active {
     transform: translateY(0px);
   }
 }
+
 .fa-arrow-alt-circle-up {
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
 }
@@ -300,10 +304,10 @@ ul {
 =                NAVIGATION                 =
 =============================================*/
 .nav {
+  display: flex;
   width: 77%;
   height: 70px;
   margin: 0 auto;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 3;
@@ -314,31 +318,31 @@ ul {
     width: 95%;
   }
   &__logo {
-    cursor: pointer;
     display: flex;
+    cursor: pointer;
     &--hide {
       display: none;
     }
     &-name {
+      margin-top: 22px;
       font-size: 27px;
+      font-family: "Nunito", sans-serif;
       color: $secondary-color;
       font-weight: bold;
-      font-family: "Nunito", sans-serif;
       white-space: nowrap;
-      margin-top: 22px;
     }
     &-image {
       height: 65px;
     }
   }
   &__bar {
-    background-color: $primary-color;
-    height: 70px;
-    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.02), 0 3px 14px 3px rgba(0, 0, 0, 0.02), 0 4px 5px 0 rgba(0, 0, 0, 0.03);
     position: fixed;
     top: 0;
     width: 100%;
+    height: 70px;
+    background-color: $primary-color;
     transition: 0.5s;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.02), 0 3px 14px 3px rgba(0, 0, 0, 0.02), 0 4px 5px 0 rgba(0, 0, 0, 0.03);
     z-index: 3;
     &--open {
       height: 126px;
@@ -350,8 +354,8 @@ ul {
     align-items: center;
     &--show {
       display: flex;
-      flex-direction: column;
       width: 90%;
+      flex-direction: column;
       .nav__bar {
         position: absolute;
       }
@@ -364,18 +368,18 @@ ul {
       }
     }
     &-item {
-      list-style: none;
+      display: inline-block;
+      position: relative;
+      padding-bottom: 8px;
+      margin-left: 50px;
+      margin-top: 15px;
       font-size: 19px;
       color: $secondary-color;
+      cursor: pointer;
+      list-style: none;
       font-weight: bold;
       text-decoration: none;
       letter-spacing: 0.15em;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-top: 15px;
-      position: relative;
-      cursor: pointer;
-      margin-left: 50px;
       @media (max-width: 1200px) {
         margin-left: 30px;
       }
@@ -383,36 +387,34 @@ ul {
         display: none;
       }
       &:after { //underline
-        background: none repeat scroll 0 0 transparent;
-        bottom: 0;
-        content: "";
         display: block;
-        height: 3px;
-        left: 50%;
         position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background: none repeat scroll 0 0 transparent;
         background: $secondary-color;
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 0;
+        content: "";
       }
       &:hover {
+        color: #fff;
         transition: all 0.25s ease;
         transform: translateY(-1px);
-        color: #fff;
       }
       &:active {
         transition: all 0.25s ease;
         transform: translateY(1px);
       }
       &:hover:after {
-        width: 100%;
         left: 0;
+        width: 100%;
       }
     }
   }
 }
-
 /*=====  End of NAVIGATION  ======*/
-
 
 
 /*=============================================
@@ -420,22 +422,23 @@ ul {
 =============================================*/
 
 /*----------  SEARCH INPUT ----------*/
+
 .search {
   display: block;
+  width: 20%;
+  height: 50px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 150px;
-  width: 20%;
   text-align: center;
-  height: 50px;
-  border-radius: 30.5px;
-  border: 3px solid rgba(91, 192, 222, 0.6);
   font-size: 23px;
-  color: #6a7481;
   font-family: "Nunito", sans-serif;
-  outline: none;
+  color: #6a7481;
+  border: 3px solid rgba(91, 192, 222, 0.6);
+  border-radius: 30.5px;
   background-color: #fff;
   transition: all 0.25s ease;
+  outline: none;
   @media (max-width: 1600px) {
     width: 22%;
   }
@@ -484,9 +487,9 @@ ul {
 
 /*----------  FILTERS ----------*/
 .filters {
+  display: flex;
   width: 40%;
   margin: 0 auto;
-  display: flex;
   justify-content: space-between;
   @media (max-width: 1600px) {
     width: 50%;
@@ -507,20 +510,20 @@ ul {
 }
 
 .categories {
-  position: relative;
   display: inline-block;
+  position: relative;
+  width: 314px;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 314px;
-  border: 2px solid rgba(91, 192, 222, 0.4);
-  border-radius: 10px;
-  color: #8190a5;
-  font-family: "Nunito", sans-serif;
-  font-size: 22px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #fff;
   text-align: center;
+  font-size: 22px;
+  font-family: "Nunito", sans-serif;
+  color: #8190a5;
+  border: 2px solid rgba(91, 192, 222, 0.4);
+  border-radius: 10px;
+  background-color: #fff;
   @media (max-width: 600px) {
     margin-top: 0;
   }
@@ -536,10 +539,9 @@ ul {
     }
   }
   &:hover {
-    transition: all 0.25s ease;
-    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.02),
-      0 3px 14px 3px rgba(0, 0, 0, 0.02), 0 4px 5px 0 rgba(0, 0, 0, 0.03);
     border: 2px solid rgba(91, 192, 222, 0.95);
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.02), 0 3px 14px 3px rgba(0, 0, 0, 0.02), 0 4px 5px 0 rgba(0, 0, 0, 0.03);
     & .categories__content {
       @media (min-width: 1025px) {
         opacity: 1;
@@ -548,41 +550,41 @@ ul {
     }
   }
   &__content {
-    pointer-events: none;
     display: block;
     position: absolute;
-    background-color: $secondary-color;
-    padding-top: 10px;
     left: -2px;
     width: 100%;
+    padding-top: 10px;
+    text-align: center;
     font-size: 21px;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
     border: 2px solid rgba(91, 192, 222, 1);
+    background-color: $secondary-color;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
     border-top: none;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    background-color: #fff;
-    text-align: center;
     opacity: 0;
-    transition: all 0.3s ease;
     z-index: 50;
+    @media (max-width: 1368px) {
+      font-size: 20px;
+    }
     &--show {
       opacity: 1;
       pointer-events: auto;
     }
-    @media (max-width: 1368px) {
-      font-size: 20px;
-    }
     &-item {
+      width: 100%;
       padding-top: 5px;
       padding-bottom: 5px;
+      text-align: left;
+      font-family: "Nunito", sans-serif;
+      color: #8190a5;
       border: none;
       background: none;
       cursor: pointer;
-      width: 100%;
-      text-align: left;
-      color: #8190a5;
-      font-family: "Nunito", sans-serif;
       @media (max-width: 1368px) {
         padding-top: 3.5px;
         padding-bottom: 3.5px;
@@ -594,36 +596,37 @@ ul {
     }
   }
 }
+
 /*------- ONLY LOW / ONLY HIGH BUTTONS ----------*/
 .allowed {
-  color: #58c858;
-  background-color: #ffffff;
+  width: 268px;
+  height: 50px;
+  padding: 0;
+  margin-left: 10px;
+  margin-top: 20px;
   font-size: 22px;
   font-family: "Nunito", sans-serif;
+  color: #58c858;
   border: 3px solid rgba(88, 200, 88, 0.4);
   border-radius: 10px;
-  padding: 0;
-  height: 50px;
-  margin-top: 20px;
-  width: 268px;
-  cursor: pointer;
-  outline: none;
+  background-color: #ffffff;
   transition: all 0.25s ease;
-  margin-left: 10px;
+  outline: none;
+  cursor: pointer;
   @media (max-width: 600px) {
-    margin-top: 0;
     margin-left: 0;
+    margin-top: 0;
     &:last-child {
       margin-left: 10px;
     }
   }
   &:hover {
-    @media (min-width: 1025px) {//disabled hover for tablets/phones
+    @media (min-width: 1025px) { //disabled hover for tablets/phones
+      color: #fff;
+      border: 3px solid rgba(88, 200, 88, 0.7);
+      background-color: #58c858;
       transition: all 0.25s ease;
       transform: translateY(-1px);
-      color: #fff;
-      background-color: #58c858;
-      border: 3px solid rgba(88, 200, 88, 0.7);
     }
   }
   &:active {
@@ -631,8 +634,8 @@ ul {
   }
   &--checked {
     color: #fff;
-    background-color: #58c858;
     border: 3px solid #58c858;
+    background-color: #58c858;
     box-shadow: 2px 5px 10px #e4e4e4;
     &:hover {
       transition: all 0.25s ease;
@@ -643,31 +646,32 @@ ul {
     }
   }
 }
+
 .banned {
-  color: rgba(217, 83, 79, 0.9);
-  background-color: #ffffff;
+  width: 268px;
+  height: 50px;
+  padding: 0;
+  margin-left: 10px;
+  margin-top: 20px;
   font-size: 22px;
   font-family: "Nunito", sans-serif;
+  color: rgba(217, 83, 79, 0.9);
   border: 3px solid rgba(217, 83, 79, 0.4);
   border-radius: 10px;
-  padding: 0;
-  height: 50px;
-  margin-top: 20px;
-  margin-left: 10px;
-  width: 268px;
-  cursor: pointer;
-  outline: none;
+  background-color: #ffffff;
   transition: all 0.25s ease;
+  outline: none;
+  cursor: pointer;
   @media (max-width: 600px) {
     margin-top: 0;
   }
   &:hover {
-    @media (min-width: 1024px) {//disabled hover for tablets/phones
+    @media (min-width: 1024px) { //disabled hover for tablets/phones
+      color: #fff;
+      border: 3px solid rgba(217, 83, 79, 0.7);
+      background-color: #d9534f;
       transition: all 0.25s ease;
       transform: translateY(-1px);
-      color: #fff;
-      background-color: #d9534f;
-      border: 3px solid rgba(217, 83, 79, 0.7);
     }
   }
   &:active {
@@ -675,8 +679,8 @@ ul {
   }
   &--checked {
     color: #fff;
-    background-color: #d9534f;
     border: 3px solid #d9534f;
+    background-color: #d9534f;
     box-shadow: 2px 5px 10px #e4e4e4;
     &:hover {
       transition: all 0.25s ease;
@@ -690,29 +694,29 @@ ul {
 /*=====  End of FILTERS  ======*/
 
 
-
 /*=============================================
 =            CONTAINER WITH PRODUCTS          =
 =============================================*/
 .container {
   display: flex;
-  flex-wrap: wrap;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  flex-wrap: wrap;
   @media (max-width: 1440px) {
     width: 90%;
   }
 }
+
 .food {
   width: 30%;
-  margin-top: 30px;
   margin-left: 3%;
+  margin-top: 30px;
+  color: #6a7481;
   border: 2px solid rgba(91, 192, 222, 0.59);
   border-radius: 59px;
-  max-height: 93px;
-  color: #6a7481;
   background-color: #fff;
+  max-height: 93px;
   @media (max-width: 1520px) {
     width: 29%;
   }
@@ -731,22 +735,22 @@ ul {
     display: flex;
     justify-content: space-between;
     &-name {
-      margin-top: 8px;
       margin-left: 10px;
+      margin-top: 8px;
       font-size: 25px;
       color: #515963;
       line-height: 90%;
       @media (max-width: 1700px) {
-        font-size: 23px;
         margin-top: 10px;
+        font-size: 23px;
       }
       @media (max-width: 1439px) {
-        font-size: 22px;
         margin-top: 10px;
+        font-size: 22px;
       }
       @media (max-width: 800px) {
-        font-size: 21px;
         margin-top: 11px;
+        font-size: 21px;
       }
       &--gluten {
         font-size: 18px;
@@ -766,8 +770,8 @@ ul {
       &--instant {
         font-size: 23px;
         @media (max-width: 1700px) {
-          font-size: 20px;
           margin-top: 5px;
+          font-size: 20px;
         }
         @media (max-width: 1537px) and (min-width: 700px) {
           font-size: 19px;
@@ -794,8 +798,8 @@ ul {
           font-size: 18px;
         }
         @media (max-width: 430px) {
-          font-size: 19px;
           margin-top: 5px;
+          font-size: 19px;
         }
       }
       &--coconut {
@@ -808,30 +812,30 @@ ul {
         }
       }
       &--smaller {
-        font-size: 19px;
         margin-top: 5px;
+        font-size: 19px;
       }
       &--cuts {
-        font-size: 19px;
         margin-top: 5px;
+        font-size: 19px;
         @media (max-width: 350px) {
           font-size: 17px;
         }
       }
-      &--mobile-s {
+      &--mobile-s { //modificator for mobile with s-size of screen
         @media (max-width: 350px) {
-          font-size: 19px;
           margin-top: 9px;
+          font-size: 19px;
         }
       }
     }
   }
   &__details {
-    color: rgba(71, 82, 94, 0.68);
-    font-size: 15px;
-    margin-top: 20px;
-    margin-left: 32.5%;
     padding-right: 10px;
+    margin-left: 32.5%;
+    margin-top: 20px;
+    font-size: 15px;
+    color: rgba(71, 82, 94, 0.68);
     @media (max-width: 1700px) {
       font-size: 14px;
     }
@@ -848,19 +852,19 @@ ul {
     }
   }
   &__fodmap {
-    color: $secondary-color;
     width: 27%;
-    text-align: center;
     height: 20px;
-    border-radius: 15px;
+    padding-top: 5px;
     margin-right: 10%;
     margin-top: 10px;
-    padding-top: 5px;
+    text-align: center;
+    color: $secondary-color;
+    border-radius: 15px;
     align-self: flex-start;
     min-width: 45px;
     @media (max-width: 1440px) {
-      font-size: 14px;
       height: 18px;
+      font-size: 14px;
     }
     &--low {
       background-color: #58c858;
@@ -881,25 +885,29 @@ ul {
     margin-bottom: 0.5px;
   }
   &--good {
-    @extend .circle;
     background-color: rgba(88, 200, 88, 0.7);
+    @extend .circle;
   }
   &--middle {
-    @extend .circle;
     background-color: rgb(255, 246, 143);
+    @extend .circle;
   }
   &--bad {
-    @extend .circle;
     background-color: rgba(217, 83, 79, 0.7);
+    @extend .circle;
   }
   &--idk {
-    @extend .circle;
     background-color: grey;
+    @extend .circle;
   }
 }
+
+
 /*=====  End of CONTAINER WITH PRODUCTS  ======*/
 
+
 /*----------  Free space for decoration =)  ----------*/
+
 .free-space {
   width: 100%;
   height: 100px;
