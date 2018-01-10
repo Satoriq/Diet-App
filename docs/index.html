@@ -49,7 +49,7 @@
     <nav id="navbar" class="nav__bar">
       <div id="js-nav" class="nav">
         <div id="js-header" class="nav__logo">
-          <img class="nav__logo-image" src="img/logo.png" alt="logo">
+          <img class="nav__logo-image" src="img/logo.png" alt="logo" height="65px" width="65px">
           <h1 class="nav__logo-name">FODMAP App</h1>
         </div>
         <ul id="js-nav__info" class="nav__info">
@@ -132,8 +132,8 @@
   
   <!-- FILTER BUTTONS START -->
   <div class="filters">
-    <div id="js-categories" class="categories" onclick="showCategories()">
-      <div class="categories__name">Categories</div>
+    <div id="js-categories" class="categories">
+      <div id="js-categories__name" class="categories__name">Categories</div>
       <div id="js-categories__content" class="categories__content">
         <button class="categories__content-item" onclick="everything()"> &#128257; All</button>
         <br>
@@ -174,7 +174,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/polenta.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/polenta_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/polenta_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -203,7 +203,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/fennel.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/fennel_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/fennel_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -232,7 +232,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/vegetable-oil.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/vegetable-oil_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/vegetable-oil_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -261,7 +261,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/peanut-oil.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/peanut-oil_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/peanut-oil_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -290,7 +290,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/cocoa-powder.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/cocoa-powder_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/cocoa-powder_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -319,7 +319,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/hummus.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/hummus_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/hummus_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -348,7 +348,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/instant-coffee.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/instant-coffee_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/instant-coffee_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -377,7 +377,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/coffee.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/coffee_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/coffee_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -406,7 +406,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/tofu.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/tofu_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/tofu_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -435,7 +435,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/canola-oil.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/canola-oil_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/canola-oil_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -464,7 +464,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/brussel-sprouts.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/brussel-sprouts_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/brussel-sprouts_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -493,7 +493,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/peanut-butter.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/peanut-butter_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/peanut-butter_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -522,7 +522,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/almond-butter.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/almond-butter_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/almond-butter_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -551,7 +551,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/seaweed.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/seaweed_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/seaweed_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -580,7 +580,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/pine-nuts.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/pine-nuts_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/pine-nuts_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -609,7 +609,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/lime-juice.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/lime-juice_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/lime-juice_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -638,7 +638,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/lime.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/lime_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/lime_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>
@@ -667,7 +667,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/figs.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img src="img/figs_s.jpg" itemprop="thumbnail" alt="Image description">
+            <img class="b-lazy" src="#" data-src="img/figs_s.jpg" alt="alt-text">
           </a>
         </figure>
       </div>

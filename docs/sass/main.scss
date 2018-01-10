@@ -524,8 +524,14 @@ ul {
   border: 2px solid rgba(91, 192, 222, 0.4);
   border-radius: 10px;
   background-color: #fff;
+  cursor: pointer;
   @media (max-width: 600px) {
-    margin-top: 0;
+    margin-top: 15px;
+  }
+  &--clicked{
+    border: 2px solid rgba(91, 192, 222, 0.95);
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.02), 0 3px 14px 3px rgba(0, 0, 0, 0.02), 0 4px 5px 0 rgba(0, 0, 0, 0.03);
   }
   &__wrapper {
     display: flex;
@@ -571,9 +577,9 @@ ul {
     @media (max-width: 1368px) {
       font-size: 20px;
     }
-    &--show {
+    &--show { //for js onclick
       opacity: 1;
-      pointer-events: auto;
+      pointer-events: auto;    
     }
     &-item {
       width: 100%;
@@ -615,7 +621,7 @@ ul {
   cursor: pointer;
   @media (max-width: 600px) {
     margin-left: 0;
-    margin-top: 0;
+    margin-top: -8px;
     &:last-child {
       margin-left: 10px;
     }
@@ -663,7 +669,7 @@ ul {
   outline: none;
   cursor: pointer;
   @media (max-width: 600px) {
-    margin-top: 0;
+    margin-top: -8px;
   }
   &:hover {
     @media (min-width: 1024px) { //disabled hover for tablets/phones
@@ -717,6 +723,7 @@ ul {
   border-radius: 59px;
   background-color: #fff;
   max-height: 93px;
+  transition: all .3s linear;
   @media (max-width: 1520px) {
     width: 29%;
   }

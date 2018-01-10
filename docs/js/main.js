@@ -7,24 +7,6 @@
 (function() {
   let bLazy = new Blazy();
 })();
-document.getElementById('js-share__wrapper').onclick = function() {
-  if (document.getElementById('js-share').className === 'share share--active') {
-    document.getElementById('js-share').className = 'share';
-  } else {
-    document.getElementById('js-share').className += ' share--active';
-  }
-};
-
-function showCategories() {
-  let content = document.getElementById('js-categories__content');
-  if (window.screen.width <= 1024) {
-    if (content.className === 'categories__content') {
-      content.className += ' categories__content--show';
-    } else {
-      content.className = 'categories__content';
-    }
-  }
-}
 
 function openBurger() {
   let a = document.getElementById('hamburger');
@@ -99,11 +81,14 @@ document.getElementById('js-search').oninput = function() {
   if (document.getElementById('js-search').value.length >= 1) {
     document.getElementsByClassName('categories__name')[0].innerHTML = 'Categories';
   }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
+  }
   (function() {
     let bLazy = new Blazy();
   })();
 };
-
 function inputWithOnlyLow() {
   let matcher = new RegExp(document.getElementById('js-search').value, 'i'); //  i = case-insensitive
   everything();
@@ -116,7 +101,6 @@ function inputWithOnlyLow() {
     }
   }
 }
-
 function inputWithOnlyHigh() {
   let matcher = new RegExp(document.getElementById('js-search').value, 'i'); //  i = case-insensitive
   for (let i = 0; i < fodmapList.length; i++) {
@@ -133,11 +117,101 @@ function inputWithOnlyHigh() {
 //   :::::: F I L T E R I N G   B Y   C A T E G O R Y : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────────────────────────────
 //
-// 1) if category === clicked category show items from this category
+// 1) clean search input
+// 2) if allowed or banned button checked, search only allowed or banned products from clicked category
+// 1) else just show items from this category
 // 2) all categories change their colors to "unpicked"
-// 3) category wich was clicked ("categories__content-item")[number writed by hand] change color to "picked"
+// 3) hide categories on category__content-item click, i have 2 variants of opening the categories, onclick(for tablets/mobiles) and onhover (for desktop)
+// 3) category which was clicked ("categories__content-item")[number written by hand] changed color to "picked"
 // 4) categories name changed to name of clicked categories
-// 5) categories dropdown hide when clicked by display none and after 100ms display = ""
+// 5) categories dropdown hide when clicked, by display none, and after 100ms display = ""
+// 6) download pictures(bLazy)
+document.getElementById('js-share__wrapper').onclick = function() {
+  if (document.getElementById('js-share').className === 'share share--active') {
+    document.getElementById('js-share').className = 'share';
+  } else {
+    document.getElementById('js-share').className += ' share--active';
+  }
+};
+
+var content = document.getElementById('js-categories__content');
+var categories = document.getElementById('js-categories');
+document.getElementById("js-categories").addEventListener("click", function( e ){
+  e = window.event || e; 
+  if(this === e.target) {
+    if (content.className === 'categories__content') {
+      content.className += ' categories__content--show';
+      categories.className += ' categories--clicked';
+    } else {
+      content.className = 'categories__content';
+      categories.className = 'categories';
+    }
+  }
+});
+document.getElementById("js-categories__name").addEventListener("click", function( e ){
+  e = window.event || e; 
+  if(this === e.target) {
+    if (content.className === 'categories__content') {
+      content.className += ' categories__content--show';
+      categories.className += ' categories--clicked';
+    } else {
+      content.className = 'categories__content';
+      categories.className = 'categories';
+    }
+  }
+});
+
+
+function breads() {
+  var clicknutie = document.getElementsByClassName('categories__content-item');
+  var imya;
+  var nomer = clicknutie[];
+  document.getElementById('js-search').value = '';
+  for (let i = 0; i < fodmapList.length; i++) {
+    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
+      if ((fodmapList[i].category === 'Breads, Cereals, Grains and Pasta') && (fodmapList[i].fodmap === 'low')) {
+        document.getElementsByClassName('food')[i].style.display = 'block';
+      } else {
+        document.getElementsByClassName('food')[i].style.display = 'none';
+      }
+    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
+      if ((fodmapList[i].category === 'Breads, Cereals, Grains and Pasta') && (fodmapList[i].fodmap === 'high')) {
+        document.getElementsByClassName('food')[i].style.display = 'block';
+      } else {
+        document.getElementsByClassName('food')[i].style.display = 'none';
+      }
+    } else {
+      if (fodmapList[i].category === 'Breads, Cereals, Grains and Pasta') {
+        document.getElementsByClassName('food')[i].style.display = 'block';
+      } else {
+        document.getElementsByClassName('food')[i].style.display = 'none';
+      }
+    }
+  }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
+  }
+  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
+    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
+  }
+  document.getElementsByClassName('categories__content-item')[1].style.color = '#2B2D42';
+  document.getElementsByClassName('categories__name')[0].innerHTML = 'Breads, Cereals, Grains';
+  document.getElementsByClassName('categories__content')[0].style.display = 'none';
+  setTimeout(function() {
+    document.getElementsByClassName('categories__content')[0].style.display = '';
+  }, 100); // LOL IT WORKS
+  
+  (function() {
+    let bLazy = new Blazy();
+  })();
+  }
+
+
+
+
+
+
 
 function breads() {
   document.getElementById('js-search').value = '';
@@ -162,6 +236,10 @@ function breads() {
       }
     }
   }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
+  }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
   }
@@ -171,10 +249,11 @@ function breads() {
   setTimeout(function() {
     document.getElementsByClassName('categories__content')[0].style.display = '';
   }, 100); // LOL IT WORKS
+  
   (function() {
     let bLazy = new Blazy();
   })();
-}
+  }
 
 function vegetables() {
   document.getElementById('js-search').value = '';
@@ -198,6 +277,10 @@ function vegetables() {
         document.getElementsByClassName('food')[i].style.display = 'none';
       }
     }
+  }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
   }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
@@ -236,6 +319,10 @@ function fruits() {
       }
     }
   }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
+  }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
   }
@@ -272,6 +359,10 @@ function drinks() {
         document.getElementsByClassName('food')[i].style.display = 'none';
       }
     }
+  }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
   }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
@@ -310,6 +401,10 @@ function meat() {
       }
     }
   }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
+  }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
   }
@@ -346,6 +441,10 @@ function condiments() {
         document.getElementsByClassName('food')[i].style.display = 'none';
       }
     }
+  }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
   }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
@@ -384,6 +483,10 @@ function milk() {
       }
     }
   }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
+  }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
   }
@@ -419,6 +522,10 @@ function sweeteners() {
       } else {
         document.getElementsByClassName('food')[i].style.display = 'none';
       }
+    }
+    if (content.className === 'categories__content categories__content--show') {
+      content.className = 'categories__content';
+      categories.className = 'categories';
     }
     for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
       document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
@@ -457,7 +564,10 @@ function dairy() {
         document.getElementsByClassName('food')[i].style.display = 'none';
       }
     }
-
+    if (content.className === 'categories__content categories__content--show') {
+      content.className = 'categories__content';
+      categories.className = 'categories';
+    }
     for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
       document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
     }
@@ -496,6 +606,10 @@ function cheese() {
       }
     }
   }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
+  }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
   }
@@ -533,6 +647,10 @@ function nuts() {
       }
     }
   }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
+  }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
   }
@@ -565,6 +683,10 @@ function everything() {
     } else {
       document.getElementsByClassName('food')[i].style.display = 'block';
     }
+  }
+  if (content.className === 'categories__content categories__content--show') {
+    content.className = 'categories__content';
+    categories.className = 'categories';
   }
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
