@@ -1,3 +1,5 @@
+
+//fix details margin in case of hyphenation
 var details = document.getElementsByClassName('food__details');
 var titleName = document.getElementsByClassName('food__title-name');
 function adaptDetailsMargin() {

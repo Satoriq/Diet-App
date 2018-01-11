@@ -3,6 +3,7 @@
 //   :::::: C R E A T I N G   A   B L O C K S  W I T H  F O O D: :  :   :    :     :
 // ────────────────────────────────────────────────────────────────────────────────
 //
+// Make blocks of food from json file 
 
 // Creating a preety circles right of Oligos, lactose....
 for (var i = 0; i < fodmapList.length; i++) {

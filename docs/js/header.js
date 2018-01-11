@@ -4,6 +4,40 @@
 // ────────────────────────────────────────────────────────────────────
 //
 
+//Burger menu
+function openBurger() {
+  let a = document.getElementById('hamburger');
+  if (a.className === 'hamburger') {
+    a.className += ' hamburger--active';
+  }
+  else {
+    a.className = 'hamburger';
+  }
+  let x = document.getElementById('navbar');
+  if (x.className === 'nav__bar') {
+      x.className += ' nav__bar--open';
+  }
+  else {
+      x.className = 'nav__bar';
+  }
+
+  let y = document.getElementById('js-header');
+  if (y.className === 'nav__logo') {
+      y.className += ' nav__logo--hide';
+  }
+  else {
+      y.className = 'nav__logo';
+  }
+
+  let z = document.getElementById('js-nav__info');
+  if (z.className === 'nav__info') {
+      z.className += ' nav__info--show';
+  }
+  else {
+      z.className = 'nav__info';
+  }
+}
+
 //Detecting wheel direction based on https://deepmikoto.com/coding/1--javascript-detect-mouse-wheel-direction
 function detectWheelDirection(e) {
   let delta = null,
@@ -41,11 +75,10 @@ if (window.addEventListener) { // Integrate direction logic with listeners for f
 
 
 
+
 window.onscroll = function () {
   showGoTop();
 };
-
-
 
 // If user at the bottom and click on logo, scroll top, otherwise go to main page
 document.getElementById('js-header').onclick = function(){

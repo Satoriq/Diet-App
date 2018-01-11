@@ -3,52 +3,29 @@
 // then do it better.
 // Now I'm at the first stage =)
 
+
 // Initialize Blazy
 (function() {
   let bLazy = new Blazy();
 })();
-
-function openBurger() {
-  let a = document.getElementById('hamburger');
-  if (a.className === 'hamburger') {
-    a.className += ' hamburger--active';
+// Share button
+document.getElementById('js-share__wrapper').onclick = function() {
+  if (document.getElementById('js-share').className === 'share share--active') {
+    document.getElementById('js-share').className = 'share';
+  } else {
+    document.getElementById('js-share').className += ' share--active';
   }
-  else {
-    a.className = 'hamburger';
-  }
-  let x = document.getElementById('navbar');
-  if (x.className === 'nav__bar') {
-      x.className += ' nav__bar--open';
-  }
-  else {
-      x.className = 'nav__bar';
-  }
-
-  let y = document.getElementById('js-header');
-  if (y.className === 'nav__logo') {
-      y.className += ' nav__logo--hide';
-  }
-  else {
-      y.className = 'nav__logo';
-  }
-
-  let z = document.getElementById('js-nav__info');
-  if (z.className === 'nav__info') {
-      z.className += ' nav__info--show';
-  }
-  else {
-      z.className = 'nav__info';
-  }
-}
-
+};
 //
 // ────────────────────────────────────────────────────────────────────── I ──────────
 //   :::::: S E A R C H I N G   B Y   I N P U T : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────────────────
 //
+// small note, style.display = 'block' the best choice for performance
+// trying to solve this by add/clear class is bad for performance, the same as trying to make showing more smoother
 document.getElementById('js-search').oninput = function() {
+  let matcher = new RegExp(document.getElementById('js-search').value, 'i'); //  i = case-insensitive
   if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-    let matcher = new RegExp(document.getElementById('js-search').value, 'i'); //  i = case-insensitive
     for (let i = 0; i < fodmapList.length; i++) {
       if ((matcher.test(fodmapList[i].name)) && (fodmapList[i].fodmap === 'low')) {
         document.getElementsByClassName('food')[i].style.display = 'block';
@@ -57,26 +34,24 @@ document.getElementById('js-search').oninput = function() {
       }
     }
   } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-    let matcher2 = new RegExp(document.getElementById('js-search').value, 'i'); //  i = case-insensitive
-    for (let a = 0; a < fodmapList.length; a++) {
-      if ((matcher2.test(fodmapList[a].name)) && (fodmapList[a].fodmap === 'high')) {
-        document.getElementsByClassName('food')[a].style.display = 'block';
+    for (let i = 0; i < fodmapList.length; i++) {
+      if ((matcher.test(fodmapList[i].name)) && (fodmapList[i].fodmap === 'high')) {
+        document.getElementsByClassName('food')[i].style.display = 'block';
       } else {
-        document.getElementsByClassName('food')[a].style.display = 'none';
+        document.getElementsByClassName('food')[i].style.display = 'none';
       }
     }
-  } else {
-    let matcher3 = new RegExp(document.getElementById('js-search').value, 'i'); //  i = case-insensitive
-    for (let b = 0; b < fodmapList.length; b++) {
-      if (matcher3.test(fodmapList[b].name)) {
-        document.getElementsByClassName('food')[b].style.display = 'block';
+  } else { 
+    for (let i = 0; i < fodmapList.length; i++) {
+      if (matcher.test(fodmapList[i].name)) {
+        document.getElementsByClassName('food')[i].style.display = 'block';
       } else {
-        document.getElementsByClassName('food')[b].style.display = 'none';
+        document.getElementsByClassName('food')[i].style.display = 'none';
       }
     }
   }
-  for (let c = 0; c < document.getElementsByClassName('categories__content-item').length; c++) {
-    document.getElementsByClassName('categories__content-item')[c].style.color = '#8190a5';
+  for (let i = 0; i < document.getElementsByClassName('categories__content-item').length; i++) {
+    document.getElementsByClassName('categories__content-item')[i].style.color = '#8190a5';
   }
   if (document.getElementById('js-search').value.length >= 1) {
     document.getElementsByClassName('categories__name')[0].innerHTML = 'Categories';
@@ -89,20 +64,9 @@ document.getElementById('js-search').oninput = function() {
     let bLazy = new Blazy();
   })();
 };
-function inputWithOnlyLow() {
-  let matcher = new RegExp(document.getElementById('js-search').value, 'i'); //  i = case-insensitive
-  everything();
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Categories';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (matcher.test(fodmapList[i].name)) {
-      document.getElementsByClassName('food')[i].style.display = 'block';
-    } else {
-      document.getElementsByClassName('food')[i].style.display = 'none';
-    }
-  }
-}
-function inputWithOnlyHigh() {
-  let matcher = new RegExp(document.getElementById('js-search').value, 'i'); //  i = case-insensitive
+
+function inputWithOnlyButtons() {
+  let matcher = new RegExp(document.getElementById('js-search').value, 'i'); 
   for (let i = 0; i < fodmapList.length; i++) {
     if (matcher.test(fodmapList[i].name)) {
       document.getElementsByClassName('food')[i].style.display = 'block';
@@ -117,23 +81,8 @@ function inputWithOnlyHigh() {
 //   :::::: F I L T E R I N G   B Y   C A T E G O R Y : :  :   :    :     :        :          :
 // ────────────────────────────────────────────────────────────────────────────────────────────
 //
-// 1) clean search input
-// 2) if allowed or banned button checked, search only allowed or banned products from clicked category
-// 1) else just show items from this category
-// 2) all categories change their colors to "unpicked"
-// 3) hide categories on category__content-item click, i have 2 variants of opening the categories, onclick(for tablets/mobiles) and onhover (for desktop)
-// 3) category which was clicked ("categories__content-item")[number written by hand] changed color to "picked"
-// 4) categories name changed to name of clicked categories
-// 5) categories dropdown hide when clicked, by display none, and after 100ms display = ""
-// 6) download pictures(bLazy)
-document.getElementById('js-share__wrapper').onclick = function() {
-  if (document.getElementById('js-share').className === 'share share--active') {
-    document.getElementById('js-share').className = 'share';
-  } else {
-    document.getElementById('js-share').className += ' share--active';
-  }
-};
 
+// Show categories 
 var content = document.getElementById('js-categories__content');
 var categories = document.getElementById('js-categories');
 document.getElementById("js-categories").addEventListener("click", function( e ){
@@ -162,26 +111,36 @@ document.getElementById("js-categories__name").addEventListener("click", functio
 });
 
 
-function breads() {
-  var clicknutie = document.getElementsByClassName('categories__content-item');
-  var imya;
-  var nomer = clicknutie[];
+/*=============================================
+=            FILTERING BUTTONS               =
+=============================================*/
+// 1) Get category name and order by onclick in html
+// 2) clean search input
+// 3) if allowed or banned button checked, search only allowed or banned products from clicked category
+// 4) else just show items from this category
+// 5) all categories change their colors to "unpicked"
+// 6) hide categories on category__content-item click, i have 2 variants of opening the categories, onclick(for tablets/mobiles) and onhover (for desktop)
+// 7) category which was clicked ("categories__content-item")[number written by hand] changed color to "picked"
+// 8) categories name changed to name of clicked categories
+// 9) categories dropdown hide when category was clicked, by display none, and after 100ms display = ""
+// 10) download pictures (initialize bLazy)
+function filtering(categoryName, contentOrder){
   document.getElementById('js-search').value = '';
   for (let i = 0; i < fodmapList.length; i++) {
     if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Breads, Cereals, Grains and Pasta') && (fodmapList[i].fodmap === 'low')) {
+      if ((fodmapList[i].category === categoryName) && (fodmapList[i].fodmap === 'low')) {
         document.getElementsByClassName('food')[i].style.display = 'block';
       } else {
         document.getElementsByClassName('food')[i].style.display = 'none';
       }
     } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Breads, Cereals, Grains and Pasta') && (fodmapList[i].fodmap === 'high')) {
+      if ((fodmapList[i].category === categoryName) && (fodmapList[i].fodmap === 'high')) {
         document.getElementsByClassName('food')[i].style.display = 'block';
       } else {
         document.getElementsByClassName('food')[i].style.display = 'none';
       }
     } else {
-      if (fodmapList[i].category === 'Breads, Cereals, Grains and Pasta') {
+      if (fodmapList[i].category === categoryName) {
         document.getElementsByClassName('food')[i].style.display = 'block';
       } else {
         document.getElementsByClassName('food')[i].style.display = 'none';
@@ -195,476 +154,18 @@ function breads() {
   for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
     document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
   }
-  document.getElementsByClassName('categories__content-item')[1].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Breads, Cereals, Grains';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
+  document.getElementsByClassName('categories__content-item')[contentOrder].style.color = '#2B2D42';
+  document.getElementsByClassName('categories__name')[0].innerHTML = categoryName;
+  document.getElementById('js-categories__content').style.display = 'none';
   setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100); // LOL IT WORKS
-  
+    document.getElementById('js-categories__content').style.display = '';
+  }, 100); // lol, it works
   (function() {
     let bLazy = new Blazy();
   })();
   }
 
-
-
-
-
-
-
-function breads() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Breads, Cereals, Grains and Pasta') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Breads, Cereals, Grains and Pasta') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Breads, Cereals, Grains and Pasta') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-  }
-  if (content.className === 'categories__content categories__content--show') {
-    content.className = 'categories__content';
-    categories.className = 'categories';
-  }
-  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-  }
-  document.getElementsByClassName('categories__content-item')[1].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Breads, Cereals, Grains';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100); // LOL IT WORKS
-  
-  (function() {
-    let bLazy = new Blazy();
-  })();
-  }
-
-function vegetables() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Vegetables and legumes') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Vegetables and legumes') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Vegetables and legumes') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-  }
-  if (content.className === 'categories__content categories__content--show') {
-    content.className = 'categories__content';
-    categories.className = 'categories';
-  }
-  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-  }
-  document.getElementsByClassName('categories__content-item')[2].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Vegetables and legumes';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
-function fruits() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Fruit') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Fruit') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Fruit') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-  }
-  if (content.className === 'categories__content categories__content--show') {
-    content.className = 'categories__content';
-    categories.className = 'categories';
-  }
-  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-  }
-  document.getElementsByClassName('categories__content-item')[3].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Fruits';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
-function drinks() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Drinks') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Drinks') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Drinks') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-  }
-  if (content.className === 'categories__content categories__content--show') {
-    content.className = 'categories__content';
-    categories.className = 'categories';
-  }
-  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-  }
-  document.getElementsByClassName('categories__content-item')[4].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Drinks';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
-function meat() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Meat and Substitutes') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Meat and Substitutes') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Meat and Substitutes') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-  }
-  if (content.className === 'categories__content categories__content--show') {
-    content.className = 'categories__content';
-    categories.className = 'categories';
-  }
-  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-  }
-  document.getElementsByClassName('categories__content-item')[5].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Meat and Substitutes';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
-function condiments() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Condiments') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Condiments') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Condiments') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-  }
-  if (content.className === 'categories__content categories__content--show') {
-    content.className = 'categories__content';
-    categories.className = 'categories';
-  }
-  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-  }
-  document.getElementsByClassName('categories__content-item')[6].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Condiments';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
-function milk() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Milk') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Milk') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Milk') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-  }
-  if (content.className === 'categories__content categories__content--show') {
-    content.className = 'categories__content';
-    categories.className = 'categories';
-  }
-  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-  }
-  document.getElementsByClassName('categories__content-item')[7].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Milk';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
-function sweeteners() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Sweeteners') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Sweeteners') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Sweeteners') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-    if (content.className === 'categories__content categories__content--show') {
-      content.className = 'categories__content';
-      categories.className = 'categories';
-    }
-    for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-      document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-    }
-  }
-  document.getElementsByClassName('categories__content-item')[8].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Sweeteners';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
-function dairy() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Dairy') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Dairy') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Dairy') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-    if (content.className === 'categories__content categories__content--show') {
-      content.className = 'categories__content';
-      categories.className = 'categories';
-    }
-    for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-      document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-    }
-  }
-  document.getElementsByClassName('categories__content-item')[9].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Dairy';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
-function cheese() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Cheese') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Cheese') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Cheese') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-  }
-  if (content.className === 'categories__content categories__content--show') {
-    content.className = 'categories__content';
-    categories.className = 'categories';
-  }
-  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-  }
-  document.getElementsByClassName('categories__content-item')[10].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Cheese';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
-function nuts() {
-  document.getElementById('js-search').value = '';
-  for (let i = 0; i < fodmapList.length; i++) {
-    if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
-      if ((fodmapList[i].category === 'Nuts and Seeds') && (fodmapList[i].fodmap === 'low')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else if (document.getElementById('js-high').className === 'banned banned--checked') {
-      if ((fodmapList[i].category === 'Nuts and Seeds') && (fodmapList[i].fodmap === 'high')) {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    } else {
-      if (fodmapList[i].category === 'Nuts and Seeds') {
-        document.getElementsByClassName('food')[i].style.display = 'block';
-      } else {
-        document.getElementsByClassName('food')[i].style.display = 'none';
-      }
-    }
-  }
-  if (content.className === 'categories__content categories__content--show') {
-    content.className = 'categories__content';
-    categories.className = 'categories';
-  }
-  for (let a = 0; a < document.getElementsByClassName('categories__content-item').length; a++) {
-    document.getElementsByClassName('categories__content-item')[a].style.color = '#8190a5';
-  }
-  document.getElementsByClassName('categories__content-item')[11].style.color = '#2B2D42';
-  document.getElementsByClassName('categories__name')[0].innerHTML = 'Nuts and Seeds';
-  document.getElementsByClassName('categories__content')[0].style.display = 'none';
-  setTimeout(function() {
-    document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 100);
-  (function() {
-    let bLazy = new Blazy();
-  })();
-}
-
+  //When user click All category
 function everything() {
   document.getElementById('js-search').value = '';
   for (let i = 0; i < fodmapList.length; i++) {
@@ -702,7 +203,7 @@ function everything() {
   })();
 }
 
-
+//Sort by low and high
 function findLow() {
   for (var i = 0; i < fodmapList.length; i++) {
     if ((fodmapList[i].fodmap === 'low') && (document.getElementsByClassName('food')[i].style.display === 'block')) {
@@ -714,32 +215,32 @@ function findLow() {
   if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
     document.getElementById('js-allowed').className = 'allowed';
     if (document.getElementById('js-search').value.length >= 1) {
-      inputWithOnlyHigh();
+      inputWithOnlyButtons();
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Categories') {
       everything();
       document.getElementsByClassName('categories__name')[0].innerHTML = 'Categories';
-    } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Breads, Cereals, Grains') {
-      breads();
+    } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Breads, Cereals, Grains and Pasta') {
+      filtering('Breads, Cereals, Grains and Pasta', 1);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Vegetables and legumes') {
-      vegetables();
-    } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Fruits') {
-      fruits();
+      filtering('Vegetables and legumes', 2);
+    } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Fruit') {
+      filtering('Fruit', 3);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Drinks') {
-      drinks();
+      filtering('Drinks', 4);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Meat and Substitutes') {
-      meat();
+      filtering('Meat and Substitutes', 5);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Condiments') {
-      condiments();
+      filtering('Condiments', 6);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Milk') {
-      milk();
+      filtering('Milk', 7);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Sweeteners') {
-      sweeteners();
+      filtering('Sweeteners', 8);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Dairy') {
-      dairy();
+      filtering('Dairy', 9);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Cheese') {
-      cheese();
+      filtering('Cheese', 10);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Nuts and Seeds') {
-      nuts();
+      filtering('Nuts and Seeds', 11);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'All') {
       everything();
     } else if ((document.getElementsByClassName('food').style.display === 'block') && (fodmapList[i].fodmap === 'low')) {
@@ -764,32 +265,32 @@ function findHigh() {
   if (document.getElementById('js-high').className === 'banned banned--checked') {
     document.getElementById('js-high').className = 'banned';
     if (document.getElementById('js-search').value.length >= 1) {
-      inputWithOnlyHigh();
+      inputWithOnlyButtons();
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Categories') {
       everything();
       document.getElementsByClassName('categories__name')[0].innerHTML = 'Categories';
-    } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Breads, Cereals, Grains') {
-      breads();
+    } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Breads, Cereals, Grains and Pasta') {
+      filtering('Breads, Cereals, Grains and Pasta', 1);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Vegetables and legumes') {
-      vegetables();
-    } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Fruits') {
-      fruits();
+      filtering('Vegetables and legumes', 2);
+    } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Fruit') {
+      filtering('Fruit', 3);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Drinks') {
-      drinks();
+      filtering('Drinks', 4);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Meat and Substitutes') {
-      meat();
+      filtering('Meat and Substitutes', 5);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Condiments') {
-      condiments();
+      filtering('Condiments', 6);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Milk') {
-      milk();
+      filtering('Milk', 7);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Sweeteners') {
-      sweeteners();
+      filtering('Sweeteners', 8);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Dairy') {
-      dairy();
+      filtering('Dairy', 9);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Cheese') {
-      cheese();
+      filtering('Cheese', 10);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'Nuts and Seeds') {
-      nuts();
+      filtering('Nuts and Seeds', 11);
     } else if (document.getElementsByClassName('categories__name')[0].innerHTML === 'All') {
       everything();
     } else if ((document.getElementsByClassName('food').style.display === 'block') && (fodmapList[i].fodmap === 'high')) {
@@ -803,6 +304,7 @@ function findHigh() {
   })();
 }
 
+// If banned/allowed button was clicked and user click second button
 document.getElementById('js-allowed').onclick = function() {
   if (document.getElementById('js-high').className === 'banned banned--checked') {
     document.getElementById('js-high').click();
@@ -811,7 +313,6 @@ document.getElementById('js-allowed').onclick = function() {
     findLow();
   }
 };
-
 document.getElementById('js-high').onclick = function() {
   if (document.getElementById('js-allowed').className === 'allowed allowed--checked') {
     document.getElementById('js-allowed').click();

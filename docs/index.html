@@ -4,10 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>FODMAP App: Your assistant in a low fodmap diet</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111728145-1"></script>
   <script>
@@ -27,17 +26,17 @@
   <link rel="shortcut icon" href="img/favicon.ico">
   <meta name="msapplication-config" content="browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-  <!-- FACEBOOK THUMBNAIL -->
+  <!-- FACEBOOK/TWITTER THUMBNAIL/CARD -->
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://i.imgur.com/jm68tQv.jpg" />
   <meta property="og:title" content="Fodmap App =)" />
   <meta property="og:description" content="This app can help you adhere to a low fodmap diet." />
-  <meta property="og:url" content="https://fodmap-app.me" />
+  <meta property="og:url" content="fodmap-app.me" />
   <!-- CSS -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/photoswipe.css">
-  <link rel="stylesheet" href="css/default-skin/default-skin.css">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/photoswipe.css" rel="stylesheet">
+  <link href="css/default-skin/default-skin.css" rel="stylesheet">
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800,900" rel="stylesheet">
 </head>
@@ -45,11 +44,11 @@
 
 
 <body>
-  <header role="banner">
+  <header>
     <nav id="navbar" class="nav__bar">
       <div id="js-nav" class="nav">
         <div id="js-header" class="nav__logo">
-          <img class="nav__logo-image" src="img/logo.png" alt="logo" height="65px" width="65px">
+          <img class="nav__logo-image" src="img/logo.png" alt="logo" height="65" width="65">
           <h1 class="nav__logo-name">FODMAP App</h1>
         </div>
         <ul id="js-nav__info" class="nav__info">
@@ -129,7 +128,7 @@
 
   <!-- INPUT SEARCH -->
   <input id="js-search" class="search" type="text" placeholder="Product name...">
-  
+
   <!-- FILTER BUTTONS START -->
   <div class="filters">
     <div id="js-categories" class="categories">
@@ -137,27 +136,27 @@
       <div id="js-categories__content" class="categories__content">
         <button class="categories__content-item" onclick="everything()"> &#128257; All</button>
         <br>
-        <button class="categories__content-item" onclick="breads()"> &#127838;Breads, Cereals, Grains</button>
+        <button class="categories__content-item" onclick="filtering('Breads, Cereals, Grains and Pasta', 1)"> &#127838;Breads, Cereals, Grains</button>
         <br>
-        <button class="categories__content-item" onclick="vegetables()"> &#127814; Vegetables</button>
+        <button class="categories__content-item" onclick="filtering('Vegetables and legumes', 2)"> &#127814; Vegetables</button>
         <br>
-        <button class="categories__content-item" onclick="fruits()"> &#127827; Fruits</button>
+        <button class="categories__content-item" onclick="filtering('Fruit', 3)"> &#127827; Fruits</button>
         <br>
-        <button class="categories__content-item" onclick="drinks()"> &#127863; Drinks</button>
+        <button class="categories__content-item" onclick="filtering('Drinks', 4)"> &#127863; Drinks</button>
         <br>
-        <button class="categories__content-item" onclick="meat()"> &#127831; Meat &amp; Substitutes</button>
+        <button class="categories__content-item" onclick="filtering('Meat and Substitutes', 5)"> &#127831; Meat &amp; Substitutes</button>
         <br>
-        <button class="categories__content-item" onclick="condiments()"> &#127835; Condiments</button>
+        <button class="categories__content-item" onclick="filtering('Condiments', 6)"> &#127835; Condiments</button>
         <br>
-        <button class="categories__content-item" onclick="milk()"> &#127868; Milk</button>
+        <button class="categories__content-item" onclick="filtering('Milk', 7)"> &#127868; Milk</button>
         <br>
-        <button class="categories__content-item" onclick="sweeteners()"> &#127852; Sweeteners</button>
+        <button class="categories__content-item" onclick="filtering('Sweeteners', 8)"> &#127852; Sweeteners</button>
         <br>
-        <button class="categories__content-item" onclick="dairy()"> &#127846; Dairy</button>
+        <button class="categories__content-item" onclick="filtering('Dairy', 9)"> &#127846; Dairy</button>
         <br>
-        <button class="categories__content-item" onclick="cheese()"> &#129472; Cheese</button>
+        <button class="categories__content-item" onclick="filtering('Cheese', 10)"> &#129472; Cheese</button>
         <br>
-        <button class="categories__content-item" onclick="nuts()"> &#127792; Nuts and Seeds</button>
+        <button class="categories__content-item" onclick="filtering('Nuts and Seeds', 11)"> &#127792; Nuts and Seeds</button>
         <br>
       </div>
     </div>
@@ -174,7 +173,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/polenta.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/polenta_s.jpg" alt="alt-text">
+            <img src="img/polenta_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -203,7 +202,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/fennel.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/fennel_s.jpg" alt="alt-text">
+            <img src="img/fennel_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -232,7 +231,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/vegetable-oil.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/vegetable-oil_s.jpg" alt="alt-text">
+            <img src="img/vegetable-oil_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -261,7 +260,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/peanut-oil.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/peanut-oil_s.jpg" alt="alt-text">
+            <img src="img/peanut-oil_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -290,7 +289,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/cocoa-powder.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/cocoa-powder_s.jpg" alt="alt-text">
+            <img src="img/cocoa-powder_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -319,7 +318,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/hummus.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/hummus_s.jpg" alt="alt-text">
+            <img src="img/hummus_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -348,7 +347,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/instant-coffee.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/instant-coffee_s.jpg" alt="alt-text">
+            <img src="img/instant-coffee_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -377,7 +376,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/coffee.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/coffee_s.jpg" alt="alt-text">
+            <img src="img/coffee_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -406,7 +405,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/tofu.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/tofu_s.jpg" alt="alt-text">
+            <img src="img/tofu_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -435,7 +434,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/canola-oil.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/canola-oil_s.jpg" alt="alt-text">
+            <img src="img/canola-oil_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -464,7 +463,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/brussel-sprouts.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/brussel-sprouts_s.jpg" alt="alt-text">
+            <img src="img/brussel-sprouts_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -493,7 +492,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/peanut-butter.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/peanut-butter_s.jpg" alt="alt-text">
+            <img src="img/peanut-butter_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -522,7 +521,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/almond-butter.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/almond-butter_s.jpg" alt="alt-text">
+            <img src="img/almond-butter_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -551,7 +550,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/seaweed.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/seaweed_s.jpg" alt="alt-text">
+            <img src="img/seaweed_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -580,7 +579,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/pine-nuts.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/pine-nuts_s.jpg" alt="alt-text">
+            <img src="img/pine-nuts_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -609,7 +608,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/lime-juice.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/lime-juice_s.jpg" alt="alt-text">
+            <img src="img/lime-juice_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -638,7 +637,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/lime.jpeg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/lime_s.jpg" alt="alt-text">
+            <img src="img/lime_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -667,7 +666,7 @@
       <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="img/figs.jpg" itemprop="contentUrl" data-size="1280x850">
-            <img class="b-lazy" src="#" data-src="img/figs_s.jpg" alt="alt-text">
+            <img src="img/figs_s.jpg" itemprop="thumbnail" alt="Image description">
           </a>
         </figure>
       </div>
@@ -13155,20 +13154,19 @@
     </div>
   </div>
   <!-- PHOTOSWIPE END -->
+  <footer>
+    <div class="free-space"> </div>
+  </footer>
 
   <script src="js/blazy.min.js"></script>
   <script src="js/details-fix.js"></script>
   <script src="js/list-of-products.js"></script>
   <script src="js/main.js"></script>
   <script src="js/header.js"></script>
-  <script src="js/Font Awesome/fontawesome.min.js"></script>
-  <script src="js/Font Awesome/fa-solid.js"></script>
-  <script src="js/Font Awesome/fa-brands.js"></script>
+  <script src="js/font-awesome/fontawesome.min.js"></script>
+  <script src="js/font-awesome/fa-solid.js"></script>
+  <script src="js/font-awesome/fa-brands.js"></script>
   <script src="js/photoswipe.js"></script>
   <script src="js/photoswipe-ui-default.min.js"></script>
 </body>
-
-<footer>
-  <div class="free-space"> </div>
-</footer>
 </html>
