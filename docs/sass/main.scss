@@ -5,10 +5,11 @@
 $primary-color: #5bc0de;
 $secondary-color: #f9f9f9;
 $decor-color: #00aedb;
+$main-font: "Nunito", sans-serif;
 
 /*----------  General Styles   ----------*/
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: $main-font;
   background-color: $secondary-color;
 }
 
@@ -21,6 +22,7 @@ ul {
   -webkit-padding-start: 0;
   list-style: none;
 }
+
 
 /*----------  Blazy   ----------*/
 .b-lazy {
@@ -81,6 +83,9 @@ ul {
   &:target {
     visibility: visible;
     opacity: 1;
+    .popup__close, .popup__copy, span{
+      pointer-events: auto;
+    }
   }
 }
 
@@ -93,6 +98,9 @@ ul {
   background: $secondary-color;
   transition: all 5s ease-in-out;
   pointer-events: none;
+  @media (max-width: 1440px) {
+    width: 40%;
+  }
   @media (max-width: 700px) {
     width: 90%;
   }
@@ -105,7 +113,6 @@ ul {
     transition: all 200ms;
     font-weight: bold;
     text-decoration: none;
-    pointer-events: auto;
     &:hover {
       color: $decor-color;
       transition: all 0.25s ease-in-out;
@@ -118,11 +125,37 @@ ul {
     margin-bottom: 10px;
     font-size: 30px;
     color: #6a7481;
+    &--center{
+      display: block;
+      text-align: center;
+    }
+    &--smaller{
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
   }
   &__content {
     font-size: 20px;
     color: #6a7481;
     max-height: 30%;
+    &-mail{
+      color: $decor-color;
+    }
+    h2{
+      text-indent: 20px;
+      margin-top: 5px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+  &__disclaimer{
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: -12px;
+    padding-bottom: 0px;
+    &-info{
+      text-indent: 20px;
+    }
   }
 }
 
@@ -326,7 +359,7 @@ ul {
     &-name {
       margin-top: 22px;
       font-size: 27px;
-      font-family: "Nunito", sans-serif;
+      font-family: $main-font;
       color: $secondary-color;
       font-weight: bold;
       white-space: nowrap;
@@ -432,7 +465,7 @@ ul {
   margin-top: 150px;
   text-align: center;
   font-size: 23px;
-  font-family: "Nunito", sans-serif;
+  font-family: $main-font;
   color: #6a7481;
   border: 3px solid rgba(91, 192, 222, 0.6);
   border-radius: 30.5px;
@@ -440,20 +473,24 @@ ul {
   transition: all 0.25s ease;
   outline: none;
   @media (max-width: 1600px) {
-    width: 22%;
-  }
-  @media (max-width: 1200px) {
     width: 25%;
   }
+  @media (max-width: 1200px) {
+    width: 30%;
+  }
   @media (max-width: 1024px) {
-    width: 27.5%;
+    width: 35%;
   }
   @media (max-width: 700px) {
-    width: 35%;
+    width: 40%;
   }
   @media (max-width: 600px) {
     width: 314px;
     margin-top: 115px;
+  }
+  @media (max-width: 350px) {
+    width: 90%;
+    margin-top: 100px;
   }
   &:hover {
     border: 3px solid rgba(91, 192, 222, 0.85);
@@ -462,19 +499,19 @@ ul {
     border: 3px solid rgba(91, 192, 222, 0.95);
     transition: width 0.5s ease;
     @media (min-width: 475px) {
-      width: 35%;
+      width: 32%;
     }
     @media (max-width: 1600px) and (min-width: 600px) {
-      width: 38.5%;
+      width: 40%;
     }
     @media (max-width: 1200px) and (min-width: 600px) {
-      width: 42%;
+      width: 45%;
     }
     @media (max-width: 1024px) and (min-width: 600px) {
-      width: 44.5%;
+      width: 50%;
     }
     @media (max-width: 700px) and (min-width: 600px) {
-      width: 50%;
+      width: 55%;
     }
   }
   &::-webkit-input-placeholder {
@@ -507,6 +544,9 @@ ul {
     flex-direction: column;
     align-items: center;
   }
+  @media (max-width: 350px) {
+    width: 90%;
+  }
 }
 
 .categories {
@@ -519,7 +559,7 @@ ul {
   margin-bottom: 20px;
   text-align: center;
   font-size: 22px;
-  font-family: "Nunito", sans-serif;
+  font-family: $main-font;
   color: #8190a5;
   border: 2px solid rgba(91, 192, 222, 0.4);
   border-radius: 10px;
@@ -527,6 +567,9 @@ ul {
   cursor: pointer;
   @media (max-width: 600px) {
     margin-top: 15px;
+  }
+  @media (max-width: 350px) {
+    width: 100%;
   }
   &--clicked{
     border: 2px solid rgba(91, 192, 222, 0.95);
@@ -542,6 +585,9 @@ ul {
     }
     @media (max-width: 475px) {
       width: 314px;
+    }
+    @media (max-width: 350px) {
+      width: 100%;
     }
   }
   &:hover {
@@ -586,7 +632,7 @@ ul {
       padding-top: 5px;
       padding-bottom: 5px;
       text-align: left;
-      font-family: "Nunito", sans-serif;
+      font-family: $main-font;
       color: #8190a5;
       border: none;
       background: none;
@@ -611,7 +657,7 @@ ul {
   margin-left: 10px;
   margin-top: 20px;
   font-size: 22px;
-  font-family: "Nunito", sans-serif;
+  font-family: $main-font;
   color: #58c858;
   border: 3px solid rgba(88, 200, 88, 0.4);
   border-radius: 10px;
@@ -660,7 +706,7 @@ ul {
   margin-left: 10px;
   margin-top: 20px;
   font-size: 22px;
-  font-family: "Nunito", sans-serif;
+  font-family: $main-font;
   color: rgba(217, 83, 79, 0.9);
   border: 3px solid rgba(217, 83, 79, 0.4);
   border-radius: 10px;
