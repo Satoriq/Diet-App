@@ -5,6 +5,7 @@
 $primary-color: #5bc0de;
 $secondary-color: #f9f9f9;
 $decor-color: #00aedb;
+$inner-color: #fff;
 $main-font: "Nunito", sans-serif;
 
 /*----------  General Styles   ----------*/
@@ -96,7 +97,7 @@ ul {
   margin: 70px auto;
   border-radius: 5px;
   background: $secondary-color;
-  transition: all 5s ease-in-out;
+  transition: all 4s ease-in-out;
   pointer-events: none;
   @media (max-width: 1440px) {
     width: 40%;
@@ -147,21 +148,20 @@ ul {
       font-size: 20px;
       font-weight: 400;
     }
+    p{
+      text-indent: 20px;
+    }
   }
   &__disclaimer{
     text-align: center;
     font-size: 22px;
     margin-bottom: -12px;
-    padding-bottom: 0px;
-    &-info{
-      text-indent: 20px;
-    }
   }
 }
 
 
 /*=============================================
-=     UI BUTTONS (HAMBURGER, TOP, SHARE)      =
+=     SIDE BUTTONS (HAMBURGER, TOP, SHARE)      =
 =============================================*/
 
 /*----------  HAMBURGER BUTTON ----------*/
@@ -270,7 +270,7 @@ ul {
         }
       }
       &:hover {
-        color: #fff;
+        color: $inner-color;
         transition: all 0.25s ease;
         transform: translateY(-5px);
       }
@@ -304,7 +304,6 @@ ul {
   right: 22px;
   bottom: 80px;
   padding: 5px 14px 5px 14px;
-  margin: 0 auto;
   font-size: 35px;
   color: $secondary-color;
   border-radius: 50%;
@@ -326,11 +325,7 @@ ul {
     transform: translateY(0px);
   }
 }
-
-.fa-arrow-alt-circle-up {
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
-}
-/*=====  End of UI BUTTONS  ======*/
+/*=====  End of SIDE BUTTONS  ======*/
 
 
 /*=============================================
@@ -343,7 +338,7 @@ ul {
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  z-index: 3;
+  z-index: 51;
   @media (max-width: 1440px) {
     width: 82%;
   }
@@ -392,7 +387,7 @@ ul {
       .nav__bar {
         position: absolute;
       }
-      .nav__info-item {
+      .nav__info-item {  //menu items when hamburger is open
         display: block;
         position: relative;
         top: 22px;
@@ -401,17 +396,15 @@ ul {
       }
     }
     &-item {
-      display: inline-block;
+      display: inline-block; //for hover effect
       position: relative;
-      padding-bottom: 8px;
+      padding-bottom: 8px; //for hover effect
       margin-left: 50px;
       margin-top: 15px;
       font-size: 19px;
       color: $secondary-color;
       cursor: pointer;
-      list-style: none;
       font-weight: bold;
-      text-decoration: none;
       letter-spacing: 0.15em;
       @media (max-width: 1200px) {
         margin-left: 30px;
@@ -419,7 +412,7 @@ ul {
       @media (max-width: 700px) {
         display: none;
       }
-      &:after { //underline
+      &:after { //for hover effect underline
         display: block;
         position: absolute;
         bottom: 0;
@@ -432,7 +425,7 @@ ul {
         content: "";
       }
       &:hover {
-        color: #fff;
+        color: $inner-color;
         transition: all 0.25s ease;
         transform: translateY(-1px);
       }
@@ -469,7 +462,7 @@ ul {
   color: #6a7481;
   border: 3px solid rgba(91, 192, 222, 0.6);
   border-radius: 30.5px;
-  background-color: #fff;
+  background-color: $inner-color;
   transition: all 0.25s ease;
   outline: none;
   @media (max-width: 1600px) {
@@ -498,7 +491,7 @@ ul {
   &:focus {
     border: 3px solid rgba(91, 192, 222, 0.95);
     transition: width 0.5s ease;
-    @media (min-width: 475px) {
+    @media (mix-width: 1600px) {
       width: 32%;
     }
     @media (max-width: 1600px) and (min-width: 600px) {
@@ -563,7 +556,7 @@ ul {
   color: #8190a5;
   border: 2px solid rgba(91, 192, 222, 0.4);
   border-radius: 10px;
-  background-color: #fff;
+  background-color: $inner-color;
   cursor: pointer;
   @media (max-width: 600px) {
     margin-top: 15px;
@@ -595,10 +588,8 @@ ul {
     transition: all 0.25s ease;
     box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.02), 0 3px 14px 3px rgba(0, 0, 0, 0.02), 0 4px 5px 0 rgba(0, 0, 0, 0.03);
     & .categories__content {
-      @media (min-width: 1025px) {
-        opacity: 1;
-        pointer-events: auto;
-      }
+      opacity: 1;
+      pointer-events: auto;
     }
   }
   &__content {
@@ -607,11 +598,10 @@ ul {
     left: -2px;
     width: 100%;
     padding-top: 10px;
-    text-align: center;
     font-size: 21px;
     border: 2px solid rgba(91, 192, 222, 1);
     background-color: $secondary-color;
-    background-color: #fff;
+    background-color: $inner-color;
     transition: all 0.3s ease;
     pointer-events: none;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
@@ -653,7 +643,6 @@ ul {
 .allowed {
   width: 268px;
   height: 50px;
-  padding: 0;
   margin-left: 10px;
   margin-top: 20px;
   font-size: 22px;
@@ -661,20 +650,17 @@ ul {
   color: #58c858;
   border: 3px solid rgba(88, 200, 88, 0.4);
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: $inner-color;
   transition: all 0.25s ease;
   outline: none;
   cursor: pointer;
   @media (max-width: 600px) {
     margin-left: 0;
     margin-top: -8px;
-    &:last-child {
-      margin-left: 10px;
-    }
   }
   &:hover {
     @media (min-width: 1025px) { //disabled hover for tablets/phones
-      color: #fff;
+      color: $inner-color;
       border: 3px solid rgba(88, 200, 88, 0.7);
       background-color: #58c858;
       transition: all 0.25s ease;
@@ -685,7 +671,7 @@ ul {
     transform: translateY(0px);
   }
   &--checked {
-    color: #fff;
+    color: $inner-color;
     border: 3px solid #58c858;
     background-color: #58c858;
     box-shadow: 2px 5px 10px #e4e4e4;
@@ -702,7 +688,6 @@ ul {
 .banned {
   width: 268px;
   height: 50px;
-  padding: 0;
   margin-left: 10px;
   margin-top: 20px;
   font-size: 22px;
@@ -710,7 +695,7 @@ ul {
   color: rgba(217, 83, 79, 0.9);
   border: 3px solid rgba(217, 83, 79, 0.4);
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: $inner-color;
   transition: all 0.25s ease;
   outline: none;
   cursor: pointer;
@@ -719,7 +704,7 @@ ul {
   }
   &:hover {
     @media (min-width: 1024px) { //disabled hover for tablets/phones
-      color: #fff;
+      color: $inner-color;
       border: 3px solid rgba(217, 83, 79, 0.7);
       background-color: #d9534f;
       transition: all 0.25s ease;
@@ -730,7 +715,7 @@ ul {
     transform: translateY(0px);
   }
   &--checked {
-    color: #fff;
+    color: $inner-color;
     border: 3px solid #d9534f;
     background-color: #d9534f;
     box-shadow: 2px 5px 10px #e4e4e4;
@@ -752,8 +737,8 @@ ul {
 .container {
   display: flex;
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1550px;
+  margin: 0 auto;
   flex-wrap: wrap;
   @media (max-width: 1440px) {
     width: 90%;
@@ -762,13 +747,13 @@ ul {
 
 .food {
   width: 30%;
+  max-height: 93px;
   margin-left: 3%;
   margin-top: 30px;
   color: #6a7481;
   border: 2px solid rgba(91, 192, 222, 0.59);
   border-radius: 59px;
-  background-color: #fff;
-  max-height: 93px;
+  background-color: $inner-color;
   transition: all .3s linear;
   @media (max-width: 1520px) {
     width: 29%;
@@ -954,14 +939,10 @@ ul {
     @extend .circle;
   }
 }
-
-
 /*=====  End of CONTAINER WITH PRODUCTS  ======*/
 
 
 /*----------  Free space for decoration =)  ----------*/
-
 .free-space {
-  width: 100%;
   height: 100px;
 }
