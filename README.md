@@ -21,5 +21,6 @@ Fodmap app helps people with IBS to adhere a low fodmap diet. The basics of this
 * **VSCode and Chrome Devtool**
 
 ## Speed
+* **Chrome Devtool/Fast 3g after caching less then 1s.** 
+* **PageSpeed Insights (95) gtmetrix.com (99%) tools.pingdom.com (95)**
 
-* **Chrome Devtool/Fast 3g -- 1-st loading 2.5+s (caching) subsequent loadings 1s and less**
