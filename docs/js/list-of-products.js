@@ -3169,10 +3169,10 @@
   {
     "id": "277",
     "name": "Savory biscuits",
-    "fodmap": "low",
+    "fodmap": "high",
     "category": "Breads, Cereals, Grains and Pasta",
     "details": {
-      "oligos": 0,
+      "oligos": 2,
       "fructose": 0,
       "polyols": 0,
       "lactose": 0
