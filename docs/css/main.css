@@ -694,7 +694,7 @@ ul {
   transition: width 0.5s ease;
 }
 
-@media (mix-width: 1600px) {
+@media (min-width: 1600px) {
   .search:focus {
     width: 32%;
   }
