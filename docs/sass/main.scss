@@ -491,7 +491,7 @@ ul {
   &:focus {
     border: 3px solid rgba(91, 192, 222, 0.95);
     transition: width 0.5s ease;
-    @media (mix-width: 1600px) {
+    @media (min-width: 1600px) {
       width: 32%;
     }
     @media (max-width: 1600px) and (min-width: 600px) {

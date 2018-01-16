@@ -204,7 +204,7 @@ function everything() {
 }
 
 //Sort by low and high
-function findLow() {
+function findLow() {  //had issues with switch
   for (var i = 0; i < fodmapList.length; i++) {
     if ((fodmapList[i].fodmap === 'low') && (document.getElementsByClassName('food')[i].style.display === 'block')) {
       document.getElementsByClassName('food')[i].style.display = 'block';
@@ -254,7 +254,7 @@ function findLow() {
   })();
 }
 
-function findHigh() {
+function findHigh() { //had issues with switch
   for (var i = 0; i < fodmapList.length; i++) {
     if ((fodmapList[i].fodmap === 'high') && (document.getElementsByClassName('food')[i].style.display === 'block')) {
       document.getElementsByClassName('food')[i].style.display = 'block';
