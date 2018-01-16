@@ -122,7 +122,7 @@ document.getElementById("js-categories__name").addEventListener("click", functio
 // 6) hide categories on category__content-item click, i have 2 variants of opening the categories, onclick(for tablets/mobiles) and onhover (for desktop)
 // 7) category which was clicked ("categories__content-item")[number written by hand] changed color to "picked"
 // 8) categories name changed to name of clicked categories
-// 9) categories dropdown hide when category was clicked, by display none, and after 100ms display = ""
+// 9) categories dropdown hide when category was clicked, by display none, and after 300ms display = ""
 // 10) download pictures (initialize bLazy)
 function filtering(categoryName, contentOrder){
   document.getElementById('js-search').value = '';
@@ -159,7 +159,7 @@ function filtering(categoryName, contentOrder){
   document.getElementById('js-categories__content').style.display = 'none';
   setTimeout(function() {
     document.getElementById('js-categories__content').style.display = '';
-  }, 100); // lol, it works
+  }, 350); 
   (function() {
     let bLazy = new Blazy();
   })();
@@ -197,7 +197,7 @@ function everything() {
   document.getElementsByClassName('categories__content')[0].style.display = 'none';
   setTimeout(function() {
     document.getElementsByClassName('categories__content')[0].style.display = '';
-  }, 200);
+  }, 450);
   (function() {
     let bLazy = new Blazy();
   })();
