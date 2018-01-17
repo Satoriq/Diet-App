@@ -869,9 +869,11 @@ ul {
           box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.02), 0 3px 14px 3px rgba(0, 0, 0, 0.02), 0 4px 5px 0 rgba(0, 0, 0, 0.03);
 }
 
-.categories:hover .categories__content {
-  opacity: 1;
-  pointer-events: auto;
+@media (min-width: 1024px) {
+  .categories:hover .categories__content {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .categories__content {

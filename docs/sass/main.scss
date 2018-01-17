@@ -588,8 +588,10 @@ ul {
     transition: all 0.25s ease;
     box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.02), 0 3px 14px 3px rgba(0, 0, 0, 0.02), 0 4px 5px 0 rgba(0, 0, 0, 0.03);
     & .categories__content {
-      opacity: 1;
-      pointer-events: auto;
+      @media (min-width: 1024px){ //fix for tablets/ phones
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
   }
   &__content {
