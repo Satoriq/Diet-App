@@ -1,5 +1,5 @@
-# FODMAP App
-Fodmap app helps people with IBS to adhere a low fodmap diet. The basics of this diet is to eat food with low FODMAP level (that is marked as LOW) and avoid food with high fodmap.
+# Diet App
+This diet app helps people with IBS to adhere a low fodmap diet. The basics of this diet is to eat food with low FODMAP level (that is marked as LOW) and avoid food with high fodmap.
 
 ## Technologies Used
 
@@ -19,8 +19,3 @@ Fodmap app helps people with IBS to adhere a low fodmap diet. The basics of this
 * **Basics of SEO** (moz.com-guide, google analytics/ google search console)
 
 * **VSCode and Chrome Devtool**
-
-## Speed
-* **Chrome Devtool/Fast 3g after caching less then 1s.** 
-* **PageSpeed Insights (95) gtmetrix.com (99%) tools.pingdom.com (95)**
-
