@@ -1,9 +1,3 @@
-//
-// ────────────────────────────────────────────────────────── I ──────────
-//   :::::: JS  F O R   H E A D E R : :  :   :    :     :
-// ────────────────────────────────────────────────────────────────────
-//
-
 //Burger menu
 function openBurger() {
   let a = document.getElementById('hamburger');
@@ -38,7 +32,7 @@ function openBurger() {
   }
 }
 
-//Detecting wheel direction based on https://deepmikoto.com/coding/1--javascript-detect-mouse-wheel-direction
+//Detecting wheel direction, based on https://deepmikoto.com/coding/1--javascript-detect-mouse-wheel-direction
 function detectWheelDirection(e) {
   let delta = null,
     direction = false;
@@ -56,7 +50,7 @@ function detectWheelDirection(e) {
   return direction;
 }
 
-//Detecting wheel direction
+//Nav bar show/hide
 function hideNavbar(direction) {// wheel direction down we will hide navbar, but only if Y position > 150px
   if (direction == 'down' && (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150)) {
     document.getElementById('navbar').style.top = '-70px';
@@ -73,24 +67,21 @@ if (window.addEventListener) { // Integrate direction logic with listeners for f
   }, {passive: true});
 }
 
-
-
-
-window.onscroll = function () {
-  showGoTop();
-};
-
 // If user at the bottom and click on logo, scroll top, otherwise go to main page
 document.getElementById('js-header').onclick = function(){
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   } else {
-    window.location = "https://fodmap-app.me";
+    window.location = "site url";
   }
 };
 
 // "Go top" button
+window.onscroll = function () {
+  showGoTop();
+};
+
 function showGoTop() {
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
     document.getElementById('js-top').style.opacity = '1';
