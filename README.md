@@ -1,5 +1,5 @@
 # Diet App
-This diet app helps people with IBS to adhere a low fodmap diet. The basics of this diet is to eat food with low FODMAP level (that is marked as LOW) and avoid food with high fodmap.
+This diet app helps people with IBS to adhere a low fodmap diet. The basics of this diet is to eat food with low FODMAP level (which are  marked as LOW) and avoid food with high fodmap.
 
 ## Technologies Used
 
